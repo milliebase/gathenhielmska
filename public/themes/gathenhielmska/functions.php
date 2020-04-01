@@ -48,11 +48,14 @@ add_filter('show_admin_bar', '__return_false');
 
 add_filter('enter_title_here', 'wp_change_title_text');
 
+add_action('admin_menu', 'archive_admin_menu');
+
 add_action(
     'wp_enqueue_scripts',
     function () {
         wp_enqueue_style('app.css', get_stylesheet_directory_uri() . '/assets/styles/app.css');
         wp_enqueue_script('app.js', get_template_directory_uri() . '/assets/scripts/app.js');
+        wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,800,800i|Roboto+Condensed:300,300i,400,400i,700,700i', false);
     }
 );
 
@@ -88,5 +91,3 @@ function archive_admin_menu()
         40
     );
 }
-
-add_action('admin_menu', 'archive_admin_menu');
