@@ -24,11 +24,7 @@
     @include flex-between();
     width: 100%;
     height: 100%;
-    padding: 0 5% 0 5%;
-
-    &--overlay {
-      background-color: $color-black;
-    }
+    padding: 0 5% 0 2%;
   }
 
   &__logo {

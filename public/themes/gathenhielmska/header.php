@@ -18,7 +18,7 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska.svg" alt="Gathenhielmska logo" />
                 </a>
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/menu.svg" alt="Hamburger menu" />
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/menu.svg" alt="Hamburger menu" class="navbar__burger" />
             </div>
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="navbar__panel__wave navbar__panel__wave--hidden">
@@ -33,7 +33,7 @@
                     <small>SV</small>
                 </div>
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/exit.svg" alt="Exit menu button">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/exit.svg" alt="Exit menu button" class="navbar__overlay__exit">
             </div>
 
             <?php wp_nav_menu([
@@ -61,3 +61,6 @@
         </div>
     </div>
     <!--/navbar-->
+
+
+    <div class="test">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id est vel magna commodo viverra. Cras imperdiet venenatis erat a aliquam. Etiam ultricies erat at malesuada tempor. Aliquam erat volutpat. Aenean libero orci, feugiat vitae ante at, varius cursus libero. Sed ex risus, congue id magna a, commodo mollis ex. Curabitur commodo, mi laoreet ullamcorper tincidunt, orci nunc euismod mauris, eu tristique elit quam commodo mauris. Maecenas nisl ante, euismod at ornare nec, tempus quis eros. Morbi nibh nisl, rutrum quis eros nec, cursus pretium augue.</div>
