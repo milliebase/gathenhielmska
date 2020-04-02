@@ -27,19 +27,27 @@ function add_fields_event_manager($fields)
         'priority' => 1,
     ];
 
+    $fields['_event_venue'] = [
+        'label' => 'Venue ',
+        'type' => 'text',
+        'required' => true,
+        'placeholder' => 'Please enter the venue for the event',
+        'priority' => 2,
+    ];
+
     $fields['_event_location'] = [
         'label' => 'Location',
         'type' => 'text',
         'required' => true,
-        'placeholder' => 'Please enter the location for the event',
-        'priority' => 2,
+        'placeholder' => 'Stigbergstorget 7 414 63 Göteborg',
+        'priority' => 3,
     ];
 
     $fields['_event_banner'] = [
         'label' => 'Image',
         'type' => 'file',
         'required' => true,
-        'priority' => 3,
+        'priority' => 4,
         'ajax' => 1,
         'multiple' => '',
         'allowed_mime_types' => [
@@ -55,7 +63,7 @@ function add_fields_event_manager($fields)
         'type' => 'wp-editor',
         'required' => true,
         'placeholder' => 'Please write a description about the event',
-        'priority' => 4,
+        'priority' => 5,
     ];
 
     $fields['_event_start_time'] = [
@@ -63,7 +71,7 @@ function add_fields_event_manager($fields)
         'type' => 'time',
         'required' => true,
         'placeholder' => '',
-        'priority' => 5,
+        'priority' => 6,
     ];
 
     $fields['_event_start_date'] = [
@@ -71,7 +79,7 @@ function add_fields_event_manager($fields)
         'type' => 'date',
         'required' => true,
         'placeholder' => '',
-        'priority' => 6,
+        'priority' => 7,
     ];
 
     $fields['_event_end_time'] = [
@@ -79,7 +87,7 @@ function add_fields_event_manager($fields)
         'type' => 'time',
         'required' => true,
         'placeholder' => '',
-        'priority' => 7,
+        'priority' => 8,
     ];
 
     $fields['_event_end_date'] = [
@@ -87,7 +95,7 @@ function add_fields_event_manager($fields)
         'type' => 'date',
         'required' => true,
         'placeholder' => '',
-        'priority' => 8,
+        'priority' => 9,
     ];
 
     $fields['_organizer_name'] = [
@@ -95,7 +103,7 @@ function add_fields_event_manager($fields)
         'type' => 'text',
         'required' => true,
         'placeholder' => 'Enter the name of the organizer',
-        'priority' => 9,
+        'priority' => 10,
     ];
 
     $fields['_organizer_description'] = [
@@ -103,7 +111,7 @@ function add_fields_event_manager($fields)
         'type' => 'wp-editor',
         'required' => true,
         'placeholder' => '',
-        'priority' => 10,
+        'priority' => 11,
     ];
 
 
@@ -112,7 +120,7 @@ function add_fields_event_manager($fields)
         'type' => 'text',
         'required' => true,
         'placeholder' => 'Enter the email to the organizer',
-        'priority' => 11,
+        'priority' => 12,
     ];
 
     $fields['_organizer_website'] = [
@@ -120,7 +128,7 @@ function add_fields_event_manager($fields)
         'type' => 'text',
         'required' => true,
         'placeholder' => 'Website URL e.g http://www.yourorganization.com',
-        'priority' => 12,
+        'priority' => 13,
     ];
 
     return $fields;
@@ -143,3 +151,22 @@ function remove_event_manager_subpages()
     remove_submenu_page("edit.php?post_type=event_listing", "event-manager-form-editor");
     remove_submenu_page("edit.php?post_type=event_listing", "event-manager-addons");
 }
+
+//removing templates at single-event-listings
+// $template = __DIR__ .'/public/themes/gathenhielmska/page-templates/';
+// $template_name = 'event.php';
+// $template_path = 'event-filters';
+
+// return apply_filters( 'event_manager_locate_template', $template, $template_name, $template_path );
+
+// $template_name = 'content-single-event_listing';
+
+// add_filter( 'event_manager_locate_template', function( $template, $template_name, $template_path ) {
+// 	$custom_template_path = __DIR__ . DIRECTORY_SEPARATOR . $template_path . DIRECTORY_SEPARATOR . $template_name;
+
+// 	if ( file_exists( $custom_template_path ) ) {
+// 		return $custom_template_path;
+// 	}
+
+// 	return $template;
+// }, 10, 3 );
