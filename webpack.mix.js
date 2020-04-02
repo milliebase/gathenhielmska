@@ -22,3 +22,8 @@ mix.copyDirectory('resources/images', `public/themes/${theme}/assets/images`);
 
 mix.js('resources/scripts/app.js', 'scripts');
 mix.sass('resources/styles/app.scss', 'styles');
+
+mix.browserSync({
+  proxy: process.env.PROXY,
+  port: 8000
+});
