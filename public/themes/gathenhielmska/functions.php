@@ -2,17 +2,7 @@
 
 declare(strict_types=1);
 
-
-@ini_set('upload_max_size', '64M');
-@ini_set('post_max_size', '64M');
-@ini_set('max_execution_time', '300');
-
-
-
 add_action('after_setup_theme', function () {
-    // add_theme_support('title-tag');
-    // add_theme_support( 'post-thumbnails' );
-
     add_theme_support('soil-clean-up');
     add_theme_support('soil-disable-asset-versioning');
     add_theme_support('soil-disable-trackbacks');
@@ -21,42 +11,52 @@ add_action('after_setup_theme', function () {
     add_theme_support('soil-relative-urls');
 });
 
+add_filter('show_admin_bar', '__return_false');
+add_filter('enter_title_here', 'wp_change_title_text');
+
+//Add functionality
 require get_template_directory() . '/plate.php';
 require get_template_directory() . '/plugins/wp-event-manager.php';
 
-//POST TYPES
+//Register post-types
 require get_template_directory() . '/post-types/employer.php';
 require get_template_directory() . '/post-types/in-house.php';
 require get_template_directory() . '/post-types/archive-image.php';
 require get_template_directory() . '/post-types/archive-video.php';
 require get_template_directory() . '/post-types/news.php';
 
-//FIELDS
+//Register fields
 require get_template_directory() . '/fields/employer.php';
 require get_template_directory() . '/fields/in-house.php';
 require get_template_directory() . '/fields/archive-image.php';
 require get_template_directory() . '/fields/archive-video.php';
 
-
-
-//TAXONMIES
+//Register taxonomies
 require get_template_directory() . '/taxonomies/archive-category-image.php';
 require get_template_directory() . '/taxonomies/archive-category-video.php';
 
+add_action('admin_menu', 'archive_admin_menu');
 
-add_filter('show_admin_bar', '__return_false');
-
-add_filter('enter_title_here', 'wp_change_title_text');
-
+//Enqueue styles and scripts
 add_action(
     'wp_enqueue_scripts',
     function () {
         wp_enqueue_style('app.css', get_stylesheet_directory_uri() . '/assets/styles/app.css');
         wp_enqueue_script('app.js', get_template_directory_uri() . '/assets/scripts/app.js');
+        wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,800,800i|Roboto+Condensed:300,300i,400,400i,700,700i', false);
     }
 );
 
-function wp_change_title_text($title)
+
+//Functions
+
+/**
+ * Change placeholder text depending on post-type
+ *
+ * @param string $title
+ * @return void
+ */
+function wp_change_title_text(string $title)
 {
     $screen = get_current_screen();
 
@@ -75,7 +75,11 @@ function wp_change_title_text($title)
     return $title;
 }
 
-
+/**
+ * Add Archive to admin menu on dashboard
+ *
+ * @return void
+ */
 function archive_admin_menu()
 {
     add_menu_page(
@@ -88,5 +92,3 @@ function archive_admin_menu()
         40
     );
 }
-
-add_action('admin_menu', 'archive_admin_menu');

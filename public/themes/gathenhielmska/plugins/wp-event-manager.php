@@ -27,11 +27,11 @@ function add_fields_event_manager($fields)
         'priority' => 1,
     ];
 
-    $fields['_event_venue_name'] = [
-        'label' => 'Venue Name',
+    $fields['_event_location'] = [
+        'label' => 'Location',
         'type' => 'text',
         'required' => true,
-        'placeholder' => 'Please enter the venue name',
+        'placeholder' => 'Please enter the location for the event',
         'priority' => 2,
     ];
 

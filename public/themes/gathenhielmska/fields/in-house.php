@@ -9,7 +9,7 @@ if (function_exists('acf_add_local_field_group')) {
         'title' => 'Activity information',
         'fields' => [
             [
-                'key' => 'profile',
+                'key' => 'profile_image',
                 'label' => 'Profile image',
                 'name' => 'profile',
                 'type' => 'image',
