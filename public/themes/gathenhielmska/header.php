@@ -61,6 +61,3 @@
         </div>
     </div>
     <!--/navbar-->
-
-
-    <div class="test">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id est vel magna commodo viverra. Cras imperdiet venenatis erat a aliquam. Etiam ultricies erat at malesuada tempor. Aliquam erat volutpat. Aenean libero orci, feugiat vitae ante at, varius cursus libero. Sed ex risus, congue id magna a, commodo mollis ex. Curabitur commodo, mi laoreet ullamcorper tincidunt, orci nunc euismod mauris, eu tristique elit quam commodo mauris. Maecenas nisl ante, euismod at ornare nec, tempus quis eros. Morbi nibh nisl, rutrum quis eros nec, cursus pretium augue.</div>
