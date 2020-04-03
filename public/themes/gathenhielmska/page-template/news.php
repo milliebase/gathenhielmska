@@ -1,4 +1,4 @@
-<?php /* Template name: Archive */ ?>
+<?php /* Template name: News */ ?>
 
 <?php get_header(); ?>
 
