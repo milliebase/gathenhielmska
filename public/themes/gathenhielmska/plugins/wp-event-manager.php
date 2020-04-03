@@ -134,24 +134,6 @@ function add_fields_event_manager($fields)
     return $fields;
 }
 
-//Find all submenus or menus
-
-// add_action('admin_init', 'wpse_136058_debug_admin_menu');
-
-// function wpse_136058_debug_admin_menu()
-// {
-
-//     echo '<pre>' . print_r($GLOBALS['menu'], TRUE) . '</pre>';
-// }
-
-add_action('admin_menu', 'remove_event_manager_subpages', 999);
-
-function remove_event_manager_subpages()
-{
-    remove_submenu_page("edit.php?post_type=event_listing", "event-manager-form-editor");
-    remove_submenu_page("edit.php?post_type=event_listing", "event-manager-addons");
-}
-
 //removing templates at single-event-listings
 // $template = __DIR__ .'/public/themes/gathenhielmska/page-templates/';
 // $template_name = 'event.php';
