@@ -1,6 +1,6 @@
 <?php wp_footer(); ?>
-<?php $footer_imgs = get_template_directory_uri().'/assets/images'; 
- 
+<?php $footer_imgs = get_template_directory_uri().'/assets/images';
+
 ?>
 
 <footer>
@@ -12,21 +12,21 @@
                 <a><img src="<?php echo  $footer_imgs.'/logos/instagram_footer.svg'?>" alt="instagram"></a>
             </div>
         </div>
-      
+
         <div class="footer__info">
             <p>Stigbergstoget 7, Göteborg</p>
-            <p>Telefon:0707 211 943</p>
-            <p>Mail:info@gathenhielm.se</p>
+            <p>Telefon: 0707 211 943</p>
+            <p>Mail: info@gathenhielm.se</p>
             <p>@2020 Gathenhielmska</p>
         </div>
-            
+
         <div class="footer__suporting">
             <p>MED STÖD FRÅN</p>
           <div class="footer__suport_box">
             <div class="footer__support_col1">
                 <img src="<?php echo  $footer_imgs.'/logos/higab.svg'?>" alt="higab">
                  <img src="<?php echo  $footer_imgs.'/logos/kulturrad.svg'?>" alt="kultur rådet">
-                
+
             </div>
             <div class="footer__support_col2">
                  <img src="<?php echo  $footer_imgs.'/logos/goteborgsstad.svg'?>" alt="västra götalandsregionen">
