@@ -1,67 +1,120 @@
 .navbar {
   width: 100%;
-  height: 88px;
-  padding: 0 5% 0 5%;
-  background-color: black;
+  height: 55px;
   position: fixed;
   z-index: 90;
   top: 0;
+  color: white;
 
-  &__overlay {
-    @include flex-col-between();
-    min-width: 100vw;
-    min-height: 100vh;
-    top: 0;
-    left: 0;
-    background-color: $color-dark-green;
-    position: absolute;
-    z-index: 91;
+  &__panel {
+    height: 55px;
+
+    &__wave {
+      position: absolute;
+      z-index: -2;
+      top: 0;
+
+      &--hidden {
+        opacity: 0;
+      }
+    }
   }
-}
 
-.menu {
-  @include flex-between();
-  width: 100%;
-  height: 100%;
+  &__buttons {
+    @include flex-between();
+    width: 100%;
+    height: 100%;
+    padding: 0 5% 0 2%;
+  }
 
   &__logo {
     width: 45px;
     height: 47px;
+
+    &--hidden {
+      opacity: 0;
+    }
   }
 
-  &__nav--overlay {
-    @include flex-col-between();
-  }
-
-  &__information {
-    @include flex-between();
-    align-items: flex-end;
-    height: 202px;
-  }
-}
-
-.menu--overlay {
-  @include flex-between();
-  padding: 0 5% 0 5%;
-  height: 65px;
-  background-color: $color-black;
-}
-
-.language {
-  @include flex-between();
-  width: 50px;
-}
-
-.information {
-  &__logo {
+  &__logo img {
+    width: 100%;
     height: 100%;
-    margin-left: -4.35%;
   }
 
-  &__ctu {
-    @include flex-between();
-    width: 120px;
-    margin-bottom: 10%;
-    margin-right: 5%;
+  &__overlay {
+    @include flex-col-between();
+    width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    position: fixed;
+    z-index: 95;
+    background-color: $color-dark-green;
+    overflow: scroll;
+
+    &__panel {
+      @include flex-between();
+      padding: 5%;
+      height: 55px;
+      background-color: $color-black;
+    }
+
+    .language {
+      @include flex-between();
+      width: 50px;
+    }
+
+    .information {
+      @include flex-between();
+        align-items: flex-end;
+        height: 202px;
+
+      &__logo {
+        height: 100%;
+        margin-left: -4.35%;
+      }
+
+      &__ctu {
+        @include flex-between();
+        width: 120px;
+        margin-bottom: 5%;
+        margin-right: 5%;
+      }
+    }
+  }
+}
+
+.menu {
+  flex-grow: 1;
+  padding: 0;
+  margin: 0 0 12%;
+  // overflow-y: scroll;
+
+  &-item {
+    list-style: none;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 5%;
+
+    a {
+      width: 100%;
+      height: 100%;
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .sub-menu {
+      padding: 0;
+      width: 100%;
+      display: none;
+
+      .menu-item {
+        box-shadow: none;
+
+        a {
+          text-decoration: underline;
+          font-weight: 300;
+        }
+      }
+    }
   }
 }
