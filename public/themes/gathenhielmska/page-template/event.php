@@ -1,5 +1,6 @@
-<?php /* Template name: Event */
-get_header(); ?>
+<?php /* Template name: Event */ ?>
+
+<?php get_header(); ?>
 
 <div class="container">
 
