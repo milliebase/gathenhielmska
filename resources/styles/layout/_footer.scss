@@ -7,15 +7,15 @@ footer{
     width:100%;
     overflow: hidden;
     margin: 0px;
-    
- 
+
+
 
     .footer_container{
         position: relative;
         padding:40px 0px 60px 32px;
         width:86.6%; //temporary
         z-index: 1;
-        
+
             .footer__social{
                      display: flex;
                     justify-content: space-between;
@@ -25,33 +25,33 @@ footer{
                         width: 26%;
                         max-width: 80px;
                         display: flex;
-                        
+
                         align-items: center;
                         justify-content: space-between;
-                      
-                        
-                      
+
+
+
                         a:hover{
                             cursor: pointer;
                         }
                     }
-             
+
             }
     }
-    
+
     .footer__info{
         font-size: 16px;
     }
     .footer__suporting{
        width:205px;
-      
+
         p{
              font-weight: bold;
              font-size: 10px;
         }
       .footer__suport_box{
          display: flex;
-       
+
         .footer__support_col1{
             position: relative;
             top:5px;
@@ -66,17 +66,17 @@ footer{
               img:nth-child(1){
                 width: 64px;
             }
-           
+
             img:nth-child(2){
                 width: 95px;
             }
         }
-        
+
         div{
             width:100px;
         }
       }
-       
+
 
     }
     .footer_bird_background{
@@ -87,6 +87,6 @@ footer{
         width:63%;
         max-width: 300px;
         transform: scaleX(-1);
-      
+
     }
 }
