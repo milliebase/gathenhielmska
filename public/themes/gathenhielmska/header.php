@@ -1,3 +1,5 @@
+<?php $uri = get_template_directory_uri(); ?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -15,10 +17,10 @@
         <div class="navbar__panel">
             <div class="navbar__buttons">
                 <a href="<?php echo home_url(); ?>" class="navbar__logo navbar__logo--hidden">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska.svg" alt="Gathenhielmska logo" />
+                    <img src="<?php echo $uri ?>/assets/images/logos/gathenhielmska.svg" alt="Gathenhielmska logo" />
                 </a>
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/menu.svg" alt="Hamburger menu" class="navbar__burger" />
+                <img src="<?php echo $uri ?>/assets/images/menu.svg" alt="Hamburger menu" class="navbar__burger" />
             </div>
 
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="navbar__panel__wave navbar__panel__wave--hidden">
@@ -29,11 +31,11 @@
         <div class="navbar__overlay hidden">
             <div class="navbar__overlay__panel">
                 <div class="language">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/language.svg" alt="Choose language icon">
+                    <img src="<?php echo $uri ?>/assets/images/language.svg" alt="Choose language icon">
                     <small>SV</small>
                 </div>
 
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/exit.svg" alt="Exit menu button" class="navbar__overlay__exit">
+                <img src="<?php echo $uri ?>/assets/images/exit.svg" alt="Exit menu button" class="navbar__overlay__exit">
             </div>
 
             <?php wp_nav_menu([
@@ -44,17 +46,17 @@
             ]) ?>
 
             <div class="information">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska_gradient.svg" alt="Gathenhielmska logo with gradient" class="information__logo">
+                <img src="<?php echo $uri ?>/assets/images/logos/gathenhielmska_gradient.svg" alt="Gathenhielmska logo with gradient" class="information__logo">
 
                 <div class="information__ctu">
                     <p>Login</p>
 
                     <a href="#">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/facebook.svg" alt="Gathenhielmska Facebook link">
+                        <img src="<?php echo $uri ?>/assets/images/logos/facebook.svg" alt="Gathenhielmska Facebook link">
                     </a>
 
                     <a href="#">
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/instagram.svg" alt="Gathenhielmska Instagram link">
+                        <img src="<?php echo $uri ?>/assets/images/logos/instagram.svg" alt="Gathenhielmska Instagram link">
                     </a>
                 </div>
             </div>
