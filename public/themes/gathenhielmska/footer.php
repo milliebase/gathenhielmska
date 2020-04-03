@@ -1,5 +1,5 @@
 <?php wp_footer(); ?>
-<?php $footer_imgs = get_template_directory_uri() . '/assets/images';
+<?php $footer_imgs = get_template_directory_uri().'/assets/images'; 
 
 ?>
 
