@@ -1,0 +1,9 @@
+.single-event-img-wrapper {
+    width: 100vw;
+  .single-event-img-wrapper__img {
+    height: 100vh;
+    width: calc(100% - 16px);
+    object-fit: cover;
+    position: relative;
+  }
+}

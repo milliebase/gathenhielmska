@@ -1,0 +1,40 @@
+.wpem-from-date //date box
+{
+  background: $color-orange !important;
+  .wpem-date,
+  .wpem-month  {
+    color: $color-white !important;
+    font-weight: 200 !important;
+  }
+}
+
+.wpem-event-layout-action //buttons for list and box view
+{
+  @include flex-row();
+  justify-content: flex-end;
+  .wpem-event-layout-icon {
+    width: 15% !important;
+    background-color: $color-white !important;
+  }
+}
+
+.wpem-event-layout-wrapper{
+  border: none !important;
+
+  .wpem-event-banner {
+    .wpem-event-banner-img {
+      width: 100% !important;
+    }
+
+  }
+
+  .wpem-event-banner-information {
+
+  }
+
+}
+
+.wpem-event-box-col {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+}

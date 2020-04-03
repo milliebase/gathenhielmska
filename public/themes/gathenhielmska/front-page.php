@@ -1,5 +1,14 @@
 <?php get_header(); ?>
 
+<!-- displays events in box view -->
+<?php echo(do_shortcode('
+        [events per_page="6"
+        orderby="event_start_date"
+        show_filters="false"
+        show_categories"false"
+        layout_type="box"]'));
+?>
+
 <div class="row">
     <div class="col">
         <?php if (have_posts()) : ?>
