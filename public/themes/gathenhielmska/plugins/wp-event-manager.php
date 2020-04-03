@@ -141,7 +141,7 @@ function add_fields_event_manager($fields)
 // function wpse_136058_debug_admin_menu()
 // {
 
-//     echo '<pre>' . print_r($GLOBALS['submenu'], TRUE) . '</pre>';
+//     echo '<pre>' . print_r($GLOBALS['menu'], TRUE) . '</pre>';
 // }
 
 add_action('admin_menu', 'remove_event_manager_subpages', 999);

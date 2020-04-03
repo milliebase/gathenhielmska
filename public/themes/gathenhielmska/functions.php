@@ -22,6 +22,7 @@ add_action(
     }
 );
 
+add_action('admin_menu', 'remove_admin_menu_items', 999);
 add_action('admin_menu', 'archive_admin_menu');
 
 add_filter('show_admin_bar', '__return_false');
@@ -52,6 +53,22 @@ require get_template_directory() . '/taxonomies/archive-category-video.php';
 
 
 //Functions
+
+//Find all submenus or menus
+// add_action('admin_init', 'wpse_136058_debug_admin_menu');
+
+// function wpse_136058_debug_admin_menu()
+// {
+
+//     echo '<pre>' . print_r($GLOBALS['menu'], TRUE) . '</pre>';
+// }
+
+function remove_admin_menu_items()
+{
+    remove_submenu_page("edit.php?post_type=event_listing", "event-manager-form-editor");
+    remove_submenu_page("edit.php?post_type=event_listing", "event-manager-addons");
+    remove_menu_page('edit.php');
+}
 
 /**
  * Change placeholder text depending on post-type
