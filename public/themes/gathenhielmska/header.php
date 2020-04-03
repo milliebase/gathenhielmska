@@ -64,4 +64,4 @@
     </div>
     <!--/navbar-->
 
-    <div class="container">
+    <div class="wrapper">
