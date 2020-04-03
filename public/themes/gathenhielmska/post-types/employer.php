@@ -19,5 +19,6 @@ add_action('init', function () {
         'menu_icon' => 'dashicons-admin-users',
         'menu_position' => 20,
         'public' => true,
+        // 'show_in_rest' => true,
     ]);
 });

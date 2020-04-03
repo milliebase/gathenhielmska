@@ -9,21 +9,21 @@ if (function_exists('acf_add_local_field_group')) {
         'title' => 'Image information',
         'fields' => [
             [
-                'key' => 'decription',
+                'key' => 'archive_image_decription',
                 'label' => 'Description',
                 'name' => 'description',
                 'type' => 'textarea',
                 'instructions' => 'Add an image description',
             ],
             [
-                'key' => 'image_date',
+                'key' => 'archive_image_date',
                 'label' => 'Date',
                 'name' => 'image_date',
                 'type' => 'date_picker',
                 'instructions' => 'Add date when the image was taken',
             ],
             [
-                'key' => 'image_gallery',
+                'key' => 'archive_image_gallery',
                 'label' => 'Images',
                 'name' => 'image_gallery',
                 'type' => 'image',
