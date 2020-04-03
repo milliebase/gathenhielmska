@@ -1,6 +1,6 @@
 <?php wp_footer(); ?>
 <?php $footer_imgs = get_template_directory_uri().'/assets/images'; 
- 
+ echo $footer_imgs;
 ?>
 
 <footer>
