@@ -1,10 +1,10 @@
 
 footer{
+    align-self: flex-end;
     background-color:$color-light;
-    position: absolute;
-    bottom: 0px;
+    position: relative;
     display:flex;
-    width:100%;
+    width:100vw;
     overflow: hidden;
     margin: 0px;
     
