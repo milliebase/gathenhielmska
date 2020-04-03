@@ -14,7 +14,7 @@ body {
   display: none;
 }
 
-.test {
-  margin-top: 400px;
-  width: 90%;
+.no-scroll {
+  height: 100vh;
+  overflow: hidden;
 }
