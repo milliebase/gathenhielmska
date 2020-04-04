@@ -18,8 +18,8 @@
 
         <div class="footer__info">
             <p>Stigbergstoget 7, Göteborg</p>
-            <p>Telefon:0707 211 943</p>
-            <p>Mail:info@gathenhielm.se</p>
+            <p>Telefon: 0707 211 943</p>
+            <p>Mail: info@gathenhielm.se</p>
             <p>@2020 Gathenhielmska</p>
         </div>
 

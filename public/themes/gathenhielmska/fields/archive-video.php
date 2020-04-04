@@ -9,7 +9,7 @@ if (function_exists('acf_add_local_field_group')) {
         'title' => 'Video information',
         'fields' => [
             [
-                'key' => 'video',
+                'key' => 'archive_video_url',
                 'label' => 'Video url',
                 'name' => 'video',
                 'type' => 'oembed',

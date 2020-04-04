@@ -1,3 +1,51 @@
 * {
   font-family: 'Nunito Sans';
 }
+
+p {
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 23px;
+}
+
+h1, h2 {
+  font-family: $font-heading;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 46px;
+  letter-spacing: 0.02em;
+  }
+
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 34px;
+}
+
+h3 {
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 23px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 23px;
+  color: #7A7A7A;
+}
+
+.page__heading {
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  margin: 32px 17px;
+}
