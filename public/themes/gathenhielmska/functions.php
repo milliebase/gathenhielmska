@@ -17,7 +17,7 @@ add_action(
     'wp_enqueue_scripts',
     function () {
         wp_enqueue_style('app.css', get_stylesheet_directory_uri() . '/assets/styles/app.css');
-        wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,800,800i|Roboto+Condensed:300,300i,400,400i,700,700i', false);
+        wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,800,800i|Roboto+Condensed:300,300i,400,400i,600,700,700i', false);
         wp_enqueue_script('app.js', get_template_directory_uri() . '/assets/scripts/app.js');
     }
 );
@@ -60,7 +60,7 @@ require get_template_directory() . '/taxonomies/archive-category-video.php';
 
 
 //Functions
-if (function_exists('customize_post_type_support')) {
+if (!function_exists('customize_post_type_support')) {
 
     /**
      * Customize the post type support in pages
@@ -79,7 +79,7 @@ if (function_exists('customize_post_type_support')) {
 }
 
 
-if (function_exists('remove_admin_menu_items')) {
+if (!function_exists('remove_admin_menu_items')) {
 
     /**
      * Function to remove specific items from admin_menu
@@ -95,7 +95,7 @@ if (function_exists('remove_admin_menu_items')) {
     }
 }
 
-if (function_exists('wp_change_title_text')) {
+if (!function_exists('wp_change_title_text')) {
 
     /**
      * Change placeholder text depending on post-type
@@ -124,7 +124,7 @@ if (function_exists('wp_change_title_text')) {
     }
 }
 
-if (function_exists('add_archive_admin_menu')) {
+if (!function_exists('add_archive_admin_menu')) {
 
     /**
      * Add Archive to admin menu on dashboard
