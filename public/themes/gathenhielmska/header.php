@@ -1,4 +1,19 @@
-<?php $uri = get_template_directory_uri(); ?>
+<?php
+
+$uri = get_template_directory_uri();
+
+global $wp;
+
+if ($wp->request != '') {
+    $page = $wp->request;
+} else {
+    $page = 'home';
+}
+
+$heroImg = get_field($page . '_hero_image');
+$heroHead = get_field($page . '_hero_heading');
+$heroText = get_field($page . '_hero_text');
+?>
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -63,5 +78,34 @@
         </div>
     </div>
     <!--/navbar-->
+
+    <section class="hero">
+        <?php if ($heroImg) : ?>
+            <img src="<?php echo $heroImg['url']; ?>" alt="<?php echo ($heroImg['alt'] === '') ? "Hero image for $page page" :  $heroImg['alt']; ?>" class="hero__image">
+        <?php endif; ?>
+
+        <article class="hero__content">
+            <div class="hero__content__text">
+                <h1><?php the_title(); ?></h1>
+
+                <h2>
+                    <?php if ($heroHead) : ?>
+                        <?php echo $heroHead; ?>
+                    <?php endif; ?>
+                </h2>
+
+                <p>
+                    <?php if ($heroText) : ?>
+                        <?php echo $heroText; ?>
+                    <?php endif; ?>
+                </p>
+            </div>
+
+            <div class="explore">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_down.svg" alt="Arrow down">
+                <p>Utforska</p>
+            </div>
+        </article>
+    </section>
 
     <div class="wrapper">
