@@ -4,8 +4,14 @@ $uri = get_template_directory_uri();
 
 global $wp;
 
-if ($wp->request != '') {
-    $page = $wp->request;
+if (!empty($wp->query_vars)) {
+    if (array_key_exists('pagename', $wp->query_vars)) {
+        $page = $wp->query_vars['pagename'];
+    } else if (array_key_exists('post_type', $wp->query_vars) && $wp->query_vars['post_type'] != 'event_listing') {
+        $page = $wp->query_vars['post_type'];
+    } else {
+        $page = 'single_event';
+    }
 } else {
     $page = 'home';
 }
