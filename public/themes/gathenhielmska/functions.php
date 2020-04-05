@@ -76,7 +76,7 @@ if (!function_exists('customize_post_type_support')) {
         remove_post_type_support('page', 'author');
         remove_meta_box('slugdiv', 'page', 'normal');
         remove_meta_box('edit-slug-box', 'page', 'normal');
-    }
+    } 
 }
 
 
