@@ -55,6 +55,7 @@ require get_template_directory() . '/fields/archive-image.php';
 require get_template_directory() . '/fields/archive-video.php';
 require get_template_directory() . '/fields/contact.php';
 require get_template_directory() . '/fields/about-history.php';
+require get_template_directory() . '/fields/about-today.php';
 
 
 //Register taxonomies
