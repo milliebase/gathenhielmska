@@ -1,54 +1,72 @@
 .se-hero {
-  position: relative;
+  @include flex-col-end();
+  width: 100%;
+  height: 100vh;
+  padding-top: 55px;
+  color: $color-white;
 
-.se-hero__img {
+
+  &__image {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    width: 100vw;
-    height: 100vh;
-  }
-  .se-hero__text {
     position: absolute;
-    margin: 0 16px;
-    left: 0;
-    right: 0;
-    top: 50%;
-    color: $color-white;
+    z-index: 1;
+    top: 0;
   }
 
-  .se-hero__title {
-    font-size: 32px;
-  }
+  &__content {
+    @include flex-col-between();
+    height: 320px;
+    padding: 0 16px;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0.5%, rgba(0, 0, 0, 0.95) 93.14%);
+    background-blend-mode: darken;
+    position: relative;
+    z-index: 2;
 
-  .se-hero__description {
-    font-size: 16px;
-    line-height: 23px;
-  }
+    &__text {
+      @include flex-col-start();
 
-  .se-hero__bottom {
-    @include flex-row();
-    position: absolute;
-    margin: 0 16px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-top: 1px solid white;
-    color: $color-white;
-  }
+      h1, p {
+        margin: 0;
+      }
+    }
 
-  .se-hero__bottom__text {
-    margin: 12px auto;
+    .explore {
+      display:flex;
+      justify-content: flex-start;
+      align-items: center;
+      height: 44px;
+      border-top: 1px solid $color-white;
+
+      p {
+        margin: 0;
+        text-align: center;
+        width: 100%;
+      }
+    }
   }
 }
 
 .se-info {
-  margin: 32px 16px ;
-  .se-info__date {
+  color: $color-black;
+  padding: 32px 16px 22px 16px;
 
+  h2 {
+    margin: 0 0 8px 0;
   }
-  .se-info__time {
-    padding: 4px 0;
+
+  &__date-time{
+    margin: 0;
   }
-  .se-info__venue {
-    font-weight: 600;
+
+  &__venue {
+    font-weight: 800;
+  }
+
+  &__description {
+    p {
+      margin: 8px 0 0 0;
+    }
   }
 }
