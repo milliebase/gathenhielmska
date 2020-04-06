@@ -14,17 +14,17 @@ if (function_exists('acf_add_local_field_group')) {
                 fieldshero('about/about_history')['header'],
                 fieldshero('about/about_history')['text'],
                 [
-                    'key' => 'field_about-history-year',
+                    'key' => 'field_about_history_year',
                     'label' => 'The house years of history',
                     'name' => 'The years of history',
                     'type' => 'group',
                     'layout'=>'table',
                     'instructions' => '',
-                    'collapsed' => 'field_about-history-years',
+                    'collapsed' => 'field_about_history_years',
                     'required' => 0,
                 ],
                         [
-                    'key' => 'field_about-history-textbox',
+                    'key' => 'field_about_history_textbox',
                     'label' => 'Add a textbox',
                     'name' => '',
                     'type' => 'group',
@@ -33,8 +33,6 @@ if (function_exists('acf_add_local_field_group')) {
                     'collapsed' => 'field_about-history-textboxes',        
                     'required' => 0,
                         ],
-              
-              
             ],
 
 
@@ -77,8 +75,8 @@ if (function_exists('acf_add_local_field_group')) {
 
 
     acf_add_local_field([
-    'key' => 'field_about-history-years',
-	'parent' => 'field_about-history-year',
+    'key' => 'field_about_history_years',
+	'parent' => 'field_about_history_year',
     
 	'label' => '',
 	'name' => 'sub_titdddle',
@@ -86,7 +84,7 @@ if (function_exists('acf_add_local_field_group')) {
     
     'sub_fields'=>[
         [
-            'key'   => 'about-history-year-date',
+            'key'   => 'about_history_year_date',
             'label' => 'Date',
             'name'  => 'year',
             'type'  => 'number',
@@ -94,7 +92,7 @@ if (function_exists('acf_add_local_field_group')) {
             'style' => 'seamless',
         ],
         [
-            'key'   => 'about-history-year-text',
+            'key'   => 'about_history_year_text',
             'label' => 'Text',
             'name'  => 'Text',
             'type'  => 'textarea',
@@ -108,11 +106,13 @@ if (function_exists('acf_add_local_field_group')) {
     ]);
 
     acf_add_local_field([
-    'key' => 'field_about-history-textboxes',
-    'parent' => 'field_about-history-textbox',
+    'key' => 'field_about_history_textboxes',
+    'parent' => 'field_about_history_textbox',
+
     'label' => 'Add att box about the house history',
 	'name' => 'Textbox about history',
     'type' => 'repeater',
+    'max' =>4,
         'sub_fields'=>[[
              'key'=>"field_about-history-image",
             'label' => 'images',
@@ -120,7 +120,7 @@ if (function_exists('acf_add_local_field_group')) {
             'type' => 'image',
             'conditional_logic' =>[
 					[
-						'field' => 'field_about-history-condition',
+						'field' => 'field_about-history_condition',
 						'operator' => '!=',
 						'value' => '1',
                     ],
@@ -130,13 +130,13 @@ if (function_exists('acf_add_local_field_group')) {
         
         ],
         [
-            'key'=>"field_about-history-gallary",
+            'key'=>"field_about_history_gallary",
             'label' => 'gallery',
             'name'  => 'background',
             'type' => 'gallery',
              'conditional_logic' =>[
 					[
-						'field' => 'field_about-history-condition',
+						'field' => 'field_about-history_condition',
 						'operator' => '==',
 						'value' => '1',
                     ],
@@ -146,7 +146,7 @@ if (function_exists('acf_add_local_field_group')) {
         
         ],
         [
-			'key' => 'field_about-history-condition',
+			'key' => 'field_about-history_condition',
 			'label' => 'Background or slider',
 			'name' => 'image_or_gallery',
 			'type' => 'true_false',
@@ -164,20 +164,27 @@ if (function_exists('acf_add_local_field_group')) {
         
         
         [
-            'key'=>'field_about-history-heading',
+            'key'=>'field_about_history_heading',
             'label' => 'Heading when house foundead',
             'name' => 'heading foundead',
             'type' => 'text',
             'required' => 0,
             'placeholder' => ''
         ],[
-             'key' => 'about_history-foundead-text',
-	         'parent' => 'field_about-history-foundead',
+             'key' => 'field_about_history_text',
         	'label' => 'Text',
 	        'name'  => 'Text',
             'type'  => 'textarea',
-            'instructions' => 'add some text about when the house was foundead.',
-        ],
+            'instructions' => 'add some text about when the house.',
+        ],[
+            'key' => 'filed_about_history_url',
+			'label' => 'optional page url',
+			'name' => 'url',
+			'type' => 'url',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+        ]
     ],
           
     'layout' => 'block',
