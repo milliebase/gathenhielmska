@@ -4,16 +4,24 @@ $uri = get_template_directory_uri();
 
 global $wp;
 
-if (!empty($wp->query_vars)) {
-    if (array_key_exists('pagename', $wp->query_vars)) {
-        $page = $wp->query_vars['pagename'];
-    } else if (array_key_exists('post_type', $wp->query_vars) && $wp->query_vars['post_type'] != 'event_listing') {
-        $page = $wp->query_vars['post_type'];
-    } else {
+if (empty($wp->query_vars)) {
+    $page = 'home';
+}
+
+if (array_key_exists('pagename', $wp->query_vars)) {
+    $page = $wp->query_vars['pagename'];
+
+    if (strpos($page, '/')) {
+        $page = substr($page, strpos($page, '/') + 1);
+    }
+}
+
+if (array_key_exists('post_type', $wp->query_vars)) {
+    $page = $wp->query_vars['post_type'];
+
+    if ($page === 'event_listing') {
         $page = 'single_event';
     }
-} else {
-    $page = 'home';
 }
 
 $heroImg = get_field($page . '_hero_image');
@@ -84,34 +92,35 @@ $heroText = get_field($page . '_hero_text');
         </div>
     </div>
     <!--/navbar-->
+    <?php if ($page != 'single_event') : ?>
+        <section class="hero">
+            <?php if ($heroImg) : ?>
+                <img src="<?php echo $heroImg['url']; ?>" alt="<?php echo ($heroImg['alt'] === '') ? "Hero image for $page page" :  $heroImg['alt']; ?>" class="hero__image">
+            <?php endif; ?>
 
-    <section class="hero">
-        <?php if ($heroImg) : ?>
-            <img src="<?php echo $heroImg['url']; ?>" alt="<?php echo ($heroImg['alt'] === '') ? "Hero image for $page page" :  $heroImg['alt']; ?>" class="hero__image">
-        <?php endif; ?>
+            <article class="hero__content">
+                <div class="hero__content__text">
+                    <h1><?php the_title(); ?></h1>
 
-        <article class="hero__content">
-            <div class="hero__content__text">
-                <h1><?php the_title(); ?></h1>
+                    <h2>
+                        <?php if ($heroHead) : ?>
+                            <?php echo $heroHead; ?>
+                        <?php endif; ?>
+                    </h2>
 
-                <h2>
-                    <?php if ($heroHead) : ?>
-                        <?php echo $heroHead; ?>
-                    <?php endif; ?>
-                </h2>
+                    <p>
+                        <?php if ($heroText) : ?>
+                            <?php echo $heroText; ?>
+                        <?php endif; ?>
+                    </p>
+                </div>
 
-                <p>
-                    <?php if ($heroText) : ?>
-                        <?php echo $heroText; ?>
-                    <?php endif; ?>
-                </p>
-            </div>
-
-            <div class="explore">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_down.svg" alt="Arrow down">
-                <p>Utforska</p>
-            </div>
-        </article>
-    </section>
+                <div class="explore">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_down.svg" alt="Arrow down">
+                    <p>Utforska</p>
+                </div>
+            </article>
+        </section>
+    <?php endif; ?>
 
     <div class="wrapper">

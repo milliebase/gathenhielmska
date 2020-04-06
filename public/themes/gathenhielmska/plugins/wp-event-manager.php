@@ -10,16 +10,16 @@ declare(strict_types=1);
  * @return string
  */
 
-function get_last_event_start_date( $post = null ) {
+function get_last_event_start_date($post = null)
+{
+    $posts = get_post($post);
 
-    $posts = get_post( $post );
+    if ($post->post_type !== 'event_listing') {
 
-	if ( $post->post_type !== 'event_listing' ) {
-
-		return '';
-	}
-	$last_event_start_date 	= $post->_last_event_start_date;
-    return apply_filters( 'display_last_event_start_date', $last_event_start_date, $post );
+        return '';
+    }
+    $last_event_start_date     = $post->_last_event_start_date;
+    return apply_filters('display_last_event_start_date', $last_event_start_date, $post);
 }
 
 

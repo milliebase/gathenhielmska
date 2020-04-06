@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 add_action('init', function () {
-    register_post_type('in-house', [
+    register_post_type('in-house-activity', [
         'has_archive' => true,
         'labels' => [
             'add_new_item' => __('Add new In-House activity'),
