@@ -48,12 +48,14 @@ require get_template_directory() . '/post-types/archive-video.php';
 require get_template_directory() . '/post-types/news.php';
 
 //Register fields
+require get_template_directory() . '/fields/hero.php';
 require get_template_directory() . '/fields/employer.php';
 require get_template_directory() . '/fields/in-house.php';
 require get_template_directory() . '/fields/archive-image.php';
 require get_template_directory() . '/fields/archive-video.php';
 require get_template_directory() . '/fields/contact.php';
 require get_template_directory() . '/fields/about-history.php';
+
 
 //Register taxonomies
 require get_template_directory() . '/taxonomies/archive-category-image.php';
