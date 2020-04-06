@@ -2,6 +2,8 @@
 global $post;
 $start_date = get_event_start_date();
 $end_date = get_event_end_date();
+$uri = get_template_directory_uri();
+$banner = get_event_banner();
 wp_enqueue_script('wp-event-manager-slick-script');
 wp_enqueue_style('wp-event-manager-slick-style');
 do_action('set_single_listing_view_count');
@@ -22,72 +24,45 @@ do_action('set_single_listing_view_count');
     <?php endif; ?>
 <?php endif; ?>
 
-<?php
-/**
- * single_event_listing_start hook
- */
-do_action('single_event_listing_start');
-?>
-<!-- se-hero = single event hero :D -->
-
-<?php
-$uri = get_template_directory_uri();
-$banner = get_event_banner();
-if (isset($banner)) : ?>
-    <article class="se-hero">
-        <img class="se-hero__img" src="<?php echo $banner; ?>" alt="<?php the_title(); ?>" />
+<section class="se-hero">
+    <?php if (isset($banner)) : ?>
+        <img class="se-hero__image" src="<?php echo $banner; ?>" alt="<?php the_title(); ?>" />
     <?php else : ?>
-        <div class="se-hero__img"><?php display_event_banner(); ?></div>
+        <div class="se-hero__image"><?php display_event_banner(); ?></div>
     <?php endif; ?>
 
-    <div class="se-hero__text">
-        <h3 class="se-hero__title" itemprop="name"><?php the_title(); ?></h3>
+    <article class="se-hero__content">
+        <div class="se-hero__content__text">
+            <h1 itemprop="name"><?php the_title(); ?></h1>
 
-        <div class="se-hero__description" itemprop="description" content="<?php echo apply_filters('display_event_description', get_the_content()); ?>">
-            <?php do_action('single_event_overview_before'); ?>
-            <?php do_action('single_event_overview_start'); ?>
             <?php echo apply_filters('display_event_description', get_the_content()); ?>
-            <?php do_action('single_event_overview_end'); ?>
         </div>
+        <div class="explore">
+            <img src="<?php echo $uri ?>/assets/images/arrow.svg" alt="arrow logo" />
+            <p>Utforska</p>
+        </div>
+    </article>
+</section><!-- /se-hero -->
+
+<article class="se-info">
+    <div class="se-info__date-time">
+        <?php display_event_start_date(); ?>
+        <?php if (get_event_start_date() != get_event_end_date()) {
+            display_event_end_date();
+        } ?>
+        <?php if (get_event_start_time()) {
+            display_event_start_time();
+        } ?>
     </div>
-    <div class="se-hero__bottom">
-        <img class="se-hero__explore" src="<?php echo $uri ?>/assets/images/arrow.svg" alt="arrow logo" />
-        <p class="se-hero__bottom__text">Utforska</p>
+
+    <div class="se-info__venue">
+        <?php if (get_event_venue_name()) { ?>
+        <?php display_event_venue_name();
+        } ?>
     </div>
 
-    </article><!-- /se-hero -->
+    <div class="se-info__description">
+        <?php echo apply_filters('display_event_description', get_the_content()); ?>
+    </div>
+</article><!-- se-info -->
 
-    <article class="se-info">
-        <h3>Fri Entré</h3>
-        <div>
-            <div class="se-info__date" itemprop="startDate" content="<?php echo $start_date; ?>">
-                <?php display_event_start_date(); ?>
-                <?php if (get_event_start_date() != get_event_end_date()) {
-                    display_event_end_date();
-                } ?>
-            </div>
-
-            <div class="se-info__time">
-                <?php if (get_event_end_date() != '' || get_event_end_time()) {
-                    _e(' Kl.', 'wp-event-manager');
-                } ?>
-                <?php if (get_event_start_time()) {
-                    display_event_start_time();
-                } ?>
-
-            </div>
-        </div>
-
-        <div class="se-info__venue">
-            <?php if (get_event_venue_name()) { ?>
-            <?php display_event_venue_name();
-            } ?>
-        </div>
-
-        <div class="se-hero__description" itemprop="description" content="<?php echo apply_filters('display_event_description', get_the_content()); ?>">
-            <?php do_action('single_event_overview_before'); ?>
-            <?php do_action('single_event_overview_start'); ?>
-            <?php echo apply_filters('display_event_description', get_the_content()); ?>
-            <?php do_action('single_event_overview_end'); ?>
-        </div>
-    </article><!-- se-info -->

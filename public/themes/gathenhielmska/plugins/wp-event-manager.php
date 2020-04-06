@@ -35,19 +35,11 @@ function add_fields_event_manager($fields)
         'priority' => 2,
     ];
 
-    $fields['_event_location'] = [
-        'label' => 'Location',
-        'type' => 'text',
-        'required' => true,
-        'placeholder' => 'Stigbergstorget 7 414 63 Göteborg',
-        'priority' => 3,
-    ];
-
     $fields['_event_banner'] = [
         'label' => 'Image',
         'type' => 'file',
         'required' => true,
-        'priority' => 4,
+        'priority' => 3,
         'ajax' => 1,
         'multiple' => '',
         'allowed_mime_types' => [
@@ -63,7 +55,7 @@ function add_fields_event_manager($fields)
         'type' => 'wp-editor',
         'required' => true,
         'placeholder' => 'Please write a description about the event',
-        'priority' => 5,
+        'priority' => 4,
     ];
 
     $fields['_event_start_time'] = [
@@ -71,7 +63,7 @@ function add_fields_event_manager($fields)
         'type' => 'time',
         'required' => true,
         'placeholder' => '',
-        'priority' => 6,
+        'priority' => 5,
     ];
 
     $fields['_event_start_date'] = [
@@ -79,7 +71,7 @@ function add_fields_event_manager($fields)
         'type' => 'date',
         'required' => true,
         'placeholder' => '',
-        'priority' => 7,
+        'priority' => 6,
     ];
 
     $fields['_event_end_time'] = [
@@ -87,7 +79,7 @@ function add_fields_event_manager($fields)
         'type' => 'time',
         'required' => true,
         'placeholder' => '',
-        'priority' => 8,
+        'priority' => 7,
     ];
 
     $fields['_event_end_date'] = [
@@ -95,7 +87,7 @@ function add_fields_event_manager($fields)
         'type' => 'date',
         'required' => true,
         'placeholder' => '',
-        'priority' => 9,
+        'priority' => 8,
     ];
 
     $fields['_organizer_name'] = [
@@ -103,7 +95,7 @@ function add_fields_event_manager($fields)
         'type' => 'text',
         'required' => true,
         'placeholder' => 'Enter the name of the organizer',
-        'priority' => 10,
+        'priority' => 9,
     ];
 
     $fields['_organizer_description'] = [
@@ -111,7 +103,7 @@ function add_fields_event_manager($fields)
         'type' => 'wp-editor',
         'required' => true,
         'placeholder' => '',
-        'priority' => 11,
+        'priority' => 10,
     ];
 
 
@@ -120,7 +112,7 @@ function add_fields_event_manager($fields)
         'type' => 'text',
         'required' => true,
         'placeholder' => 'Enter the email to the organizer',
-        'priority' => 12,
+        'priority' => 11,
     ];
 
     $fields['_organizer_website'] = [
@@ -128,7 +120,7 @@ function add_fields_event_manager($fields)
         'type' => 'text',
         'required' => true,
         'placeholder' => 'Website URL e.g http://www.yourorganization.com',
-        'priority' => 13,
+        'priority' => 12,
     ];
 
     return $fields;
