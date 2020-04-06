@@ -2,6 +2,28 @@
 
 declare(strict_types=1);
 
+/**
+ * get_last_event_start_date function.
+ *
+ * @access public
+ * @param int $post (default: null)
+ * @return string
+ */
+
+function get_last_event_start_date( $post = null ) {
+
+    $posts = get_post( $post );
+
+	if ( $post->post_type !== 'event_listing' ) {
+
+		return '';
+	}
+	$last_event_start_date 	= $post->_last_event_start_date;
+    return apply_filters( 'display_last_event_start_date', $last_event_start_date, $post );
+}
+
+
+
 // Add your own function to filter the fields
 add_filter('event_manager_event_listing_data_fields', 'unset_fields_event_manager');
 

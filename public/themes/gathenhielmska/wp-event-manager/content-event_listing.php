@@ -15,18 +15,8 @@ elseif (is_array($banner) && empty($banner))
 else
     $banner = $banner;
 ?>
-
-<div class="wpem-event-box-col wpem-col wpem-col-12 wpem-col-md-6 wpem-col-lg-<?php echo apply_filters('event_manager_event_wpem_column', '4'); ?>">
-    <!----- wpem-col-lg-4 value can be change by admin settings ------->
-    <div class="wpem-event-layout-wrapper e">
         <div <?php event_listing_class('wpem-event-layout-wrapper'); ?>>
             <a href="<?php display_event_permalink(); ?>" class="wpem-event-action-url event-style-color <?php echo $event_type; ?>">
-
-            <!-- VIEW MONTH TITLE HERE -->
-            <?php $month_title = date_i18n('F', strtotime($start_date));?>
-            <!-- implement if month not the same as the other event echo out title... -->
-            <h1><?php echo $month_title; ?></h3>
-
                 <div class="wpem-event-banner">
                     <div class="wpem-event-banner-img" style="background-image: url('<?php echo $banner  ?>')">
 
