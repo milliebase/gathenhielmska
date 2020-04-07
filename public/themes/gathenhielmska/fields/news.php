@@ -25,4 +25,42 @@ if (function_exists('acf_add_local_field_group')) {
         'label_placement' => 'left',
         'instruction_placement' => 'field',
     ]);
+
+    acf_add_local_field_group([
+        'key' => 'group_article',
+        'title' => 'Article content',
+        'fields' => [
+            [
+                'key' => 'article_image',
+                'label' => 'Image',
+                'name' => 'image',
+                'type' => 'image',
+                'max_size' => '2MB',
+                'instructions' => 'Add an image for the article',
+            ],
+            [
+                'key' => 'article_text',
+                'label' => 'Article text',
+                'name' => 'articletext',
+                'type' => 'textarea',
+                'instructions' => 'Write your article here',
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'article',
+                ],
+            ],
+        ],
+        'position' => 'acf_after_title',
+        'label_placement' => 'left',
+        'instruction_placement' => 'field',
+        'hide_on_screen' => [
+            // 0 => 'permalink',
+            3 => 'custom_fields',
+        ],
+    ]);
 }
