@@ -5,6 +5,55 @@ declare(strict_types=1);
 if (function_exists('acf_add_local_field_group')) {
 
     acf_add_local_field_group([
+        'key' => 'group_in-house_hero',
+        'title' => 'Hero content',
+        'fields' => [
+            fieldshero('in-house')['img'],
+            fieldshero('in-house')['heading'],
+            fieldshero('in-house')['text']
+        ],
+        'location' => [
+            [
+                [
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-template/in-house.php',
+                ],
+            ],
+        ],
+        'position' => 'acf_after_title',
+        'label_placement' => 'left',
+        'instruction_placement' => 'field',
+    ]);
+
+    acf_add_local_field_group([
+        'key' => 'group_in-house_info',
+        'title' => 'Page description',
+        'fields' => [
+            [
+                'key' => 'in-house_description',
+                'label' => 'Description',
+                'name' => 'description',
+                'type' => 'textarea',
+                'required' => 0,
+                'placeholder' => 'Write a text about you in-house activities',
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-template/in-house.php',
+                ],
+            ],
+        ],
+        'position' => 'acf_after_title',
+        'label_placement' => 'left',
+        'instruction_placement' => 'field',
+    ]);
+
+    acf_add_local_field_group([
         'key' => 'group_in-house-activity',
         'title' => 'Activity information',
         'fields' => [
@@ -65,27 +114,5 @@ if (function_exists('acf_add_local_field_group')) {
             // 0 => 'permalink',
             3 => 'custom_fields',
         ],
-    ]);
-
-    acf_add_local_field_group([
-        'key' => 'group_in-house_hero',
-        'title' => 'Hero content',
-        'fields' => [
-            fieldshero('in-house')['img'],
-            fieldshero('in-house')['heading'],
-            fieldshero('in-house')['text']
-        ],
-        'location' => [
-            [
-                [
-                    'param' => 'page_template',
-                    'operator' => '==',
-                    'value' => 'page-template/in-house.php',
-                ],
-            ],
-        ],
-        'position' => 'acf_after_title',
-        'label_placement' => 'left',
-        'instruction_placement' => 'field',
     ]);
 }
