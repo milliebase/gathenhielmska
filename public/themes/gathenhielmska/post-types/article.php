@@ -3,14 +3,14 @@
 declare(strict_types=1);
 
 add_action('init', function () {
-    register_post_type('news', [
+    register_post_type('article', [
         'has_archive' => true,
         'labels' => [
-            'add_new_item' => __('Add news'),
-            'edit_item' => __('Edit news'),
-            'name' => __('News'),
-            'search_items' => __('Search news'),
-            'singular_name' => __('News'),
+            'add_new_item' => __('Add article'),
+            'edit_item' => __('Edit article'),
+            'name' => __('Article'),
+            'search_items' => __('Search article'),
+            'singular_name' => __('Article'),
         ],
         'supports' => [
             'title',

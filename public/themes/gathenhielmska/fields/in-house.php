@@ -9,7 +9,7 @@ if (function_exists('acf_add_local_field_group')) {
         'title' => 'Activity information',
         'fields' => [
             [
-                'key' => 'in_house_logo',
+                'key' => 'in-house_logo',
                 'label' => 'Logo',
                 'name' => 'profile',
                 'type' => 'image',
@@ -17,14 +17,14 @@ if (function_exists('acf_add_local_field_group')) {
                 'instructions' => 'Add a logo for the activity',
             ],
             [
-                'key' => 'in_house_decription',
+                'key' => 'in-house_decription',
                 'label' => 'Description',
                 'name' => 'description',
                 'type' => 'textarea',
                 'instructions' => 'Describe the activity',
             ],
             [
-                'key' => 'in_house_phone',
+                'key' => 'in-house_phone',
                 'label' => 'Phone number',
                 'name' => 'phone',
                 'type' => 'number',
@@ -33,7 +33,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'instructions' => 'Fill out a contact phone number for the activity',
             ],
             [
-                'key' => 'in_house_email',
+                'key' => 'in-house_email',
                 'label' => 'Email',
                 'name' => 'email',
                 'type' => 'email',
@@ -41,7 +41,7 @@ if (function_exists('acf_add_local_field_group')) {
                 'instructions' => 'Fill out a contact email for the activity',
             ],
             [
-                'key' => 'in_house_website_url',
+                'key' => 'in-house_website_url',
                 'label' => 'Website',
                 'name' => 'website_url',
                 'type' => 'url',
@@ -54,7 +54,33 @@ if (function_exists('acf_add_local_field_group')) {
                 [
                     'param' => 'post_type',
                     'operator' => '==',
-                    'value' => 'in-house',
+                    'value' => 'in-house-activity',
+                ],
+            ],
+        ],
+        'position' => 'acf_after_title',
+        'label_placement' => 'left',
+        'instruction_placement' => 'field',
+        'hide_on_screen' => [
+            // 0 => 'permalink',
+            3 => 'custom_fields',
+        ],
+    ]);
+
+    acf_add_local_field_group([
+        'key' => 'group_in-house_hero',
+        'title' => 'Hero content',
+        'fields' => [
+            fieldshero('in-house')['img'],
+            fieldshero('in-house')['heading'],
+            fieldshero('in-house')['text']
+        ],
+        'location' => [
+            [
+                [
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-template/in-house.php',
                 ],
             ],
         ],
