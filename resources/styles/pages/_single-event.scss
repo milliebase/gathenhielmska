@@ -1,10 +1,13 @@
-.se-hero {
+.single-event {
+  width: 100%;
+}
+
+.hero {
   @include flex-col-end();
   width: 100%;
   height: 100vh;
   padding-top: 55px;
   color: $color-white;
-
 
   &__image {
     width: 100%;
@@ -15,7 +18,7 @@
     top: 0;
   }
 
-  &__content {
+  &__content{
     @include flex-col-between();
     height: 320px;
     padding: 0 16px;
@@ -27,7 +30,7 @@
     &__text {
       @include flex-col-start();
 
-      h1, p {
+      h2, p {
         margin: 0;
       }
     }
@@ -48,7 +51,7 @@
   }
 }
 
-.se-info {
+.info {
   color: $color-black;
   padding: 32px 16px 22px 16px;
 
@@ -61,6 +64,7 @@
   }
 
   &__venue {
+    margin: 0;
     font-weight: 800;
   }
 
@@ -68,5 +72,7 @@
     p {
       margin: 8px 0 0 0;
     }
+
   }
 }
+

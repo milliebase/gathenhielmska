@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); ?> index
 
 <div class="row">
     <div class="col">

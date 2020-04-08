@@ -126,7 +126,7 @@ function add_fields_event_manager($fields)
     return $fields;
 }
 
-
+//get event fields
 function get_event_month($postId)
 {
     return (date_i18n('F', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
@@ -152,10 +152,12 @@ function get_event_time($postId)
     return get_metadata('post', $postId, '_event_start_time', true);
 }
 
-//removing templates at single-event-listings
-// $template = __DIR__ .'/public/themes/gathenhielmska/page-templates/';
-// $template_name = 'event.php';
-// $template_path = 'event-filters';
+function get_list_event_date($postId)
+{
+    return (date_i18n('d/m', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
+}
+
+
 
 // return apply_filters( 'event_manager_locate_template', $template, $template_name, $template_path );
 
