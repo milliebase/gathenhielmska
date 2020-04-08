@@ -42,20 +42,24 @@ require get_template_directory() . '/plugins/wp-event-manager.php';
 
 //Register post-types
 require get_template_directory() . '/post-types/employer.php';
-require get_template_directory() . '/post-types/in-house.php';
+require get_template_directory() . '/post-types/in-house-activity.php';
 require get_template_directory() . '/post-types/archive-image.php';
 require get_template_directory() . '/post-types/archive-video.php';
-require get_template_directory() . '/post-types/news.php';
+require get_template_directory() . '/post-types/article.php';
 
 //Register fields
 require get_template_directory() . '/fields/hero.php';
-require get_template_directory() . '/fields/employer.php';
-require get_template_directory() . '/fields/in-house.php';
-require get_template_directory() . '/fields/archive-image.php';
-require get_template_directory() . '/fields/archive-video.php';
-require get_template_directory() . '/fields/contact.php';
+require get_template_directory() . '/fields/event.php';
+require get_template_directory() . '/fields/visit.php';
 require get_template_directory() . '/fields/about-history.php';
 require get_template_directory() . '/fields/about-today.php';
+require get_template_directory() . '/fields/archive.php';
+require get_template_directory() . '/fields/archive-image.php';
+require get_template_directory() . '/fields/archive-video.php';
+require get_template_directory() . '/fields/news.php';
+require get_template_directory() . '/fields/contact.php';
+require get_template_directory() . '/fields/employer.php';
+require get_template_directory() . '/fields/in-house.php';
 
 
 //Register taxonomies
@@ -79,7 +83,7 @@ if (!function_exists('customize_post_type_support')) {
         remove_post_type_support('page', 'author');
         remove_meta_box('slugdiv', 'page', 'normal');
         remove_meta_box('edit-slug-box', 'page', 'normal');
-    } 
+    }
 }
 
 
@@ -150,7 +154,7 @@ if (!function_exists('add_archive_admin_menu')) {
     }
 }
 
-//Find all submenus or menus
+// Find all submenus or menus
 // add_action('admin_init', 'wpse_136058_debug_admin_menu');
 
 // function wpse_136058_debug_admin_menu()
