@@ -7,7 +7,7 @@ if (function_exists('acf_add_local_field_group')) {
 
     acf_add_local_field_group(
         [
-            'key' => 'group_about/about_history_hero',
+            'key' => 'group_about_history_hero',
             'title' => 'Hero content',
             'fields' => [
                 fieldshero('about-history')['img'],
@@ -79,7 +79,7 @@ if (function_exists('acf_add_local_field_group')) {
         'parent' => 'field_about_history_year',
 
         'label' => '',
-        'name' => 'sub_titdddle',
+        'name' => 'history_year',
         'type' => 'repeater',
 
         'sub_fields' => [
