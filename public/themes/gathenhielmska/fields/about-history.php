@@ -10,15 +10,9 @@ if (function_exists('acf_add_local_field_group')) {
             'key' => 'group_about/about_history_hero',
             'title' => 'Hero content',
             'fields' => [
-<<<<<<< HEAD
                 fieldshero('about-history')['img'],
                 fieldshero('about-history')['heading'],
                 fieldshero('about-history')['text'],
-=======
-                fieldshero('about/about-history')['img'],
-                fieldshero('about/about-history')['header'],
-                fieldshero('about/about-history')['text'],
->>>>>>> f72b110bda7341ecc0d7d71a81006019839c7b42
                 [
                     'key' => 'field_about_history_year',
                     'label' => 'The house years of history',
@@ -81,7 +75,6 @@ if (function_exists('acf_add_local_field_group')) {
 
 
     acf_add_local_field([
-<<<<<<< HEAD
         'key' => 'field_about_history_years',
         'parent' => 'field_about_history_year',
 
@@ -105,35 +98,8 @@ if (function_exists('acf_add_local_field_group')) {
                 'type'  => 'textarea',
                 'rows' => 5,
             ],
-=======
-    'key' => 'field_about_history_years',
-	'parent' => 'field_about_history_year',
-    
-	'label' => '',
-	'name' => 'sub_titdddle',
-    'type' => 'repeater',
-    
-    'sub_fields'=>[
-        [
-            'key'   => 'about_history_year_date',
-            'label' => 'Date',
-            'name'  => 'year',
-            'type'  => 'number',
-            'min' => '1000',
-            'max' => '3000',
-            'default_value' => '1717',
-            'style' => 'seamless',
-
         ],
-        [
-            'key'   => 'about_history_year_text',
-            'label' => 'Text',
-            'name'  => 'Text',
-            'type'  => 'textarea',
-            'rows'=>5,
->>>>>>> f72b110bda7341ecc0d7d71a81006019839c7b42
-        ],
-    ],
+  
     
     'layout' => 'block',
     'button_label' => __('add'),
@@ -141,7 +107,6 @@ if (function_exists('acf_add_local_field_group')) {
     ]);
 
     acf_add_local_field([
-<<<<<<< HEAD
         'key' => 'field_about_history_textboxes',
         'parent' => 'field_about_history_textbox',
 
@@ -169,7 +134,7 @@ if (function_exists('acf_add_local_field_group')) {
             [
                 'key' => "field_about_history_gallary",
                 'label' => 'gallery',
-                'name'  => 'background',
+                'name'  => 'gallery',
                 'type' => 'gallery',
                 'conditional_logic' => [
                     [
@@ -180,50 +145,8 @@ if (function_exists('acf_add_local_field_group')) {
                 ],
                 'default_value' => '',
                 'instructions' => 'add multiple images to make a slider',
-=======
-    'key' => 'field_about_history_textboxes',
-    'parent' => 'field_about_history_textbox',
-
-    'label' => 'Add att box about the house history',
-	'name' => 'Textbox_history',
-    'type' => 'repeater',
-    'max' =>4,
-        'sub_fields'=>[[
-             'key'=>"field_about-history-image",
-            'label' => 'images',
-            'name'  => 'background',
-            'type' => 'image',
-             'required' => 0,
-             'return_format' => 'url',
-            'conditional_logic' =>[
-					[
-						'field' => 'field_about-history_condition',
-						'operator' => '==',
-						'value' => '1',
-                    ],
-                ],
-            'default_value' => '',
-            'instructions' => 'add background fot the textbox',
-        
-        ],
-        [
-            'key'=>"field_about_history_gallary",
-            'label' => 'gallery',
-            'name'  => 'gallery',
-            'type' => 'gallery',
-            'required' => 1,
-             'conditional_logic' =>[
-					[
-						'field' => 'field_about-history_condition',
-						'operator' => '!=',
-						'value' => '1',
-                    ],
-                ],
-            'default_value' => '',
-            'instructions' => 'add multiple images to make a slider',
-        
-        ],
-        [
+            ],
+             [
 			'key' => 'field_about-history_condition',
 			'label' => 'Background or slider',
 			'name' => 'image_or_gallery',
@@ -276,12 +199,8 @@ if (function_exists('acf_add_local_field_group')) {
           
     'layout' => 'block',
     'button_label' => __('add'),
-    ]);
- 
 
->>>>>>> f72b110bda7341ecc0d7d71a81006019839c7b42
-
-
+]);
     
 }
 
