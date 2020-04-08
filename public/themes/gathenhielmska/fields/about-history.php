@@ -10,9 +10,9 @@ if (function_exists('acf_add_local_field_group')) {
             'key' => 'group_about/about_history_hero',
             'title' => 'Hero content',
             'fields' => [
-                fieldshero('about/about_history')['img'],
-                fieldshero('about/about_history')['header'],
-                fieldshero('about/about_history')['text'],
+                fieldshero('about/about-history')['img'],
+                fieldshero('about/about-history')['header'],
+                fieldshero('about/about-history')['text'],
                 [
                     'key' => 'field_about_history_year',
                     'label' => 'The house years of history',
@@ -88,8 +88,11 @@ if (function_exists('acf_add_local_field_group')) {
             'label' => 'Date',
             'name'  => 'year',
             'type'  => 'number',
+            'min' => '1000',
+            'max' => '3000',
             'default_value' => '1717',
             'style' => 'seamless',
+
         ],
         [
             'key'   => 'about_history_year_text',
@@ -110,7 +113,7 @@ if (function_exists('acf_add_local_field_group')) {
     'parent' => 'field_about_history_textbox',
 
     'label' => 'Add att box about the house history',
-	'name' => 'Textbox about history',
+	'name' => 'Textbox_history',
     'type' => 'repeater',
     'max' =>4,
         'sub_fields'=>[[
@@ -118,10 +121,12 @@ if (function_exists('acf_add_local_field_group')) {
             'label' => 'images',
             'name'  => 'background',
             'type' => 'image',
+             'required' => 0,
+             'return_format' => 'url',
             'conditional_logic' =>[
 					[
 						'field' => 'field_about-history_condition',
-						'operator' => '!=',
+						'operator' => '==',
 						'value' => '1',
                     ],
                 ],
@@ -132,12 +137,13 @@ if (function_exists('acf_add_local_field_group')) {
         [
             'key'=>"field_about_history_gallary",
             'label' => 'gallery',
-            'name'  => 'background',
+            'name'  => 'gallery',
             'type' => 'gallery',
+            'required' => 1,
              'conditional_logic' =>[
 					[
 						'field' => 'field_about-history_condition',
-						'operator' => '==',
+						'operator' => '!=',
 						'value' => '1',
                     ],
                 ],
@@ -151,7 +157,7 @@ if (function_exists('acf_add_local_field_group')) {
 			'name' => 'image_or_gallery',
 			'type' => 'true_false',
 			'instructions' => '',
-			'required' => 1,
+			'required' => 0,
 			'conditional_logic' => 0,
 			
 			'message' => '',
@@ -165,7 +171,7 @@ if (function_exists('acf_add_local_field_group')) {
         
         [
             'key'=>'field_about_history_heading',
-            'label' => 'Heading when house foundead',
+            'label' => 'Heading',
             'name' => 'heading foundead',
             'type' => 'text',
             'required' => 0,
@@ -177,6 +183,15 @@ if (function_exists('acf_add_local_field_group')) {
             'type'  => 'textarea',
             'instructions' => 'add some text about when the house.',
         ],[
+
+            'key' => 'field_about_history_aditonaltext',
+        	'label' => 'optional addtional textfield',
+	        'name'  => 'Text',
+            'type'  => 'textarea',
+            'rows' => 2,
+            'instructions' => 'add some text about when the house.',
+        ],
+        [
             'key' => 'filed_about_history_url',
 			'label' => 'optional page url',
 			'name' => 'url',

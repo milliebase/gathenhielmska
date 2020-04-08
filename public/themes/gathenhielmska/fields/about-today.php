@@ -10,9 +10,9 @@ if (function_exists('acf_add_local_field_group')) {
             'key' => 'group_about/about_today_hero',
             'title' => 'Hero content',
             'fields' => [
-                fieldshero('about/about_today')['img'],
-                fieldshero('about/about_today')['header'],
-                fieldshero('about/about_today')['text'],
+                fieldshero('about/about-today')['img'],
+                fieldshero('about/about-today')['header'],
+                fieldshero('about/about-today')['text'],
                 [
                     'key' => 'field_about_today_box',
                     'label' => 'about us',

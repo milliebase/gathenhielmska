@@ -19,6 +19,7 @@ if (!empty($wp->query_vars)) {
 $heroImg = get_field($page . '_hero_image');
 $heroHead = get_field($page . '_hero_heading');
 $heroText = get_field($page . '_hero_text');
+
 ?>
 
 <!DOCTYPE html>
