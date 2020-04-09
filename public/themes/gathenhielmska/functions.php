@@ -21,15 +21,12 @@ add_action(
         wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,500,800,800i|Roboto+Condensed:300,300i,400,400i,600,700,700i', false);
         wp_enqueue_script('app.js', get_template_directory_uri() . '/assets/scripts/app.js');
 
-        $key = getenv('API_KEY');
-        wp_enqueue_script('google-map', "https://maps.googleapis.com/maps/api/js?key=$key", [], '3', true);
+        if (is_page('visit')) {
+            $key = getenv('API_KEY');
+            wp_enqueue_script('google-map', "https://maps.googleapis.com/maps/api/js?key=$key", [], '3', true);
+        }
     }
 );
-
-
-if (is_page('contact')) {
-    echo 'hi';
-}
 
 add_action('admin_menu', 'remove_admin_menu_items', 999);
 add_action('admin_menu', 'add_archive_admin_menu');
@@ -59,6 +56,7 @@ require get_template_directory() . '/post-types/article.php';
 
 //Register fields
 require get_template_directory() . '/fields/hero.php';
+require get_template_directory() . '/fields/home.php';
 require get_template_directory() . '/fields/event.php';
 require get_template_directory() . '/fields/visit.php';
 require get_template_directory() . '/fields/about-history.php';
