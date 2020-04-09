@@ -1,0 +1,10 @@
+.in_house {
+  &__description {
+    margin: $margin-text-box;
+    border-bottom: 1px solid #BDBDBD;
+
+    h2 {
+      margin: 0;
+    }
+  }
+}
