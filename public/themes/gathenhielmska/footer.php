@@ -9,7 +9,7 @@
 <footer>
     <div class="footer_container">
         <div class="footer__social">
-            <img class="meh" src="<?php echo  $footer_imgs . '/logos/gathenhielmska._footer.svg' ?>" alt="gathenheimska">
+            <img src="<?php echo  $footer_imgs . '/logos/gathenhielmska._footer.svg' ?>" alt="gathenheimska">
             <div class="footer___media">
                 <a><img src="<?php echo  $footer_imgs . '/logos/facebook_footer.svg' ?>" alt="facebook"></a>
                 <a><img src="<?php echo  $footer_imgs . '/logos/instagram_footer.svg' ?>" alt="instagram"></a>

@@ -27,6 +27,7 @@ if (array_key_exists('post_type', $wp->query_vars)) {
 $heroImg = get_field($page . '_hero_image');
 $heroHead = get_field($page . '_hero_heading');
 $heroText = get_field($page . '_hero_text');
+
 ?>
 
 <!DOCTYPE html>
