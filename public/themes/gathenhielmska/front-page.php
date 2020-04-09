@@ -1,9 +1,5 @@
 <?php get_header(); ?>
 
-<!-- displays events in box view -->
-<?php echo (do_shortcode(
-        '[events per_page="6"
-        orderby="event_start_date"]')); ?>
 
 <div class="row">
     <div class="col">

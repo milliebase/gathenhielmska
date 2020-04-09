@@ -66,6 +66,9 @@ require get_template_directory() . '/fields/in-house.php';
 require get_template_directory() . '/taxonomies/archive-category-image.php';
 require get_template_directory() . '/taxonomies/archive-category-video.php';
 
+//Output events
+
+
 
 //Functions
 if (!function_exists('customize_post_type_support')) {

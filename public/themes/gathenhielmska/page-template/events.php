@@ -1,25 +1,155 @@
-<?php /* Template name: Events */ ?>
+<?php /* Template name: Events */
 
-<?php get_header(); ?>
-<h2><?php the_title(); ?></h2>
-<?php $args =
-    ['post_type' => 'event_listing']
+get_header();
+
+$args =
+    [
+        'post_type' => 'event_listing',
+        'orderby'    => 'date',
+        'order'      => 'ASC'
+    ];
+
+$events = get_posts($args);
+$isItFirstTitle = true;
+$todayMonth = (date('F'));
 ?>
-<?php $events = get_posts($args) ?>
+
+<?php the_title(); ?>
+
+<div class="search">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="Search">
+
+    <form action="POST" name="event-search">
+        <input type="text" placeholder="Sök...">
+        <button type="submit"></button>
+    </form>
+</div>
+
+<div class="filter">
+</div>
+
+<div class="view">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/list.svg" alt="List-view" class="list-view">
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/box.svg" alt="Box-view" class="box-view">
+</div>
+
+<article class="event">
+
+    <?php if (count($events)) : ?>
+
+        <?php foreach ($events as $post) : setup_postdata($post); ?>
+
+            <?php
+            $image = get_event_image($post->ID);
+            $description = $post->post_content;
+            $venue = get_event_venue($post->ID);
+            $date = get_event_date($post->ID);
+            $time = get_event_time($post->ID);
+            $latestEventMonth = get_event_month($post->ID - 1);
+            $currentEventMonth = get_event_month($post->ID);
+            ?>
+
+            <!-- display the first month title once-->
+            <?php if (($todayMonth === $currentEventMonth) && $isItFirstTitle) : ?>
+                <div class="event__month-title">
+                    <h2><?php echo $currentEventMonth; ?></h2>
+                </div>
+                <?php $isItFirstTitle = false; ?>
+            <?php endif; ?>
+
+            <!-- display the month title if it's a new month-->
+            <?php if ($latestEventMonth !== $currentEventMonth) : ?>
+                <div class="event__month-title">
+                    <h2><?php echo $currentEventMonth; ?></h2>
+                </div>
+            <?php endif; ?>
 
 
-<?php if (count($events)) : ?>
+            <div class="event__item">
+                <?php if ($image) : ?>
+                    <img src="<?php echo $image; ?>" alt="" class="event__item__image">
+                <?php else : ?>
+                    <img src="#" alt="placeholder img" class="event__item__image">
+                <?php endif; ?>
 
-    <?php foreach ($events as $post) : setup_postdata($post); ?>
+                <?php if ($date) : ?>
+                    <div class="date-box">
+                        <h2><?php echo "$date"; ?></h2>
+                    </div>
+                <?php endif; ?>
 
-        <?php $month = date_i18n('F', strtotime($post->post_date)); ?>
+                <div class="event-info">
+                    <h3><?php the_title(); ?></h3>
+                    <?php if ($venue) : ?>
+                        <p><?php echo $venue; ?></p>
+                    <?php endif; ?>
 
-        <h1><?php the_title(); ?></h1>
-        <p><?php echo get_metadata('post', $post->ID, '_event_description', true); ?></p>
-        <p><?php echo $post->post_content; ?></p>
-        <button><a href="<?php the_permalink(); ?>"></a></button>
+                    <?php if ($date && $time) : ?>
+                        <p class="date-time"><?php echo "$date $time"; ?></p>
+                    <?php endif; ?>
 
-    <?php endforeach; ?>
-<?php endif; ?>
+                    <a href="<?php the_permalink($post); ?>"><button class="choose-event">Läs mer och boka</button></a>
+                </div>
+            </div> <!-- /event-item -->
+
+        <?php endforeach; ?>
+    <?php endif; ?>
+</article> <!-- /event box-view-->
+
+
+<article class="event-list event--list--view">
+
+    <?php if (count($events)) : ?>
+
+        <?php foreach ($events as $post) : setup_postdata($post); ?>
+
+            <?php
+            $venue = get_event_venue($post->ID);
+            $listDate = get_list_event_date($post->ID);
+            $time = get_event_time($post->ID);
+            $latestEventMonth = get_event_month($post->ID - 1);
+            $currentEventMonth = get_event_month($post->ID);
+            ?>
+
+            <!-- display the first month title once-->
+            <?php if (($todayMonth === $currentEventMonth) && $isItFirstTitle) : ?>
+                <div class="event__month-title">
+                    <h2><?php echo $currentEventMonth; ?></h2>
+                </div>
+                <?php $isItFirstTitle = true; ?>
+            <?php endif; ?>
+
+            <!-- display the month title if it's a new month-->
+            <?php if ($latestEventMonth !== $currentEventMonth) : ?>
+                <div class="event__month-title">
+                    <h2><?php echo $currentEventMonth; ?></h2>
+                </div>
+            <?php endif; ?>
+
+
+            <div class="event-list__item">
+                <div class="event-list__item__wrapper">
+                    <div class="time">
+                        <?php if ($listDate && $time) : ?>
+                            <p><?php echo $listDate; ?></p>
+                            <p><?php echo $time; ?></p>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="title-venue">
+                        <p><?php the_title(); ?></p>
+                        <?php if ($venue) : ?>
+                            <p><?php echo $venue; ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="booking-link">
+                    <p><a href="<?php the_permalink($post); ?>">Boka</a></p>
+                </div>
+            </div> <!-- /event-item -->
+
+        <?php endforeach; ?>
+    <?php endif; ?>
+</article>
 
 <?php get_footer(); ?>

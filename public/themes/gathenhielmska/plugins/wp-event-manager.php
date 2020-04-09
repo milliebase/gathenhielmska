@@ -2,28 +2,6 @@
 
 declare(strict_types=1);
 
-/**
- * get_last_event_start_date function.
- *
- * @access public
- * @param int $post (default: null)
- * @return string
- */
-
-function get_last_event_start_date($post = null)
-{
-    $posts = get_post($post);
-
-    if ($post->post_type !== 'event_listing') {
-
-        return '';
-    }
-    $last_event_start_date     = $post->_last_event_start_date;
-    return apply_filters('display_last_event_start_date', $last_event_start_date, $post);
-}
-
-
-
 // Add your own function to filter the fields
 add_filter('event_manager_event_listing_data_fields', 'unset_fields_event_manager');
 
@@ -148,10 +126,38 @@ function add_fields_event_manager($fields)
     return $fields;
 }
 
-//removing templates at single-event-listings
-// $template = __DIR__ .'/public/themes/gathenhielmska/page-templates/';
-// $template_name = 'event.php';
-// $template_path = 'event-filters';
+//get event fields
+function get_event_month($postId)
+{
+    return (date_i18n('F', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
+}
+
+function get_event_image($postId)
+{
+    return get_metadata('post', $postId, '_event_banner', true);
+}
+
+function get_event_venue($postId)
+{
+    return get_metadata('post', $postId, '_event_venue_name', true);
+}
+
+function get_event_date($postId)
+{
+    return (date_i18n('j F', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
+}
+
+function get_event_time($postId)
+{
+    return get_metadata('post', $postId, '_event_start_time', true);
+}
+
+function get_list_event_date($postId)
+{
+    return (date_i18n('d/m', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
+}
+
+
 
 // return apply_filters( 'event_manager_locate_template', $template, $template_name, $template_path );
 

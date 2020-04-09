@@ -1,50 +1,180 @@
-.wpem-from-date //date box
-{
-  background: $color-orange !important;
-  .wpem-date,
-  .wpem-month  {
-    color: $color-white !important;
-    font-weight: 200 !important;
+.search{
+  padding: 0 16px;
+  width: 100%;
+  height: 52px;
+  @include flex-row();
+  align-items: center;
+
+  img {
+    width: 19px;
+    margin: 0 16px 0 0;
   }
+  form {
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 100%;
+      border: none;
+      padding: 4px;
+    }
+    input::placeholder {
+      font-size: 16px;
+      text-decoration: underline;
+      color: $color-grey;
+    }
+  }
+
+
 }
 
-.wpem-event-layout-action //buttons for list and box view
-{
+
+.list-view {
+  display: block;
+}
+
+.box-view {
+  display:none;
+}
+
+.view {
   @include flex-row();
   justify-content: flex-end;
-  .wpem-event-layout-icon {
-    width: 15% !important;
-    background-color: $color-white !important;
-  }
+  height: 50px;
+  width: 100%;
+  padding: 0 16px;
 }
-.wpem-event-layout-wrapper{
-  border: none !important;
-  .wpem-event-banner {
-    .wpem-event-banner-img {
-      width: 100% !important;
+
+.event{
+  display: block;
+  width: 100%;
+
+  &__month-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color: $color-white;
+    background-color: $color-green;
+    padding: 0 16px;
+
+    h2 {
+      font-weight: bold;
+      margin:0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    &__image {
+    width: 100%;
+    height: 206px;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    }
+
+    .date-box {
+      @include flex-center();
+      text-align: center;
+      width: 62px;
+      height: 62px;
+      position: absolute;
+      z-index: 2;
+      background-color: $color-orange;
+      margin: 0;
+      color: $color-white;
+      h2 {
+        margin: 0;
+        line-height: 24px;
+      }
+    }
+
+    .event-info {
+      width: 100%;
+      padding: 0 16px;
+      h3, p {
+        margin: 0;
+        text-transform: none;
+      }
+      h3 {
+        margin: 8px 0 18px 0;
+      }
+      .date-time {
+        font-weight: 800;
+      }
+
+      .choose-event {
+        width: 50%;
+        height: 44px;
+        background-color: $color-black;
+        color: $color-white;
+        border-radius: 4px;
+        border: none;
+        font-size: 16px;
+        margin: 4px 0 24px 0;
+      }
     }
 
   }
+}
 
-  .wpem-event-banner-information {
+.event-list__item:nth-child(2n) {
+  background-color: $color-light;
+}
 
+.event-list{
+  display: none;
+  width: 100%;
+
+  &__item {
+    width: 100%;
+    padding: 8px 16px 0 16px;
+
+    &__wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .time {
+        margin: 0;
+        padding: 0 16px 0 0;
+
+        p {
+          margin: 0;
+          font-weight: 800;
+        }
+    }
+
+    .title-venue {
+      width: 100%;
+      padding: 0 16px 0 16px;
+      p {
+        margin: 0
+      }
+    }
+   }
+
+  .booking-link {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0 0 4px 0;
+
+    a {
+      color: $color-black;
+      text-decoration: underline;
+      font-style: italic;
+      font-weight: 800;
+    }
+
+    p {
+      margin: 0;
+    }
   }
-
+ }
 }
-
-.wpem-event-box-col {
-  padding-right: 0 !important;
-  padding-left: 0 !important;
-}
-
-#event-listing-view {
-  margin: 0
-}
-
-.wpem-form-wrapper {
-  .showing_applied_filters {
-    display: none !important;
-    background-color: $color-orange !important;
-  }
-}
-
