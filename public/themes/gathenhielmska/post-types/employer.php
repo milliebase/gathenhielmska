@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 add_action('init', function () {
     register_post_type('employer', [
-        'has_archive' => true,
+        'has_archive' => false,
         'labels' => [
             'add_new_item' => __('Add new employer'),
             'edit_item' => __('Edit employer'),
