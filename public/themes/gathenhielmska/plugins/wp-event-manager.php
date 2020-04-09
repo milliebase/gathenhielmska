@@ -132,6 +132,11 @@ function get_event_month($postId)
     return (date_i18n('F', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
 }
 
+function get_event_year($postId)
+{
+    return (date_i18n('Y', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
+}
+
 function get_event_image($postId)
 {
     return get_metadata('post', $postId, '_event_banner', true);

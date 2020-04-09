@@ -14,17 +14,12 @@ $isItFirstTitle = true;
 $todayMonth = (date('F'));
 ?>
 
+
 <?php the_title(); ?>
 
 <div class="search">
-    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="Search">
-
-    <form action="POST" name="event-search">
-        <input type="text" placeholder="Sök...">
-        <button type="submit"></button>
-    </form>
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="Search" class="search">
 </div>
-
 <div class="filter">
 </div>
 
@@ -45,6 +40,7 @@ $todayMonth = (date('F'));
             $venue = get_event_venue($post->ID);
             $date = get_event_date($post->ID);
             $time = get_event_time($post->ID);
+            $year = get_event_year($post->ID);
             $latestEventMonth = get_event_month($post->ID - 1);
             $currentEventMonth = get_event_month($post->ID);
             ?>
@@ -52,7 +48,7 @@ $todayMonth = (date('F'));
             <!-- display the first month title once-->
             <?php if (($todayMonth === $currentEventMonth) && $isItFirstTitle) : ?>
                 <div class="event__month-title">
-                    <h2><?php echo $currentEventMonth; ?></h2>
+                    <h2><?php echo "$currentEventMonth $year"; ?></h2>
                 </div>
                 <?php $isItFirstTitle = false; ?>
             <?php endif; ?>
@@ -60,7 +56,7 @@ $todayMonth = (date('F'));
             <!-- display the month title if it's a new month-->
             <?php if ($latestEventMonth !== $currentEventMonth) : ?>
                 <div class="event__month-title">
-                    <h2><?php echo $currentEventMonth; ?></h2>
+                    <h2><?php echo "$currentEventMonth $year"; ?></h2>
                 </div>
             <?php endif; ?>
 
@@ -97,7 +93,7 @@ $todayMonth = (date('F'));
 </article> <!-- /event box-view-->
 
 
-<article class="event-list event--list--view">
+<article class="event-list">
 
     <?php if (count($events)) : ?>
 
@@ -107,6 +103,7 @@ $todayMonth = (date('F'));
             $venue = get_event_venue($post->ID);
             $listDate = get_list_event_date($post->ID);
             $time = get_event_time($post->ID);
+            $year = get_event_year($post->ID);
             $latestEventMonth = get_event_month($post->ID - 1);
             $currentEventMonth = get_event_month($post->ID);
             ?>
@@ -114,7 +111,7 @@ $todayMonth = (date('F'));
             <!-- display the first month title once-->
             <?php if (($todayMonth === $currentEventMonth) && $isItFirstTitle) : ?>
                 <div class="event__month-title">
-                    <h2><?php echo $currentEventMonth; ?></h2>
+                    <h2><?php echo "$currentEventMonth $year"; ?></h2>
                 </div>
                 <?php $isItFirstTitle = true; ?>
             <?php endif; ?>
@@ -122,7 +119,7 @@ $todayMonth = (date('F'));
             <!-- display the month title if it's a new month-->
             <?php if ($latestEventMonth !== $currentEventMonth) : ?>
                 <div class="event__month-title">
-                    <h2><?php echo $currentEventMonth; ?></h2>
+                    <h2><?php echo "$currentEventMonth $year"; ?></h2>
                 </div>
             <?php endif; ?>
 
