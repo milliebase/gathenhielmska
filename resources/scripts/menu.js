@@ -10,19 +10,20 @@ const logo = document.querySelector('.navbar__logo');
 const wave = document.querySelector('.navbar__panel__wave');
 const exit = document.querySelector('.navbar__overlay__exit');
 
-const about = document.querySelector('.menu-item-209');
+const about = document.querySelector('.menu-item-209 a');
 const subMenu = document.querySelector('.sub-menu');
 
-
-window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 5) {
-    logo.classList.remove('navbar__logo--hidden');
-    wave.classList.remove('navbar__panel__wave--hidden');
-  } else {
-    logo.classList.add('navbar__logo--hidden');
-    wave.classList.add('navbar__panel__wave--hidden');
-  }
-})
+if (window.location.pathname === "/") {
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 5) {
+      logo.classList.remove('navbar__logo--hidden');
+      wave.classList.remove('navbar__panel__wave--hidden');
+    } else {
+      logo.classList.add('navbar__logo--hidden');
+      wave.classList.add('navbar__panel__wave--hidden');
+    }
+  })
+}
 
 const toggleOverlay = () => {
   navOverlay.classList.toggle('hidden');

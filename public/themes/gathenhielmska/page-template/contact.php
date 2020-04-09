@@ -8,12 +8,12 @@ $employers = get_posts(['post_type' => 'employer']);
 <section class="contact">
     <h2 class="page__heading">Ledningsgrupp</h2>
 
-    <article class="employer">
+    <article class="details">
         <?php if (count($employers)) : ?>
 
             <?php foreach ($employers as $post) : setup_postdata($post); ?>
 
-                <div class="employer__item">
+                <div class="details__item">
 
                     <?php $employerImage = get_field('employer_image', $post->ID); ?>
 
@@ -21,7 +21,7 @@ $employers = get_posts(['post_type' => 'employer']);
                         <img src="<?php echo $employerImage['url']; ?>" alt="<?php echo ($employerImage['alt'] != '') ? $employerImage['alt'] : '' ?>">
                     <?php endif; ?>
 
-                    <div class="employer__item__info">
+                    <div class="details__item__info">
                         <h3><?php the_title(); ?></h3>
 
                         <?php $employerProfession = get_field('employer_profession'); ?>
