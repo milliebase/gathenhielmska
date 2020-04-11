@@ -1,4 +1,161 @@
 .history{
-    height:100px;
-    width:100px;
+    width:100%;
+    max-width: 100%;
+    border:1px solid black;
+
+    .timeline{
+     
+        padding-bottom:5px ;
+        .timeline_container{
+        display: flex;
+        flex-direction: row;
+        padding:12px;
+        overflow: auto;
+        .timeline_box{
+            min-width: 237px;
+        
+            padding: 12px 0px 23px 0px ;
+            height:auto;
+            text-align: center;
+           overflow-wrap: break-word;
+           display: flex;
+           flex-direction: column;
+           justify-self: start;
+           
+            
+        
+             .timeline__year{
+                font-size: 21px;
+                width:143px;
+                color:$color-orange;
+                font-weight: bold;
+   
+                   
+                }
+                .timeline___line-dot{
+                        width: 8px;
+                        height: 8px;
+                        background-color: $color-green;         
+                        border-radius: 50%;
+                        position: relative;
+                        bottom:4px;
+                               }
+                .timeline__lines{
+                 width:100%;
+                 background-color: black;
+                 height:1px;
+                display: flex;
+                justify-content: center;
+                 .timeline___line-dot{
+                     position: relative;
+                     right:19.8%;
+                 }
+                }
+                .timeline__line-first{
+                 width:72%;
+                 background-color: black;
+                 height:1px;
+                 position: relative;
+                 left:28.7%;
+                    
+                }
+                .timeline__text{
+                    display: block;
+                    width: 143px;
+                    font-size: 14px;
+                    text-align: center;
+                   
+                    
+                }
+
+           }
+            
+        }
+        .timeline_moreinfo{
+            width: 98%;
+            text-align: right;
+            font-weight: bold;
+            .history___arrow-icon{
+                filter:invert(1);
+            }
+        }
+    }
+    .history_facts{
+        width: 100%;
+       overflow: hidden;
+        position: relative;
+
+
+ 
+    .history_facts-content{
+        padding:16px 16px 48px 16px;
+        width: 100%;
+           a {
+            all: unset;
+            text-decoration: underline;
+            font-weight: 800;
+            &:hover{
+                cursor: pointer;
+            }
+           img{
+               transform: scale(1.2) translateY(2px);
+               margin-left: 6px;
+           }
+        }
+        
+    
+     }
+    
+    }
+     .history_foundead{
+            color:white;
+            .history__facts_background{
+                height:auto;
+                position: absolute;
+                object-fit:cover;
+                z-index:-1;
+              }
+            
+        }
+    
+    .history_part{
+    
+        overflow: hidden;
+        .history__facts_slider-container{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            img{
+                margin: 0px 10px;
+            }
+        }
+    }
+    .history_saved{
+        color:white;
+        background: $color-green;
+        mix-blend-mode: multiply;
+        
+        
+      .history__facts_background{
+             display: block;
+             position: absolute;
+            right:0px;
+            bottom: 0px;
+       
+        }
+    }
+
+    .history_now{
+       
+        .history__facts_img-container{
+            display: flex;
+            flex-direction: row;
+        }
+       .history___arrow-icon{
+                filter: invert(1);
+            
+        }
+    }
+
 }

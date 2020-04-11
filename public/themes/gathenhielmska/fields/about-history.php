@@ -16,7 +16,7 @@ if (function_exists('acf_add_local_field_group')) {
                 [
                     'key' => 'field_about_history_year',
                     'label' => 'The house years of history',
-                    'name' => 'The years of history',
+                    'name' => 'history_timeline',
                     'type' => 'group',
                     'layout'=>'table',
                     'instructions' => '',
@@ -26,7 +26,7 @@ if (function_exists('acf_add_local_field_group')) {
                         [
                     'key' => 'field_about_history_textbox',
                     'label' => 'Add a textbox',
-                    'name' => '',
+                    'name' => 'history_facts',
                     'type' => 'group',
                     'layout'=>'table',
                     'instructions' => '',
@@ -78,7 +78,7 @@ if (function_exists('acf_add_local_field_group')) {
         'key' => 'field_about_history_years',
         'parent' => 'field_about_history_year',
 
-        'label' => '',
+        'label' => 'Timeline',
         'name' => 'history_year',
         'type' => 'repeater',
 
@@ -96,7 +96,8 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Text',
                 'name'  => 'Text',
                 'type'  => 'textarea',
-                'rows' => 5,
+                'rows' => 3,
+               
             ],
         ],
   
@@ -110,8 +111,8 @@ if (function_exists('acf_add_local_field_group')) {
         'key' => 'field_about_history_textboxes',
         'parent' => 'field_about_history_textbox',
 
-        'label' => 'Add att box about the house history',
-        'name' => 'Textbox about history',
+        'label' => 'the history about the house',
+        'name' => 'textboxes_history',
         'type' => 'repeater',
         'max' => 4,
         'sub_fields' => [
@@ -120,13 +121,13 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'images',
                 'name'  => 'background',
                 'type' => 'image',
-                'conditional_logic' => [
-                    [
-                        'field' => 'field_about-history_condition',
-                        'operator' => '!=',
-                        'value' => '1',
+                'return_format' => 'url',
+                 'conditional_logic' => [[
+                'field' => 'field_about-history_condition',
+				'operator' => '==',
+				'value' => 'image',
                     ],
-                ],
+                 ],
                 'default_value' => '',
                 'instructions' => 'add background fot the textbox',
 
@@ -136,65 +137,120 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'gallery',
                 'name'  => 'gallery',
                 'type' => 'gallery',
-                'conditional_logic' => [
-                    [
+                 'conditional_logic' => [
+                     [
                         'field' => 'field_about-history_condition',
                         'operator' => '==',
-                        'value' => '1',
-                    ],
+                        'value' => 'gallery',
+                     ],
                 ],
                 'default_value' => '',
                 'instructions' => 'add multiple images to make a slider',
             ],
-             [
-			'key' => 'field_about-history_condition',
-			'label' => 'Background or slider',
-			'name' => 'image_or_gallery',
-			'type' => 'true_false',
-			'instructions' => '',
-			'required' => 0,
-			'conditional_logic' => 0,
-			
-			'message' => '',
-			'default_value' => 1,
-			'ui' => 1,
-			'ui_on_text' => 'image',
-			'ui_off_text' => 'slider',
-        
-	    ],
-        
-        
+            
         [
             'key'=>'field_about_history_heading',
             'label' => 'Heading',
-            'name' => 'heading foundead',
+            'name' => 'history_heading',
             'type' => 'text',
             'required' => 0,
-            'placeholder' => ''
+             'conditional_logic' => [
+                 [
+                'field' => 'field_about-history_condition',
+				'operator' => '==',
+				'value' => 'header',
+             ],
+        ],
+            'placeholder' => '',
         ],[
              'key' => 'field_about_history_text',
         	'label' => 'Text',
 	        'name'  => 'Text',
             'type'  => 'textarea',
+             'conditional_logic' => [
+                 [
+                'field' => 'field_about-history_condition',
+				'operator' => '==',
+				'value' => 'text',
+             ],
+        ],
             'instructions' => 'add some text about when the house.',
-        ],[
-
-            'key' => 'field_about_history_aditonaltext',
-        	'label' => 'optional addtional textfield',
-	        'name'  => 'Text',
+        ],
+        [
+             'key' => 'field_about_history_additonalText',
+        	'label' => 'Bottom Text',
+	        'name'  => 'addinotal_text',
             'type'  => 'textarea',
-            'rows' => 2,
+             'rows'=>3,
+             'conditional_logic' => [
+                 [
+                'field' => 'field_about-history_condition',
+				'operator' => '==',
+				'value' => 'bottom text',
+             ],
+        ],
             'instructions' => 'add some text about when the house.',
         ],
         [
             'key' => 'filed_about_history_url',
 			'label' => 'optional page url',
 			'name' => 'url',
-			'type' => 'url',
+			'type' => 'group',
+			'instructions' => '',
+			'required' => 0,
+            'conditional_logic' => [[
+                'field' => 'field_about-history_condition',
+				'operator' => '==',
+				'value' => 'url',
+            ],
+        ],
+            'layout'=>'table',
+            'sub_fields' => [
+					
+						[
+							'key' => 'filed_about_history_urltext',
+							'label' => 'url text',
+							'name' => 'url_text',
+							'type' => 'text',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							
+                        ],
+                        	[
+							'key' => 'filed_about_history_theurl',
+							'label' => 'url',
+							'name' => 'url',
+							'type' => 'url',
+							'instructions' => '',
+							'required' => 0,
+							'conditional_logic' => 0,
+							'default_value' => '',
+							'placeholder' => '',
+                            ],
+                        
+            ],
+        ],
+         [
+			'key' => 'field_about-history_condition',
+			'label' => 'Chose what field you need',
+			'name' => 'fields_condition',
+			'type' => 'checkbox',
 			'instructions' => '',
 			'required' => 0,
 			'conditional_logic' => 0,
-        ]
+			
+			'choices' => [
+						'image' => 'image',
+						'gallery' => 'gallery',
+						'header' => 'header',
+                        'text' => 'text',
+                        'bottom text'=>'bottom text',
+                        'url' => 'url',
+                        
+            ],
+            'layout' => 'horizontal'
+	    ]
     ],
           
     'layout' => 'block',

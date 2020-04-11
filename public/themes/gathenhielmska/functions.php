@@ -1,6 +1,11 @@
 <?php
 
 declare(strict_types=1);
+// remove this when the proejct is over   
+function print_A($arry){
+         print("<pre>".print_r($arry,true)."</pre>");
+    };
+
 
 add_action('after_setup_theme', function () {
     add_theme_support('menus');
