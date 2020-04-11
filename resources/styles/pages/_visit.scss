@@ -1,0 +1,30 @@
+.visit {
+  &__opening_hours {
+    margin: $margin-text-box;
+  }
+
+  &__adress {
+    padding: $margin-text-box;
+    background-color: $color-light;
+
+    p {
+      margin: 0;
+    }
+
+    p:first-of-type {
+      font-weight: 800;
+    }
+
+    p:last-of-type {
+      margin-top: 8px;
+    }
+  }
+
+  &__parking {
+    margin: $margin-text-box;
+  }
+
+  h2 {
+    margin: 0;
+  }
+}
