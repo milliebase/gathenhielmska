@@ -28,6 +28,11 @@
       p span {
         font-weight: 500;
       }
+
+      a {
+        color: $color-black;
+        text-decoration: underline;
+      }
     }
   }
 }
