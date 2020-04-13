@@ -47,6 +47,11 @@ $employers = get_posts(['post_type' => 'employer']);
             <?php endforeach; ?>
         <?php endif; ?>
     </article>
+
+    <article class="contact_us">
+        <h2>Kontakta oss</h2>
+        <?php echo do_shortcode('[ninja_form id=2]'); ?>
+    </article>
 </section>
 
 <?php get_footer();
