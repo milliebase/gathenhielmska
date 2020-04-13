@@ -41,7 +41,7 @@ $heroText = get_field($page . '_hero_text');
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body  <?php body_class(); ?>>
 
     <div class="navbar">
         <div class="navbar__panel">
