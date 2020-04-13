@@ -8,7 +8,7 @@ if (!function_exists('fieldshero')) {
             'img' => [
                 'key' => $page . '_hero_image',
                 'label' => 'Hero image',
-                'name' => 'Hero image',
+                'name' => 'heroimage',
                 'type' => 'image',
                 'instructions' => '',
                 'required' => 1,
@@ -19,8 +19,8 @@ if (!function_exists('fieldshero')) {
             ],
             'heading' => [
                 'key' => $page . '_hero_heading',
-                'label' => 'Heading for hero',
-                'name' => 'headingforhero',
+                'label' => 'Hero heading',
+                'name' => 'heroheading',
                 'type' => 'text',
                 'required' => 0,
                 'placeholder' => '',
@@ -28,7 +28,7 @@ if (!function_exists('fieldshero')) {
             'text' =>  [
                 'key' => $page . '_hero_text',
                 'label' => 'Text',
-                'name' => 'text',
+                'name' => 'herotext',
                 'type' => 'textarea',
                 'required' => 0,
                 'placeholder' => 'Add text for your page.',

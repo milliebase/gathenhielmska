@@ -15,7 +15,7 @@ $employers = get_posts(['post_type' => 'employer']);
 
                 <div class="details__item">
 
-                    <?php $employerImage = get_field('employer_image', $post->ID); ?>
+                    <?php $employerImage = get_field('employer_image'); ?>
 
                     <?php if ($employerImage) : ?>
                         <img src="<?php echo $employerImage['url']; ?>" alt="<?php echo ($employerImage['alt'] != '') ? $employerImage['alt'] : '' ?>">
