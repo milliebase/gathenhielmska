@@ -1,7 +1,8 @@
 .contact_us {
-  background-color: $color-dark-green;
+  background-color: $color-green;
   color: $color-white;
   padding: 48px 0;
+  margin-bottom: 48px;
 
   h2 {
     margin: 0;
@@ -33,7 +34,7 @@
     &__name,
     &__email,
     &__subject {
-      background-color: $color-dark-green !important;
+      background-color: $color-green !important;
       border: none !important;
       border-bottom: 1px solid $color-white !important;
       color: $color-white !important;
@@ -74,7 +75,7 @@
   }
 
   .nf-response-msg {
-    background-color: $color-green !important;
+    background-color: $color-dark-green !important;
     border-radius: 10px !important;
     padding: 2% !important;
     margin-top: 5% !important;
