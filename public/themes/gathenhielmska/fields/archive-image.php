@@ -20,13 +20,13 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Date',
                 'name' => 'image_date',
                 'type' => 'date_picker',
-                'instructions' => 'Add date when the image was taken',
+                'instructions' => 'Add date of the event',
             ],
             [
                 'key' => 'archive_image_gallery',
                 'label' => 'Images',
                 'name' => 'image_gallery',
-                'type' => 'image',
+                'type' => 'gallery',
                 'return_format' => 'array',
                 'preview_size' => 'thumbnail',
                 'library' => 'all',
@@ -42,6 +42,10 @@ if (function_exists('acf_add_local_field_group')) {
                     'value' => 'archive-image',
                 ],
             ],
+        ],
+        'hide_on_screen' => [
+            // 0 => 'permalink',
+            3 => 'custom_fields',
         ],
     ]);
 }
