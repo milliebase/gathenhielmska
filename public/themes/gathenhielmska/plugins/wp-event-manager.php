@@ -152,9 +152,14 @@ function get_event_date($postId)
     return (date_i18n('j F', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
 }
 
-function get_event_time($postId)
+function get_event_time_start($postId)
 {
     return get_metadata('post', $postId, '_event_start_time', true);
+}
+
+function get_event_time_end($postId)
+{
+    return get_metadata('post', $postId, '_event_end_time', true);
 }
 
 function get_list_event_date($postId)
