@@ -33,10 +33,37 @@ if (function_exists('acf_add_local_field_group')) {
             [
                 'key' => 'in-house_description',
                 'label' => 'Description',
-                'name' => 'description',
+                'name' => 'inhousedescription',
                 'type' => 'textarea',
                 'required' => 0,
                 'placeholder' => 'Write a text about you in-house activities',
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param' => 'page_template',
+                    'operator' => '==',
+                    'value' => 'page-template/in-house.php',
+                ],
+            ],
+        ],
+        'position' => 'acf_after_title',
+        'label_placement' => 'left',
+        'instruction_placement' => 'field',
+    ]);
+
+    acf_add_local_field_group([
+        'key' => 'group_in-house_read_more',
+        'title' => 'Read more',
+        'fields' => [
+            [
+                'key' => 'in-house_read_more',
+                'label' => 'Description',
+                'name' => 'inhousereadmore',
+                'type' => 'textarea',
+                'required' => 0,
+                'placeholder' => 'Write a text for the home page about in-house activities',
             ],
         ],
         'location' => [

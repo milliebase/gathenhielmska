@@ -41,7 +41,7 @@ $heroText = get_field($page . '_hero_text');
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body  <?php body_class(); ?>>
 
     <div class="navbar">
         <div class="navbar__panel">
@@ -128,7 +128,7 @@ $heroText = get_field($page . '_hero_text');
                         <p>Utforska</p>
                     </div>
                 <?php else : ?>
-                    <Huset href="/about-today" class="home__button">Huset idag</a>
+                    <Huset href="/about-today" class="button home__button">Huset idag</a>
                     <?php endif; ?>
             </article>
         </section>

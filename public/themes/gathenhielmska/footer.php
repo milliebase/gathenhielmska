@@ -41,6 +41,7 @@
     <img class="footer_bird_background" src="<?php echo  $footer_imgs . '/illustrations/png_bird2.png' ?>" alt="ilustartion bird">
 
 </footer>
+
 </body>
 
 </html>
