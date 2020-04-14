@@ -3,8 +3,8 @@
 Template Name: Search Page
 */
 get_header(); ?>
+<?php echo do_shortcode('[searchandfilter fields="search,post_types"]'); ?>
 
-<?php get_search_form(); ?>
 <section class="result">
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
