@@ -28,12 +28,12 @@ $months = [
     <article class="filter">
         <form action="/about/news/" method="get" class="filter__form">
 
+            <?php $monthNum = 1; ?>
+
             <?php foreach ($months as $month) : ?>
 
-                <?php $monthNum = 1; ?>
-
                 <label for="<?php echo $month; ?>" class="filter__button"><?php echo $month; ?></label>
-                <input type="radio" id="<?php echo $month; ?>" name="month" value="<?php echo $month; ?>">
+                <input type="submit" id="<?php echo $month; ?>" name="month" value="<?php echo $monthNum; ?>">
 
                 <?php $monthNum++; ?>
 
@@ -42,12 +42,15 @@ $months = [
     </article>
 
     <article class=" news__content">
-        <?php if (isset($_GET['month'])) : ?>
-            <?php var_dump($_GET); ?>
-        <?php else : ?>
-            <?php $counter = 0; ?>
-            <?php echo do_shortcode('[ajax_load_more post_type="article" no_results_text="No articles."]'); ?>
-        <?php endif; ?>
+        <?php
+
+        if (isset($_GET['month'])) {
+            echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter denna månaden" month="' . $_GET['month'] . '"]');
+        } else {
+            echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter denna månaden"]');
+        }
+
+        ?>
     </article>
 
 </section>
