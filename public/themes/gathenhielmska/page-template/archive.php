@@ -64,9 +64,12 @@ $videos = get_posts(['post_type' => 'archive-video']);
 
                 // Add extra parameters to src and replace HTML.
                 $params = [
+                    'autoplay' => 1,
                     'controls'  => 1,
                     'hd'        => 1,
                     'autohide'  => 0,
+                    'mute' => 1,
+                    'enablejsapi' => 1
                 ];
 
                 $new_src = add_query_arg($params, $src);
@@ -74,14 +77,41 @@ $videos = get_posts(['post_type' => 'archive-video']);
 
                 ?>
 
-                <?php if ($iframe) : ?>
+                <?php if ($iframe) :
+                ?>
                     <div class="video">
-                        <?php echo $iframe; ?>
+                        <?php echo $iframe;
+                        ?>
                         <button class="video__play" style="background-image: url('<?php echo get_field('archive_video_image')['url']; ?>')">
-                            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/play.svg" alt="Play button">
+                            <img src="<?php echo get_template_directory_uri();
+                                        ?>/assets/images/play.svg" alt="Play button">
                         </button>
                     </div>
                 <?php endif; ?>
+
+
+
+                <!-- <?php
+                        // $youtube_video_url = get_field('archive_video_url', false, false);
+                        // print_r($youtube_video_url);
+
+                        // $embedUrl = str_replace('watch?=v=', 'embed/', $youtube_video_url,);
+
+                        // print_r($embedUrl);
+                        ?>
+
+                <div class="video">
+                    <button class="video__play" style="background-image: url('<?php //echo get_field('archive_video_image')['url'];
+                                                                                ?>')">
+                        <img src="<?php //echo get_template_directory_uri();
+                                    ?>/assets/images/play.svg" alt="Play button">
+                    </button>
+                    <iframe width="560" height="315" src="<?php //echo $youtube_video_url;
+                                                            ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div> -->
+
+
+
 
             <?php endforeach; ?>
         <?php endif; ?>

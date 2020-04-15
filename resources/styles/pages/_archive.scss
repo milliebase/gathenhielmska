@@ -11,14 +11,13 @@
     }
 
     &__slider {
-      height: 192px;
-      display: flex;
+      height: 190px;
       overflow-x: scroll;
       margin-left: 17px;
       display: grid;
       grid-template-rows: 90px 90px;
       grid-auto-columns: 150px;
-      grid-auto-flow: column;
+      grid-auto-flow: column dense;
       grid-gap: 5px;
 
 
@@ -29,7 +28,7 @@
       }
 
       .landscape {
-        height: 90px;
+        height: 88px;
         width: 150px;
         grid-row: span 1;
         grid-column: span 1;
@@ -37,7 +36,7 @@
 
       .portrait {
         width: 150px;
-        height: 188px;
+        height: 184px;
         grid-column: span 1;
         grid-row: span 2;
       }
