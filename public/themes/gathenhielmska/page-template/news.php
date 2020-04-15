@@ -2,12 +2,21 @@
 
 get_header();
 
-$args = [
-    'post_type' => 'article',
-    'numberposts' => 6
+$months = [
+    'januari',
+    'februari',
+    'mars',
+    'april',
+    'maj',
+    'juni',
+    'juli',
+    'augusti',
+    'september',
+    'oktober',
+    'november',
+    'december'
 ];
 
-$articles = get_posts($args);
 ?>
 
 <section class="news">
@@ -16,22 +25,30 @@ $articles = get_posts($args);
     <article class="search">
     </article>
 
-    <article class="articles">
-        <?php if (count($articles)) : ?>
-            <?php foreach ($articles as $post) : setup_postdata($post); ?>
+    <article class="filter">
+        <form action="/about/news/" method="get" class="filter__form">
 
-                <div class="article__item">
-                    <h3><?php the_title(); ?></h3>
+            <?php foreach ($months as $month) : ?>
 
-                    <h4><?php echo get_the_date('Y-m-d'); ?></h4>
+                <?php $monthNum = 1; ?>
 
-                    <?php echo acf_excerpt('article_text'); ?>
-                </div>
+                <label for="<?php echo $month; ?>" class="filter__button"><?php echo $month; ?></label>
+                <input type="radio" id="<?php echo $month; ?>" name="month" value="<?php echo $month; ?>">
+
+                <?php $monthNum++; ?>
 
             <?php endforeach; ?>
-        <?php endif; ?>
+        </form>
     </article>
 
+    <article class=" news__content">
+        <?php if (isset($_GET['month'])) : ?>
+            <?php var_dump($_GET); ?>
+        <?php else : ?>
+            <?php $counter = 0; ?>
+            <?php echo do_shortcode('[ajax_load_more post_type="article" no_results_text="No articles."]'); ?>
+        <?php endif; ?>
+    </article>
 
 </section>
 

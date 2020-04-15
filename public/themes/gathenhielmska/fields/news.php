@@ -43,7 +43,8 @@ if (function_exists('acf_add_local_field_group')) {
                 'label' => 'Article text',
                 'name' => 'articletext',
                 'type' => 'textarea',
-                'instructions' => 'Write your article here',
+                'instructions' => 'Maximum 280 characters',
+                'maxlength' => 280,
             ],
         ],
         'location' => [
