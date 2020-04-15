@@ -9,33 +9,33 @@
   padding: 8px 30px;
 }
 
-.search-form {
+.search {
   display: flex;
-  margin: 0 16px;
 
-  .search__logo{
+  &__logo{
     padding-right:16px;
   }
-}
-.search {
-  border-bottom: 1px solid $color-grey;
-  border-left: 0;
-  border-top: 0;
-  border-right: 0;
-  font-size: 16px;
-  color: $color-black;
-  width: 100%;
-  padding: 4px;
-  transition: width .35s ease-in-out;
 
-  &[type=text]:focus{
-    outline:none;
-    width:100%;
-  }
+  &__input {
+    border-bottom: 1px solid $color-grey;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    font-size: 16px;
+    color: $color-black;
+    width: 100%;
+    padding: 4px;
+    transition: width .35s ease-in-out;
 
-  &__hide {
-    position: absolute;
-    top:-1000px;
-    visibility: hidden;
+    &[type=text]:focus{
+      outline:none;
+      width:100%;
+    }
+
+    &__hide {
+      position: absolute;
+      top:-1000px;
+      visibility: hidden;
+    }
   }
 }
