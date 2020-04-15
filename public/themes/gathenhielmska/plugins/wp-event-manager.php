@@ -182,3 +182,4 @@ function get_list_event_date($postId)
 
 // 	return $template;
 // }, 10, 3 );
+
