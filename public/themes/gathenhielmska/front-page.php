@@ -1,24 +1,63 @@
-<?php get_header(); ?>
+<?php
 
+get_header();
 
-<div class="row">
-    <div class="col">
-        <?php if (have_posts()) : ?>
-            <!-- Start the loop -->
-            <?php while (have_posts()) : ?>
-                <!-- iterate the post index and set up the next post in line -->
-                <?php the_post(); ?>
-                <div>
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                    <?php the_excerpt(); ?>
-                </div>
-            <?php endwhile; ?>
+$args = [
+    'post_type' => 'article',
+    'numberposts' => 3
+];
 
-        <?php else : ?>
-            <p>No posts.</p>
+$articles = get_posts($args);
+$inHousePage = get_page_by_path('in-house');
+?>
+
+<?php if (count($articles)) : ?>
+    <section class="home__news">
+
+        <h2 class="page__heading">Nyheter</h2>
+
+        <?php foreach ($articles as $post) : setup_postdata($post); ?>
+            <div class="home__article">
+                <h3><?php the_title(); ?></h3>
+
+                <?php echo acf_excerpt('article_text'); ?>
+
+                <a href="<?php the_permalink(); ?>">
+                    <span>Mer information</span>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.svg">
+                </a>
+            </div>
+        <?php endforeach; ?>
+
+        <div class="home__bg">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/illustrations/flower.png" alt="Flower decor">
+        </div>
+    </section>
+<?php endif; ?>
+
+<?php if ($inHousePage) : ?>
+    <?php $id = $inHousePage->ID; ?>
+
+    <section class="home__in_house">
+        <?php $inHouseImage = get_field('in-house_hero_image', $id); ?>
+
+        <?php if ($inHouseImage) : ?>
+            <img src="<?php echo $inHouseImage['url']; ?>" alt="<?php echo ($inHouseImage['alt'] != '') ? $inHouseImage['alt'] : '' ?>">
         <?php endif; ?>
 
-    </div><!-- /col -->
-</div><!-- /row -->
+        <h2 class="page__heading"><?php echo $inHousePage->post_title; ?></h2>
+
+        <div class="read_more">
+            <?php $inHouseReadMore = get_field('in-house_read_more', $id) ?>
+
+            <?php if ($inHouseReadMore) : ?>
+                <p><?php echo $inHouseReadMore; ?></p>
+            <?php endif; ?>
+
+            <a href="<?php echo get_permalink($id); ?>" class="button">Verksamheter</a>
+        </div>
+
+    </section>
+<?php endif; ?>
 
 <?php get_footer();

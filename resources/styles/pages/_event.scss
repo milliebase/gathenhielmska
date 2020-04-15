@@ -1,33 +1,10 @@
-.search{
+.event-search{
   padding: 0 16px;
   width: 100%;
-  height: 52px;
-  @include flex-row();
-  align-items: center;
-
-  img {
-    width: 19px;
-    margin: 0 16px 0 0;
+  h2 {
+    margin: 0;
   }
-  form {
-    display: flex;
-    align-items: center;
-
-    input {
-      width: 100%;
-      border: none;
-      padding: 4px;
-    }
-    input::placeholder {
-      font-size: 16px;
-      text-decoration: underline;
-      color: $color-grey;
-    }
-  }
-
-
 }
-
 
 .list-view {
   display: block;
