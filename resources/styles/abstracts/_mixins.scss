@@ -44,3 +44,13 @@
   align-items: center;
   justify-content: center;
 }
+
+
+@mixin bp($point) {
+  @if $point == tablet {
+    @media (min-width: 600px) { @content; }
+  }
+  @else if $point == desktop {
+    @media (min-width: 992px) { @content; }
+  }
+}

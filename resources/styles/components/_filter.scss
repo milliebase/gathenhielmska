@@ -1,14 +1,46 @@
+.event-filter {
+  height: 50px;
+  margin: 18px 16px;
+
+  &__form {
+    min-width: 100%;
+    display: flex;
+    overflow: auto;
+  }
+  &__button {
+    flex: 0 0 auto;
+    border: 1px solid $color-filter;
+    box-sizing: border-box;
+    border-radius: 11px;
+    background-color: $color-white;
+    color: $color-filter;
+    height:44px;
+    width: 147px;
+    margin: 0 18px 0 0;
+    font-size: 14px;
+  }
+  &__button:hover {
+    cursor: pointer;
+  }
+}
+
 .filter {
   @include flex-between();
   width: 100%;
   overflow-x: scroll;
   padding: $margin-text-box;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &__form{
     @extend .filter;
+    padding: 0;
 
     input {
-      visibility: hidden;
+      display: none;
     }
   }
 
