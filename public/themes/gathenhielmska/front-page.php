@@ -17,17 +17,22 @@ $inHousePage = get_page_by_path('in-house');
         <h2 class="page__heading">Nyheter</h2>
 
         <?php foreach ($articles as $post) : setup_postdata($post); ?>
-            <div class="home__article">
+            <div class="article__item">
                 <h3><?php the_title(); ?></h3>
 
-                <?php echo acf_excerpt('article_text'); ?>
+                <?php $articleText = get_field('article_text') ?>
 
-                <a href="<?php the_permalink(); ?>">
-                    <span>Mer information</span>
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.svg">
-                </a>
+                <?php if ($articleText) : ?>
+                    <p><?php echo $articleText; ?></p>
+                <?php endif; ?>
+
             </div>
         <?php endforeach; ?>
+
+        <a href="about/news">
+            <span>Mer information</span>
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow_right.svg">
+        </a>
 
         <div class="home__bg">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/illustrations/flower.png" alt="Flower decor">
