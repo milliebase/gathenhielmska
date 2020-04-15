@@ -23,6 +23,10 @@ $months = [
     <h2 class="page__heading"><?php the_title(); ?></h2>
 
     <article class="search">
+        <form method="get">
+            <input type="text" name="search" placeholder="Sök..." class="search__input">
+            <input type="submit" value="submit">
+        </form>
     </article>
 
     <article class="filter">
@@ -46,6 +50,8 @@ $months = [
 
         if (isset($_GET['month'])) {
             echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter denna månaden" month="' . $_GET['month'] . '"]');
+        } elseif (isset($_GET['search'])) {
+            echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter på det du sökte search="' . $_GET['search'] . '"]');
         } else {
             echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter denna månaden"]');
         }
