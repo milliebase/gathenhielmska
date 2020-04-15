@@ -1,5 +1,5 @@
 import './menu';
-import './event-view';
 import './google-maps';
+import './event';
 import './iframe';
 
