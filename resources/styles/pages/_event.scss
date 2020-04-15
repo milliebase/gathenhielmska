@@ -1,29 +1,9 @@
-.event-search{
-  padding: 0 16px;
-  width: 100%;
-  h2 {
-    margin: 0;
-  }
-}
-
-.list-view {
-  display: block;
-}
-
-.box-view {
-  display:none;
-}
-
-.view {
-  @include flex-row();
-  justify-content: flex-end;
-  height: 50px;
-  width: 100%;
-  padding: 0 16px;
+.event-title {
+  margin: 32px 16px;
+  font-weight: 600px;
 }
 
 .event{
-  display: block;
   width: 100%;
 
   &__month-title {
@@ -104,12 +84,16 @@
 }
 
 .event-list{
-  display: none;
   width: 100%;
 
   &__item {
     width: 100%;
     padding: 8px 16px 0 16px;
+
+    @media (min-width: 600px){
+      width: 60%;
+      margin: 0 auto;
+    }
 
     &__wrapper {
       width: 100%;
@@ -155,3 +139,4 @@
   }
  }
 }
+
