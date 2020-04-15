@@ -18,7 +18,7 @@ if (function_exists('acf_add_local_field_group')) {
                     'label' => 'The house years of history',
                     'name' => 'history_timeline',
                     'type' => 'group',
-                    'layout'=>'table',
+                    'layout'=>'block',
                     'instructions' => '',
                     'collapsed' => 'field_about_history_years',
                     'required' => 0,
@@ -71,10 +71,20 @@ if (function_exists('acf_add_local_field_group')) {
 	'description' => '',
         ],
     );
+     acf_add_local_field(
+        [
+        'key' => 'field_about_history_years-desktopimg',
+        'parent' => 'field_about_history_year',
 
+        'label' => 'Desktop image',
+        'name' => 'history_Desktop-image',
+        'type' => 'image',
+         'return_format' => 'url',
 
+        ]);
 
-    acf_add_local_field([
+    acf_add_local_field(
+        [
         'key' => 'field_about_history_years',
         'parent' => 'field_about_history_year',
 
