@@ -1,10 +1,11 @@
 <?php
 
 declare(strict_types=1);
-// remove this when the proejct is over   
-function print_A($arry){
-         print("<pre>".print_r($arry,true)."</pre>");
-    };
+// remove this when the proejct is over
+function print_A($arry)
+{
+    print("<pre>" . print_r($arry, true) . "</pre>");
+};
 
 
 add_action('after_setup_theme', function () {
@@ -22,15 +23,16 @@ add_action(
     'wp_enqueue_scripts',
     function () {
 
-        wp_enqueue_style('app.css', get_stylesheet_directory_uri() . '/assets/styles/app.css');
         wp_enqueue_style('custom-google-fonts', 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,300i,400,400i,500,800,800i|Roboto+Condensed:300,300i,400,400i,600,700,700i', false);
+        wp_enqueue_style('app.css', get_stylesheet_directory_uri() . '/assets/styles/app.css');
         wp_enqueue_script('app.js', get_template_directory_uri() . '/assets/scripts/app.js');
 
         if (is_page('visit')) {
             $key = getenv('API_KEY');
             wp_enqueue_script('google-map', "https://maps.googleapis.com/maps/api/js?key=$key", [], '3', true);
         }
-    }
+    },
+    9999
 );
 
 add_action('admin_menu', 'remove_admin_menu_items', 999);
