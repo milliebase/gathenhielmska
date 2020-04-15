@@ -15,7 +15,7 @@ $employers = get_posts(['post_type' => 'employer']);
 
                 <div class="details__item">
 
-                    <?php $employerImage = get_field('employer_image', $post->ID); ?>
+                    <?php $employerImage = get_field('employer_image'); ?>
 
                     <?php if ($employerImage) : ?>
                         <img src="<?php echo $employerImage['url']; ?>" alt="<?php echo ($employerImage['alt'] != '') ? $employerImage['alt'] : '' ?>">
@@ -46,6 +46,11 @@ $employers = get_posts(['post_type' => 'employer']);
 
             <?php endforeach; ?>
         <?php endif; ?>
+    </article>
+
+    <article class="contact_us">
+        <h2>Kontakta oss</h2>
+        <?php echo do_shortcode('[ninja_form id=2]'); ?>
     </article>
 </section>
 

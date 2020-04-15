@@ -1,0 +1,84 @@
+.contact_us {
+  background-color: $color-green;
+  color: $color-white;
+  padding: 48px 0;
+  margin-bottom: 48px;
+
+  h2 {
+    margin: 0;
+    text-align: center;
+  }
+
+  .nf-form-fields-required {
+    display: none;
+  }
+
+  .ninja-forms-req-symbol {
+    display: none;
+  }
+
+  .nf-form-cont {
+    margin: $margin-text-box;
+    margin-top: 0;
+  }
+
+  .nf-form-content {
+    padding: 0;
+
+    label {
+      font-weight: 300 !important;
+    }
+  }
+
+  .field {
+    &__name,
+    &__email,
+    &__subject {
+      background-color: $color-green !important;
+      border: none !important;
+      border-bottom: 1px solid $color-white !important;
+      color: $color-white !important;
+    }
+
+    &__message {
+      resize: vertical !important;
+      color: $color-black !important;
+    }
+
+    &__send {
+      background: $color-orange !important;
+      box-shadow: inset 0px 1px 8px rgba(255, 201, 162, 0.25), inset 0px -1px 8px rgba(0, 0, 0, 0.25) !important;
+      border-radius: 11px !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      font-weight: 500 !important;
+      padding: 8px 30px !important;
+      width: 50% !important;
+    }
+  }
+
+  .nf-error .nf-field-element::after {
+    background: $color-orange !important;
+  }
+
+  .nf-error-msg {
+    color: $color-orange !important;
+  }
+
+  .nf-error .ninja-forms-field {
+    border-color: $color-orange !important;
+  }
+
+  .nf-form-content button:hover, .nf-form-content input[type=button]:hover, .nf-form-content input[type=submit]:hover {
+    background: #c4c4c4 !important;
+  }
+
+  .nf-response-msg {
+    background-color: $color-dark-green !important;
+    border-radius: 10px !important;
+    padding: 2% !important;
+    margin-top: 5% !important;
+  }
+
+}
