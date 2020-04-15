@@ -1,0 +1,97 @@
+.archive {
+  width: 100%;
+
+  .album {
+
+    &__info {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 17px;
+
+    }
+
+    &__slider {
+      height: 190px;
+      overflow-x: scroll;
+      margin-left: 17px;
+      display: grid;
+      grid-template-rows: 90px 90px;
+      grid-auto-columns: 150px;
+      grid-auto-flow: column dense;
+      grid-gap: 5px;
+
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .landscape {
+        height: 88px;
+        width: 150px;
+        grid-row: span 1;
+        grid-column: span 1;
+      }
+
+      .portrait {
+        width: 150px;
+        height: 184px;
+        grid-column: span 1;
+        grid-row: span 2;
+      }
+    }
+  }
+
+  .videos {
+    width: 100%;
+    padding: $margin-text-box;
+
+    h2 {
+      margin: 0;
+      margin-bottom: 16px;
+    }
+
+    .video {
+      width: 100%;
+      height: 194px;
+      margin-bottom: 8px;
+      position: relative;
+
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+
+      &__play {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 2;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border: none;
+
+        img {
+          pointer-events: none;
+        }
+      }
+
+      &__play:hover {
+        cursor: pointer;
+      }
+
+      &__play:focus {
+        outline: none;
+      }
+    }
+
+  }
+}
