@@ -4,11 +4,16 @@
   overflow-x: scroll;
   padding: $margin-text-box;
 
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   &__form{
     @extend .filter;
+    padding: 0;
 
     input {
-      visibility: hidden;
+      display: none;
     }
   }
 
