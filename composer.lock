@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f142e22622065f251aab65ee373b2c02",
+    "content-hash": "5b2ce37b3a50dcf97a64fd8e9de112fb",
     "packages": [
         {
             "name": "composer/installers",
@@ -1128,6 +1128,7 @@
                 "wordplate",
                 "wordpress"
             ],
+            "abandoned": "https://vinkla.dev/administration-ui",
             "time": "2019-08-08T13:02:18+00:00"
         },
         {
@@ -1147,6 +1148,24 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/advanced-custom-fields/"
+        },
+        {
+            "name": "wpackagist-plugin/ajax-load-more",
+            "version": "5.2.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/ajax-load-more/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/ajax-load-more.zip?timestamp=1584115721"
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/ajax-load-more/"
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
