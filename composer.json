@@ -17,7 +17,7 @@
         "wpackagist-plugin/advanced-custom-fields": "^5.8",
         "wpackagist-plugin/ajax-load-more": "^5.2",
         "wpackagist-plugin/ninja-forms": "3.4.24.1",
-        "wpackagist-plugin/the-events-calendar": "5.0.3.1",
+        "wpackagist-plugin/search-filter": "^1.2",
         "wpackagist-plugin/wp-event-manager": "^3.1",
         "wpackagist-plugin/wp-migrate-db": "^1.0"
     },
