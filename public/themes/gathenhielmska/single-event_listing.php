@@ -5,6 +5,22 @@
     <?php if (have_posts()) : ?>
 
         <?php while (have_posts()) : the_post(); ?>
+            <?php
+            $months = [
+                'Januari',
+                'Februari',
+                'Mars',
+                'April',
+                'Maj',
+                'Juni',
+                'Juli',
+                'Augusti',
+                'September',
+                'Oktober',
+                'November',
+                'December'
+            ];
+            ?>
 
             <?php
             $image = get_event_image($post->ID);
@@ -13,6 +29,8 @@
             $date = get_event_date($post->ID);
             $time = get_event_time_start($post->ID);
             $organizer = get_metadata('post', $post->ID, '_organizer_name', true);
+            $event_month = get_event_month($post->ID);
+            $month_index = (get_event_month_numb($post->ID) - 1);
             ?>
 
             <div class="hero">
@@ -40,7 +58,7 @@
             <div class="info">
                 <h2></h2>
                 <?php if ($date && $time) : ?>
-                    <p class="info__date-time"><?php echo "$date $time"; ?></p>
+                    <p class="info__date-time"><?php echo "$date $months[$month_index] $time"; ?></p>
                 <?php endif; ?>
                 <?php if ($venue) : ?>
                     <p class="info__venue"><?php echo $venue; ?></p>
@@ -80,11 +98,13 @@
                 $date = get_event_date($post->ID);
                 $startTime = get_event_time_start($post->ID);
                 $endTime = get_event_time_end($post->ID);
+                $event_month = get_event_month($post->ID);
+                $month_index = (get_event_month_numb($post->ID) - 1);
                 ?>
 
                 <div>
                     <?php if ($date && $time) : ?>
-                        <p class="date-time"><?php echo "$date $startTime-$endTime"; ?></p>
+                        <p class="date-time"><?php echo "$date $months[$month_index] $startTime-$endTime"; ?></p>
                     <?php endif; ?>
                 </div>
             <?php endforeach; ?>
@@ -102,13 +122,15 @@
             <h2 class="more-events__title">Fler liknande evenemang:</h2>
             <div class="more-events__wrapper">
                 <?php foreach ($events as $post) : setup_postdata($post); ?>
-
                     <?php
                     $image = get_event_image($post->ID);
                     $description = $post->post_content;
                     $venue = get_event_venue($post->ID);
                     $date = get_event_date($post->ID);
-                    $time = get_event_time_start($post->ID); ?>
+                    $time = get_event_time_start($post->ID);
+                    $event_month = get_event_month($post->ID);
+                    $month_index = (get_event_month_numb($post->ID) - 1);
+                    ?>
 
                     <div class="event__item more-events__item">
                         <?php if ($image) : ?>
@@ -119,7 +141,7 @@
 
                         <?php if ($date) : ?>
                             <div class="date-box">
-                                <h2 class="date-box__date"><?php echo "$date"; ?></h2>
+                                <h2 class="date-box__date"><?php echo "$date $months[$month_index]"; ?></h2>
                             </div>
                         <?php endif; ?>
 
@@ -130,7 +152,7 @@
                             <?php endif; ?>
 
                             <?php if ($date && $time) : ?>
-                                <p class="date-time"><?php echo "$date $time"; ?></p>
+                                <p class="date-time"><?php echo "$date $months[$month_index] $time"; ?></p>
                             <?php endif; ?>
 
                             <a href="<?php the_permalink($post); ?>"><button class="choose-event">Läs mer och boka</button></a>
