@@ -27,18 +27,20 @@
     border-left: 0;
     border-top: 0;
     border-right: 0;
-    font-size: 16px;
     color: $color-black;
-    width: 100%;
+    width: 80%;
     padding: 4px;
+    font-size: 16px;
     transition: width .35s ease-in-out;
+    @include bp(tablet){
+      font-size: 18px;
+    }
 
     &[type=text]:focus{
       outline:none;
       width:100%;
     }
   }
-
   &__hide {
     position: absolute;
     top:-1000px;

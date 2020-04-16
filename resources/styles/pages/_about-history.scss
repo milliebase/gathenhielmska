@@ -160,6 +160,11 @@
     .history_saved{
         color:white;
         background: $color-green;
+        
+        .history_background-wave-desktop{
+          display: none;
+        
+        }
      
         
         
@@ -245,12 +250,25 @@ $var:100;
                        width: 100%;
                        min-width: 1080px;
                    }
+                   .history_saved{
+                       padding-top: 120px;
+                       .history_background-wave-desktop{
+                            display: block;
+                            width: 100%;
+                            position: absolute;
+                            z-index: 0;
+                            margin-bottom: 100px;
+                            top:0px;
+                            background-color: white;
+        
+                         }
+                   }
                 .history_foundead, .history_saved{
                   
                 display: flex;
-                padding:20px 0px;
+           
             
-                  
+                   
                     .history_facts-content{
                  
                      margin-left: auto;

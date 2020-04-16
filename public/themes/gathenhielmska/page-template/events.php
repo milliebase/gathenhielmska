@@ -53,11 +53,11 @@ $categories = get_terms(
 ?>
 
 <article class="event-intro">
-    <h2 class="event-title"><?php the_title(); ?></h2>
-    <div class="search-form">
+    <h2><?php the_title(); ?></h2>
+    <div class="search">
         <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="search-logo" class="search__logo">
         <form action="/events" method="get" id="form">
-            <input type="text" name="search" placeholder="Sök..." class="search">
+            <input type="text" name="search" placeholder="Sök..." class="search__input">
             <input type="submit" class="search__hide"></input>
         </form>
     </div>
