@@ -142,5 +142,10 @@ footer{
              width: 100%;
               
              }   
+               @include bp(desktop) {
+             left: 71%;
+           
+              
+             } 
     }
 }

@@ -154,6 +154,8 @@
             overflow-x: auto;
             img{
                 margin: 0px 10px;
+                 object-fit: cover;
+                height: 100%;
             }
         }
     }
@@ -377,6 +379,7 @@ $var:100;
                                min-width: 782px;
                                display: flex;
                                     justify-content: flex-end;
+                                     height: 295px;
                                img{
                                margin: 0px;
                                padding: 0px;
