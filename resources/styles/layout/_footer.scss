@@ -1,30 +1,54 @@
-
+   .gatheimska_logo{
+           @include bp(tablet) {
+             display: none;
+          }
+       }
 footer{
     align-self: flex-end;
     background-color:$color-light;
     position: relative;
     display:flex;
     width:100vw;
+ 
     overflow: hidden;
     margin: 0px;
+   
+          
 
     @include bp(tablet) {
       padding-left: 175px;
       width: 100%;
     }
-
+    
 
 
     .footer_container{
         position: relative;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         padding:40px 0px 60px 32px;
-        width:86.6%; //temporary
+        width:100%;
         z-index: 1;
-
-            .footer__social{
+    
+        @include bp(tablet) {
+      max-height: 420px;
+      margin-left: 3%;
+      padding:40px 0px 60px 32px;
+    }
+       
+    
+         .footer__social{
                      display: flex;
                     justify-content: space-between;
                     padding-bottom: 10px;
+                     
+        @include bp(desktop) {
+            img{
+                transform: scale(1.2);
+            }
+    }
+                   
 
                 .footer___media{
                         width: 26%;
@@ -33,7 +57,7 @@ footer{
 
                         align-items: center;
                         justify-content: space-between;
-
+                       
 
 
                         a:hover{
@@ -46,13 +70,31 @@ footer{
 
     .footer__info{
         font-size: 16px;
+        
+          @include bp(tablet) {
+      width: 30%;
+    }
+        
+        
+       
     }
     .footer__suporting{
        width:205px;
-
+       
+     
+       
+          @include bp(desktop) {
+                 padding-top: 50px;
+                 transform: scale(1.45);
+                
+                }
         p{
              font-weight: bold;
              font-size: 10px;
+               @include bp(tablet) {
+                transform: scale(1);;
+                
+                }
         }
       .footer__suport_box{
          display: flex;
@@ -64,17 +106,19 @@ footer{
                 width: 53px;
             }
                img:nth-child(2){
-                width: 95px;
+                width: 53px;
+                
             }
         }
         .footer__support_col2{
+             position: relative;
+                left:-20px;
               img:nth-child(1){
                 width: 64px;
+               
             }
 
-            img:nth-child(2){
-                width: 95px;
-            }
+           
         }
 
         div{
@@ -92,6 +136,11 @@ footer{
         width:63%;
         max-width: 300px;
         transform: scaleX(-1);
-
+           @include bp(tablet) {
+             left: 60%;
+             max-width: 343px;
+             width: 100%;
+              
+             }   
     }
 }
