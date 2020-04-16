@@ -23,9 +23,10 @@ $months = [
     <h2 class="page__heading"><?php the_title(); ?></h2>
 
     <article class="search">
-        <form method="get">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="search-logo" class="search__logo">
+        <form method="get" id="form">
             <input type="text" name="search" placeholder="Sök..." class="search__input">
-            <input type="submit" value="submit">
+            <input type="submit" class="search__hide"></input>
         </form>
     </article>
 
