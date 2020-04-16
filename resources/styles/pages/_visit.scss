@@ -1,30 +1,67 @@
 .visit {
-  &__opening_hours {
-    margin: $margin-text-box;
-  }
-
-  &__adress {
+  &__opening_hours,
+  &__parking {
     padding: $margin-text-box;
-    background-color: $color-light;
 
-    p {
+    @include bp(tablet) {
       margin: 0;
     }
 
-    p:first-of-type {
-      font-weight: 800;
-    }
-
-    p:last-of-type {
-      margin-top: 8px;
+    p {
+        @include bp(tablet) {
+          padding-left: 98px;
+          padding-right: 117px;
+        }
     }
   }
 
-  &__parking {
-    margin: $margin-text-box;
+
+  &__adress {
+    width: 100%;
+    background-color: $color-light;
+
+    @include bp(tablet) {
+      display: flex;
+      padding: 0;
+    }
+
+    &__text {
+      padding: $margin-text-box;
+
+      @include bp(tablet) {
+        min-width: 50%;
+      }
+
+      p {
+        margin: 0;
+
+        @include bp(tablet) {
+          padding-left: 98px;
+          padding-right: 117px;
+        }
+
+      }
+
+      p:first-of-type {
+        font-weight: 800;
+
+        @include bp(tablet) {
+          margin-bottom: 20px;
+        }
+      }
+
+      p:last-of-type {
+        margin-top: 8px;
+      }
+    }
   }
 
   h2 {
     margin: 0;
+
+    @include bp(tablet) {
+      margin-left: 20px;
+      margin-bottom: 26px;
+    }
   }
 }
