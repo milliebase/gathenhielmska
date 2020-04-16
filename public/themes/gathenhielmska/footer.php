@@ -9,7 +9,7 @@
 <footer>
     <div class="footer_container">
         <div class="footer__social">
-            <img src="<?php echo  $footer_imgs . '/logos/gathenhielmska._footer.svg' ?>" alt="gathenheimska">
+            <img class="gatheimska_logo" src="<?php echo  $footer_imgs . '/logos/gathenhielmska._footer.svg' ?>" alt="gathenheimska">
             <div class="footer___media">
                 <a><img src="<?php echo  $footer_imgs . '/logos/facebook_footer.svg' ?>" alt="facebook"></a>
                 <a><img src="<?php echo  $footer_imgs . '/logos/instagram_footer.svg' ?>" alt="instagram"></a>
@@ -28,12 +28,12 @@
             <div class="footer__suport_box">
                 <div class="footer__support_col1">
                     <img src="<?php echo  $footer_imgs . '/logos/higab.svg' ?>" alt="higab">
-                    <img src="<?php echo  $footer_imgs . '/logos/kulturrad.svg' ?>" alt="kultur rådet">
+                    <img src="<?php echo  $footer_imgs . '/logos/studefrämjandet_logga.png'?>" alt="studiefrämjandet">
 
                 </div>
                 <div class="footer__support_col2">
                     <img src="<?php echo  $footer_imgs . '/logos/goteborgsstad.svg' ?>" alt="västra götalandsregionen">
-                    <img src="<?php echo  $footer_imgs . '/logos/vastragotalandregionen.svg' ?>" alt="göteborgs stad">
+                  
                 </div>
             </div>
         </div>
