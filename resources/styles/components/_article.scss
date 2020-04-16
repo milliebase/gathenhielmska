@@ -16,7 +16,12 @@
     margin-bottom: 8px;
   }
 
-  &:nth-child(2n) {
-    background-color: $color-light;
+}
+
+.news {
+  .article__item {
+    &:nth-child(2n) {
+      background-color: $color-light;
+    }
   }
 }

@@ -11,9 +11,15 @@
 
 .search {
   display: flex;
+  padding: 0 17px 25px;
 
   &__logo{
     padding-right:16px;
+  }
+
+  #form {
+    width:100%;
+    display: flex;
   }
 
   &__input {

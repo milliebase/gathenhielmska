@@ -7,6 +7,10 @@
   color: $color-white;
   background-color: $color-dark-green;
 
+  @include bp(tablet) {
+    padding-left: 175px;
+  }
+
   &__home {
     @extend .hero;
     @include flex-col-center();
