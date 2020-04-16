@@ -24,11 +24,21 @@
 
   .nf-form-content {
     padding: 0;
+    @include bp(tablet){
+      max-width: 60%;
+    }
 
     label {
       font-weight: 300 !important;
     }
   }
+
+  #nf-field-4 {
+    background-color: $color-orange;
+    border-radius: 8px;
+  }
+
+
 
   .field {
     &__name,

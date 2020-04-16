@@ -99,45 +99,46 @@
         <?php $args = ['post_type' => 'event_listing', 'numberposts' => 2, 'orderby' => 'rand']; ?>
         <?php $events = get_posts($args); ?>
         <?php if (count($events)) : ?>
-            <h2>Fler evenemang från värden:</h2>
-            <?php foreach ($events as $post) : setup_postdata($post); ?>
+            <h2 class="more-events__title">Fler liknande evenemang:</h2>
+            <div class="more-events__wrapper">
+                <?php foreach ($events as $post) : setup_postdata($post); ?>
 
-                <?php
-                $image = get_event_image($post->ID);
-                $description = $post->post_content;
-                $venue = get_event_venue($post->ID);
-                $date = get_event_date($post->ID);
-                $time = get_event_time_start($post->ID); ?>
+                    <?php
+                    $image = get_event_image($post->ID);
+                    $description = $post->post_content;
+                    $venue = get_event_venue($post->ID);
+                    $date = get_event_date($post->ID);
+                    $time = get_event_time_start($post->ID); ?>
 
-                <div class="event__item">
-                    <?php if ($image) : ?>
-                        <img src="<?php echo $image; ?>" alt="" class="event__item__image">
-                    <?php else : ?>
-                        <img src="#" alt="placeholder img" class="event__item__image">
-                    <?php endif; ?>
+                    <div class="event__item more-events__item">
+                        <?php if ($image) : ?>
+                            <img src="<?php echo $image; ?>" alt="" class="event__item__image">
+                        <?php else : ?>
+                            <img src="#" alt="placeholder img" class="event__item__image">
+                        <?php endif; ?>
 
-                    <?php if ($date) : ?>
-                        <div class="date-box">
-                            <h2><?php echo "$date"; ?></h2>
+                        <?php if ($date) : ?>
+                            <div class="date-box">
+                                <h2 class="date-box__date"><?php echo "$date"; ?></h2>
+                            </div>
+                        <?php endif; ?>
+
+                        <div class="event-info">
+                            <h3><?php the_title(); ?></h3>
+                            <?php if ($venue) : ?>
+                                <p><?php echo $venue; ?></p>
+                            <?php endif; ?>
+
+                            <?php if ($date && $time) : ?>
+                                <p class="date-time"><?php echo "$date $time"; ?></p>
+                            <?php endif; ?>
+
+                            <a href="<?php the_permalink($post); ?>"><button class="choose-event">Läs mer och boka</button></a>
                         </div>
-                    <?php endif; ?>
+                    </div> <!-- /event-item -->
 
-                    <div class="event-info">
-                        <h3><?php the_title(); ?></h3>
-                        <?php if ($venue) : ?>
-                            <p><?php echo $venue; ?></p>
-                        <?php endif; ?>
-
-                        <?php if ($date && $time) : ?>
-                            <p class="date-time"><?php echo "$date $time"; ?></p>
-                        <?php endif; ?>
-
-                        <a href="<?php the_permalink($post); ?>"><button class="choose-event">Läs mer och boka</button></a>
-                    </div>
-                </div> <!-- /event-item -->
-
-            <?php endforeach; ?>
-
+                <?php endforeach; ?>
+            </div>
         <?php endif; ?>
     </div>
 </article>

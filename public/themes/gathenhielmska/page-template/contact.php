@@ -50,7 +50,7 @@ $employers = get_posts(['post_type' => 'employer']);
 
     <article class="contact_us">
         <h2>Kontakta oss</h2>
-        <?php echo do_shortcode('[ninja_form id=2]'); ?>
+        <?php echo do_shortcode('[ninja_form id=1]'); ?>
     </article>
 </section>
 

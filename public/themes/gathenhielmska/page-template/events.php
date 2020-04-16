@@ -93,7 +93,7 @@ $categories = get_terms(
 
             <!-- display the title of the month if it's a new month-->
             <?php if ($event_month === $month) : ?>
-                <div class="event__month-title">
+                <div class="month-title">
                     <h2><?php echo "$event_month $year"; ?></h2>
                 </div>
                 <?php $count++; ?>
