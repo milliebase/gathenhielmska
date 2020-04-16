@@ -52,7 +52,17 @@ $categories = get_terms(
 
 ?>
 
+<article class="event-intro">
+    <h2><?php the_title(); ?></h2>
+    <div class="search">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="search-logo" class="search__logo">
+        <form action="/events" method="get" id="form">
+            <input type="text" name="search" placeholder="Sök..." class="search__input">
+            <input type="submit" class="search__hide"></input>
+        </form>
+    </div>
 
+<<<<<<< HEAD
 <h2 class="event-title"><?php the_title(); ?></h2>
 <div class="search-form">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="search-logo" class="search__logo">
@@ -71,6 +81,18 @@ $categories = get_terms(
         </div>
     </form>
 </div>
+=======
+    <div class="event-filter">
+        <form action="/events" method="get" id="form">
+            <div class="event-filter__form">
+                <?php foreach ($categories as $category) : ?>
+                    <input type="submit" value="<?php echo $category->name; ?>" name="filter" class="event-filter__button">
+                <?php endforeach; ?>
+            </div>
+        </form>
+    </div>
+</article>
+>>>>>>> master
 
 
 

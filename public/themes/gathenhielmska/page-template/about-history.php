@@ -6,6 +6,7 @@
 
 
  $icon = get_template_directory_uri().'/assets/images/';
+ $wave = $icon ."waveDesktop.svg";
  $history = get_fields() ;
  
 ?>
@@ -74,6 +75,10 @@
                         $paragraph2 = substr($historyfacts[$i]['Text'],strlen($historyfacts[$i]['Text'])/$breakpoint,strlen($historyfacts[$i]['Text']));      
                  ?>
              <article class="history_facts <?php echo $historyClass ?>" >
+                <?php if ($i === 2): ?>
+                <img class="history_background-wave-desktop" src="<?php echo $wave ?>">
+              
+                    <?php endif; ?>
                 <img src="<?php echo $historyfacts[$i]['background']?>" class="history__facts_background"?>
                      
                 <div class="history_facts-content">  
