@@ -21,10 +21,10 @@ if (function_exists('acf_add_local_field_group')) {
                     'layout' => 'block',
                     'instructions' => '',
                     'required' => 0,
-                   
+
                 ],
-                
-               
+
+
             ],
             'location' => [
                 [
@@ -65,7 +65,7 @@ if (function_exists('acf_add_local_field_group')) {
         [
             'key' => 'field_about_today_boxes-manifest',
             'parent' => 'field_about_today',
-    
+
             'label' => '',
             'name' => 'manifest',
             'type' => 'repeater',
@@ -82,11 +82,11 @@ if (function_exists('acf_add_local_field_group')) {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'default_value' => '',
-                    'max_size' => '2MB',
+                    'max_size' => '3MB',
                     'instructions' => 'background image.',
                     'return' => 'url'
                 ],
-                     [
+                [
                     'key' => 'about_today_background-mobile',
                     'label' => 'Background image Mobile',
                     'name' => 'image-mobile',
@@ -95,7 +95,7 @@ if (function_exists('acf_add_local_field_group')) {
                     'required' => 0,
                     'conditional_logic' => 0,
                     'default_value' => '',
-                    'max_size' => '2MB',
+                    'max_size' => '3MB',
                     'instructions' => 'background image.',
                     'return' => 'url'
                 ],
@@ -115,22 +115,22 @@ if (function_exists('acf_add_local_field_group')) {
                 ],
 
             ],
-            
+
         ],
     );
-     acf_add_local_field(
-            [
+    acf_add_local_field(
+        [
             'key' => 'field_about_today_box-culture',
-                    'label' => 'a cultur ecenter',
-                    'parent' => 'field_about_today',
-                    'name' => 'culture',
-                    'type' => 'group',
-                    'layout' => 'block',
-                    
-                    'required' => 0,
-                
+            'label' => 'a cultur ecenter',
+            'parent' => 'field_about_today',
+            'name' => 'culture',
+            'type' => 'group',
+            'layout' => 'block',
+
+            'required' => 0,
+
             'sub_fields' => [
-                 [
+                [
                     'key' => 'field_about_today_textheader',
                     'label' => 'textbox header',
                     'name' => 'today_text-header',
@@ -143,7 +143,7 @@ if (function_exists('acf_add_local_field_group')) {
                     'name' => 'today_textarea',
                     'type' => 'textarea',
                     'layout' => 'block',
-                    'rows'=>'7',
+                    'rows' => '7',
                 ],
                 [
                     'key' => 'field_about_today_texturl',

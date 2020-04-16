@@ -1,5 +1,7 @@
 <?php /* Template name: Archive */
 
+$uri = get_template_directory_uri();
+
 get_header();
 
 if (isset($_GET['search']) && (!empty($_GET['search']))) {
@@ -41,8 +43,7 @@ $videos = get_posts($videosArgs);
             <?php if (count($events)) : ?>
                 <?php foreach ($events as $post) : setup_postdata($post);  ?>
 
-                    <?php $gallery = get_field('archive_image_gallery') ?>
-
+                <?php $gallery = get_field('archive_image_gallery') ?>
                     <div class="album">
                         <div class="album__info">
                             <h3><?php the_title(); ?></h3>
@@ -58,8 +59,19 @@ $videos = get_posts($videosArgs);
                         <?php if ($gallery) : ?>
                             <div class="album__slider">
                                 <?php foreach ($gallery as $image) : ?>
-                                    <div class="image <?php echo ($image['width'] > $image['height']) ? 'landscape' : 'portrait'; ?>">
-                                        <img src="<?php echo $image['url']; ?>" alt="">
+                                        <div class="image <?php echo ($image['width'] > $image['height']) ? 'landscape' : 'portrait'; ?>">
+                                            <img src="<?php echo $image['url']; ?>" alt="">
+                                        </div>
+
+                                        <div class="modal-overlay">
+                                            <!-- <img src="<?php echo $uri ?>/assets/images/exit.svg" alt="Exit menu button" class="modal-overlay__exit"> -->
+                                        <div class="image">
+                                            <img src="<?php echo $image['url']; ?>" alt="">
+                                        </div>
+                                        <div class="modal-text">
+                                            <p>date</p>
+                                            <p>description</p>
+                                        </div>
                                     </div>
                                 <?php endforeach; ?>
                             </div>
@@ -144,6 +156,9 @@ $videos = get_posts($videosArgs);
             </div>
         <?php endif; ?>
     </article>
+    <div class="modal" id="modal">
+        <span class="close">&times;</span>
+    </div>
 
 </section>
 

@@ -25,6 +25,42 @@
       grid-auto-flow: column dense;
       grid-gap: 5px;
 
+      .modal-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 500;
+        background: rgba(0, 0, 0, 0.3);
+
+        &__exit {
+          background-color: rgba(0, 0, 0, 0.75);
+        }
+
+        &--open {
+          display: block;
+        }
+
+        // &--close {
+        //   display: none;
+        // }
+
+        .modal {
+          max-height: 500px;
+          max-width: 700px;
+          @include bp(tablet){
+            margin: 0 auto;
+          }
+        }
+        .modal-text {
+          color: $color-white;
+          p {
+            padding-bottom: 12px;
+          }
+        }
+      }
 
       img {
         width: 100%;
@@ -97,6 +133,5 @@
         outline: none;
       }
     }
-
   }
 }
