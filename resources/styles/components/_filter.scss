@@ -1,6 +1,7 @@
 .event-filter {
   height: 50px;
-  margin: 18px 0;
+  margin: 18px 16px;
+
   &__form {
     min-width: 100%;
     display: flex;
@@ -36,12 +37,18 @@
   width: 100%;
   overflow-x: scroll;
   padding: $margin-text-box;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   &__form{
     @extend .filter;
+    padding: 0;
 
     input {
-      visibility: hidden;
+      display: none;
     }
   }
 
