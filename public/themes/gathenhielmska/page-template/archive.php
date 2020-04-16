@@ -2,16 +2,30 @@
 
 get_header();
 
-$events = get_posts(['post_type' => 'archive-image']);
-$videos = get_posts(['post_type' => 'archive-video']);
+if (isset($_GET['search']) && (!empty($_GET['search']))) {
+    $search = trim(filter_var($_GET['search'], FILTER_SANITIZE_STRING));
+
+    $eventArgs = [
+        'post_type' => 'archive-image',
+        's' => $search
+    ];
+
+    $eventArgs = [
+        'post_type' => 'archive-video',
+        's' => $search
+    ];
+} else {
+    $eventArgs = ['post_type' => 'archive-image'];
+    $videosArgs = ['post_type' => 'archive-video'];
+}
+
+$events = get_posts($eventArgs);
+$videos = get_posts($videosArgs);
 ?>
 
 <section class="archive">
     <article class="images">
         <h2 class="page__heading">Bilder</h2>
-
-        <div class="images_search">
-        </div>
 
         <div class="event_gallery">
             <?php if (count($events)) : ?>
