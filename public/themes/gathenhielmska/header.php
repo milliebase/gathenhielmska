@@ -28,6 +28,7 @@ $heroImg = get_field($page . '_hero_image');
 $heroHead = get_field($page . '_hero_heading');
 $heroText = get_field($page . '_hero_text');
 
+$aboutToday = get_page_by_path('about/about-today');
 ?>
 
 <!DOCTYPE html>
@@ -154,8 +155,11 @@ $heroText = get_field($page . '_hero_text');
                         <p>Utforska</p>
                     </div>
                 <?php else : ?>
-                    <Huset href="/about-today" class="button home__button">Huset idag</a>
+                    <?php if ($aboutToday) : ?>
+                        <?php $id = $aboutToday->ID; ?>
+                        <a href="<?php echo get_permalink($id); ?>" class="button home__button">Huset idag</a>
                     <?php endif; ?>
+                <?php endif; ?>
             </article>
         </section>
     <?php endif; ?>
