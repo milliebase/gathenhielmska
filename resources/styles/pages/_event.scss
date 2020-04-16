@@ -1,10 +1,14 @@
 .event-intro {
+  width: 100%;
   padding: 0 16px;
-}
+  @include bp(tablet){
+    padding: 0 20px;
+  }
 
-.event-title {
-  margin: 32px 0;
-  font-weight: 600px;
+  h2 {
+    margin: 32px 0;
+    font-weight: 600px;
+  }
 }
 
 .event{
