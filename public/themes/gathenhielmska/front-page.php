@@ -1,7 +1,66 @@
 <?php
-
 get_header();
+?>
 
+<?php $event_args =
+    [
+        'post_type' => 'event_listing',
+        'meta_key' => '_event_start_date',
+        'orderby' => 'meta_value',
+        'order'    => 'ASC',
+    ];
+$events = get_posts($event_args);
+?>
+<article class="event">
+    <div class="event__box-title">
+        <h2>Evenemang</h2>
+        <a href="/events">Se alla evenemang</a>
+    </div>
+    <?php if (count($events)) : ?>
+        <div class="event__wrapper">
+            <?php foreach ($events as $post) : setup_postdata($post); ?>
+                <?php
+                $image = get_event_image($post->ID);
+                $description = $post->post_content;
+                $venue = get_event_venue($post->ID);
+                $date = get_event_date($post->ID);
+                $time = get_event_time_start($post->ID);
+                ?>
+                <div class="event__item">
+                    <?php if ($image) : ?>
+                        <img src="<?php echo $image; ?>" alt="" class="event__item__image">
+                    <?php else : ?>
+                        <img src="#" alt="placeholder img" class="event__item__image">
+                    <?php endif; ?>
+
+                    <?php if ($date) : ?>
+                        <div class="date-box">
+                            <h2 class="date-box__date"><?php echo "$date"; ?></h2>
+                        </div>
+                    <?php endif; ?>
+
+
+                    <div class="event-info">
+                        <h3><?php the_title(); ?></h3>
+                        <?php if ($venue) : ?>
+                            <p><?php echo $venue; ?></p>
+                        <?php endif; ?>
+
+                        <?php if ($date && $time) : ?>
+                            <p class="date-time"><?php echo "$date $time"; ?></p>
+                        <?php endif; ?>
+
+                        <a href="<?php the_permalink($post); ?>"><button class="choose-event">Läs mer och boka</button></a>
+                    </div>
+                </div> <!-- /event-item -->
+            <?php endforeach; ?>
+        </div>
+    <?php endif; ?>
+</article>
+
+
+
+<?php
 $args = [
     'post_type' => 'article',
     'numberposts' => 3
