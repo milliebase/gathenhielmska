@@ -14,48 +14,17 @@ if (function_exists('acf_add_local_field_group')) {
                 fieldshero('about-today')['heading'],
                 fieldshero('about-today')['text'],
                 [
-                    'key' => 'field_about_today_box',
+                    'key' => 'field_about_today',
                     'label' => 'about us',
-                    'name' => 'today_box',
+                    'name' => 'about_today_box',
                     'type' => 'group',
-                    'layout' => 'table',
-                    'instructions' => '',
-                    'collapsed' => 'field_about_today_boxes',
-                    'required' => 0,
-                ],
-                [
-                    'key' => 'field_about_today_textheader',
-                    'label' => 'textbox header',
-                    'name' => 'text',
-                    'type' => 'text',
                     'layout' => 'block',
-                ],
-                [
-                    'key' => 'field_about_today_textbox',
-                    'label' => 'write somthing about Gathenhielmska',
-                    'name' => 'text',
-                    'type' => 'textarea',
-                    'layout' => 'block',
-                ], [
-                    'key' => 'filed_about_today_texturl',
-                    'label' => 'optional page url',
-                    'name' => 'url',
-                    'type' => 'url',
                     'instructions' => '',
                     'required' => 0,
-                    'conditional_logic' => 0,
-                ], [
-                    'key' => 'about_today_textbackground',
-                    'label' => 'optional background',
-                    'name' => 'image',
-                    'type' => 'image',
-                    'instructions' => '',
-                    'required' => 0,
-                    'conditional_logic' => 0,
-                    'default_value' => '',
-                    'max_size' => '2MB',
-                    'instructions' => 'background image.',
+                   
                 ],
+                
+               
             ],
             'location' => [
                 [
@@ -94,19 +63,20 @@ if (function_exists('acf_add_local_field_group')) {
     );
     acf_add_local_field(
         [
-            'key' => 'field_about_today_boxes',
-            'parent' => 'field_about_today_box',
+            'key' => 'field_about_today_boxes-manifest',
+            'parent' => 'field_about_today',
+    
             'label' => '',
-            'name' => 'sub_titdddle',
+            'name' => 'manifest',
             'type' => 'repeater',
             'layout' => 'block',
             'max' => 4,
             'button_label' => __('add'),
             'sub_fields' => [
                 [
-                    'key' => 'about_today_background',
-                    'label' => 'image',
-                    'name' => 'image',
+                    'key' => 'about_today_background-desktop',
+                    'label' => 'Background image Desktop',
+                    'name' => 'image-desktop',
                     'type' => 'image',
                     'instructions' => '',
                     'required' => 0,
@@ -114,6 +84,20 @@ if (function_exists('acf_add_local_field_group')) {
                     'default_value' => '',
                     'max_size' => '2MB',
                     'instructions' => 'background image.',
+                    'return' => 'url'
+                ],
+                     [
+                    'key' => 'about_today_background-mobile',
+                    'label' => 'Background image Mobile',
+                    'name' => 'image-mobile',
+                    'type' => 'image',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
+                    'default_value' => '',
+                    'max_size' => '2MB',
+                    'instructions' => 'background image.',
+                    'return' => 'url'
                 ],
                 [
                     'key'   => 'about_today_boxes_header',
@@ -127,7 +111,55 @@ if (function_exists('acf_add_local_field_group')) {
                     'label' => 'Text',
                     'name'  => 'Text',
                     'type'  => 'textarea',
-                    'rows' => '3'
+                    'rows' => '2'
+                ],
+
+            ],
+            
+        ],
+    );
+     acf_add_local_field(
+            [
+            'key' => 'field_about_today_box-culture',
+                    'label' => 'a cultur ecenter',
+                    'parent' => 'field_about_today',
+                    'name' => 'culture',
+                    'type' => 'group',
+                    'layout' => 'block',
+                    
+                    'required' => 0,
+                
+            'sub_fields' => [
+                 [
+                    'key' => 'field_about_today_textheader',
+                    'label' => 'textbox header',
+                    'name' => 'today_text-header',
+                    'type' => 'text',
+                    'layout' => 'block',
+                ],
+                [
+                    'key' => 'field_about_today_textbox',
+                    'label' => 'write somthing about Gathenhielmska',
+                    'name' => 'today_textarea',
+                    'type' => 'textarea',
+                    'layout' => 'block',
+                    'rows'=>'7',
+                ],
+                [
+                    'key' => 'field_about_today_texturl',
+                    'label' => 'url text',
+                    'name' => 'today_text-url',
+                    'type' => 'text',
+                    'layout' => 'block',
+                ],
+                [
+                    'key' => 'filed_about_today_url',
+                    'label' => 'optional page url',
+                    'name' => 'url',
+                    'type' => 'url',
+                    'instructions' => '',
+                    'required' => 0,
+                    'conditional_logic' => 0,
                 ],
 
             ],

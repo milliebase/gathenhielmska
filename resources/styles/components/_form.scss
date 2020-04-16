@@ -4,9 +4,31 @@
   padding: 48px 0;
   margin-bottom: 48px;
 
+  @include bp(tablet){
+    padding: 48px 0 0;
+  }
+
   h2 {
     margin: 0;
     text-align: center;
+
+    @include bp(tablet){
+      text-align: left;
+      margin-left: 20px;
+    }
+  }
+
+  .nf-field-element {
+    @include bp(tablet){
+      width: 100%;
+    }
+
+    p {
+      @include bp(tablet){
+        padding-left: 98px;
+        padding-right: 117px;
+      }
+    }
   }
 
   .nf-form-fields-required {
@@ -20,16 +42,72 @@
   .nf-form-cont {
     margin: $margin-text-box;
     margin-top: 0;
+
+    @include bp(tablet) {
+      margin: 0;
+    }
   }
 
   .nf-form-content {
     padding: 0;
+
     @include bp(tablet){
-      max-width: 60%;
+      margin: 0;
+      max-width: 100%;
     }
 
     label {
       font-weight: 300 !important;
+    }
+  }
+
+  nf-fields-wrap {
+    @include bp(tablet){
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: repeat(4, 85px) 48px;
+    }
+
+    @include bp(tablet) {
+      nf-field {
+        &:nth-of-type(1) {
+          grid-row: span 1;
+          grid-column: span 2;
+        }
+
+        &:nth-of-type(2) {
+          grid-row-start: 1;
+          grid-row: span 1;
+          grid-column-start: 1;
+          grid-column: span 1;
+        }
+
+        &:nth-of-type(3) {
+          grid-row-start: 2;
+          grid-row: span 1;
+          grid-column-start: 1;
+        }
+
+        &:nth-of-type(4) {
+          grid-row-start: 3;
+          grid-row: span 1;
+          grid-column-start: 1;
+        }
+
+        &:nth-of-type(5) {
+          grid-row-start: 2;
+          grid-row-end: 5;
+          grid-column-start: 2;
+        }
+
+        &:nth-of-type(6) {
+          grid-row-start: 6;
+          grid-row: span 1;
+          grid-column-start: 2;
+        }
+      }
     }
   }
 
@@ -43,16 +121,32 @@
   .field {
     &__name,
     &__email,
-    &__subject {
+    &__subject,
+    &__phone,
+    &__event,
+    &__persons {
       background-color: $color-green !important;
       border: none !important;
       border-bottom: 1px solid $color-white !important;
       color: $color-white !important;
+
+      @include bp(tablet) {
+        margin-left: 20px !important;
+        width: 80% !important;
+      }
     }
 
     &__message {
       resize: vertical !important;
       color: $color-black !important;
+
+      @include bp(tablet) {
+        background-color: $color-green !important;
+        color: $color-white !important;
+        border: none !important;
+        border-left: 1px solid $color-grey !important;
+        resize: none !important;
+      }
     }
 
     &__send {
@@ -65,30 +159,102 @@
       font-weight: 500 !important;
       padding: 8px 30px !important;
       width: 50% !important;
+
+      @include bp(tablet) {
+        width: 100% !important;
+        height: 48px !important;
+        border-radius: 0 !important;
+      }
     }
   }
+}
 
-  .nf-error .nf-field-element::after {
-    background: $color-orange !important;
+.single-event {
+  .contact_us {
+    nf-field {
+      @include bp(tablet) {
+        &:nth-of-type(5) {
+          grid-row-start: 2;
+          grid-row-end: 3;
+          grid-column-start: 2;
+        }
+
+        &:nth-of-type(6) {
+          margin-top: 25px;
+          grid-row-start: 3;
+          grid-row-end: 4;
+          grid-column-start: 2;
+        }
+
+        &:nth-of-type(7) {
+          grid-row-start: 5;
+          grid-column-start: 2;
+        }
+      }
+    }
+
+    .nf-field-label {
+      margin-top: 15px;
+
+      @include bp (tablet) {
+        margin-top: 0 !important;
+        margin-left: 18px !important;
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .field {
+      &__send {
+        margin-top: 25px;
+        width: 60%;
+
+        @include bp(tablet) {
+          margin-top: 0;
+          width: 100%;
+        }
+      }
+    }
   }
+}
 
-  .nf-error-msg {
-    color: $color-orange !important;
+.nf-pass .nf-field-element::after {
+  @include bp(tablet) {
+    right: unset !important;
   }
+}
 
-  .nf-error .ninja-forms-field {
-    border-color: $color-orange !important;
+.nf-error .nf-field-element::after {
+  background: $color-orange !important;
+
+  @include bp(tablet) {
+    right: unset !important;
   }
+}
 
-  .nf-form-content button:hover, .nf-form-content input[type=button]:hover, .nf-form-content input[type=submit]:hover {
-    background: #c4c4c4 !important;
+.nf-error-msg {
+  color: $color-orange !important;
+
+  @include bp(tablet) {
+    padding-left: 20px;
   }
+}
 
-  .nf-response-msg {
-    background-color: $color-dark-green !important;
-    border-radius: 10px !important;
-    padding: 2% !important;
-    margin-top: 5% !important;
+.nf-error .ninja-forms-field {
+  border-color: $color-orange !important;
+}
+
+.nf-form-content button:hover, .nf-form-content input[type=button]:hover, .nf-form-content input[type=submit]:hover {
+  background: #c4c4c4 !important;
+}
+
+.nf-response-msg {
+  background-color: $color-dark-green !important;
+  border-radius: 10px !important;
+  padding: 2% !important;
+  margin-top: 5% !important;
+
+  @include bp(tablet) {
+    width: 80% !important;
+    margin-left: 98px;
   }
-
 }

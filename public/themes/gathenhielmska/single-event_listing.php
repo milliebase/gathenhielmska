@@ -111,8 +111,9 @@
         </div> <!-- /also-play -->
     <?php endif; ?>
 
-    <div class="booking">
-        <?php echo do_shortcode('[ninja_form id=2]'); ?>
+    <div class="booking contact_us">
+        <h2>Boka</h2>
+        <?php echo do_shortcode('[ninja_form id=4]'); ?>
     </div>
 
     <div class="more-events">

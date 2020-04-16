@@ -14,7 +14,6 @@ if (function_exists('acf_add_local_field_group')) {
                 'name' => 'profile',
                 'type' => 'image',
                 'instructions' => '',
-                'required' => 1,
                 'conditional_logic' => 0,
                 'default_value' => '',
                 'max_size' => '2MB',

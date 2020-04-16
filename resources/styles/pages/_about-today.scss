@@ -1,0 +1,67 @@
+.about-today{
+    max-width: 100%;
+    overflow-x:hidden ;
+
+
+    .today_manifest{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        position: relative;
+        justify-content: space-around;
+    
+        .manifest_box{
+           
+            overflow: hidden;
+            width: 375px;
+            height: 243px;
+            position: relative;
+            color:$color-white;
+            
+           
+           
+            .manifest__box-background-desktop{
+             display: none;
+
+            }
+            .manifest__box-background-mobile{
+                   display: block;
+                position: absolute;
+                z-index: -1;
+                width:100%;
+                 object-fit: cover;
+
+            }
+            .manifest__box-text{
+                h2{
+                    margin:2px 4px;
+                    padding:0px;
+                }
+                p{
+                    margin:0px;
+                }
+                padding:17px 75px 16px 16px ;
+                background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 100%);
+                position: absolute;
+                bottom: 0px;
+            }
+        }
+        
+    }
+  .today_culture{
+      padding:40px 23px 48px 16px;
+        .culture__paragraph2{
+            a{
+                color:black;
+                font-weight: bolder;
+                text-decoration: underline;
+                .today___arrow-icon{
+                    filter: invert(1);
+                    text-decoration: none;
+                    transform: scale(1.2) translate(5px, 2px);
+                }
+            }
+        }
+    }
+
+}
