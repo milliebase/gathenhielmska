@@ -5,6 +5,10 @@
     min-width: 100%;
     display: flex;
     overflow: auto;
+    @include bp(tablet){
+      display: flex;
+      overflow: initial;
+    }
   }
   &__button {
     flex: 0 0 auto;
@@ -17,6 +21,10 @@
     width: 147px;
     margin: 0 18px 0 0;
     font-size: 14px;
+    @include bp(tablet){
+      min-width: 157px;
+      font-size: 18px;
+    }
   }
   &__button:hover {
     cursor: pointer;
