@@ -28,8 +28,6 @@ $videos = get_posts($videosArgs);
 
         <h2 class="page__heading">Bilder</h2>
 
-<<<<<<< HEAD
-=======
         <article class="search">
             <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="search-logo" class="search__logo">
             <form method="get" id="form">
@@ -38,7 +36,6 @@ $videos = get_posts($videosArgs);
             </form>
         </article>
 
->>>>>>> master
         <div class="event_gallery">
 
             <?php if (isset($_GET['search'])) : ?>
