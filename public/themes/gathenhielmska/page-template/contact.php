@@ -19,6 +19,8 @@ $employers = get_posts(['post_type' => 'employer']);
 
                     <?php if ($employerImage) : ?>
                         <img src="<?php echo $employerImage['url']; ?>" alt="<?php echo ($employerImage['alt'] != '') ? $employerImage['alt'] : '' ?>">
+                    <?php else : ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png" alt="Contact image">
                     <?php endif; ?>
 
                     <div class="details__item__info">

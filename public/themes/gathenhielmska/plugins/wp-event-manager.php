@@ -127,16 +127,6 @@ function add_fields_event_manager($fields)
 }
 
 //get event fields
-function get_event_month($postId)
-{
-    return (date_i18n('F', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
-}
-
-function get_event_year($postId)
-{
-    return (date_i18n('Y', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
-}
-
 function get_event_image($postId)
 {
     return get_metadata('post', $postId, '_event_banner', true);
@@ -149,7 +139,7 @@ function get_event_venue($postId)
 
 function get_event_date($postId)
 {
-    return (date_i18n('j F', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
+    return (date_i18n('j', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
 }
 
 function get_event_time_start($postId)
@@ -165,6 +155,21 @@ function get_event_time_end($postId)
 function get_list_event_date($postId)
 {
     return (date_i18n('d/m', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
+}
+
+function get_event_month($postId)
+{
+    return (date_i18n('F', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
+}
+
+function get_event_year($postId)
+{
+    return (date_i18n('Y', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
+}
+
+function get_event_month_numb($postId)
+{
+    return (date_i18n('n', strtotime(get_metadata('post', $postId, '_event_start_date', true))));
 }
 
 

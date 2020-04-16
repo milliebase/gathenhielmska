@@ -38,6 +38,9 @@
   overflow-x: scroll;
   padding: $margin-text-box;
   -ms-overflow-style: none;
+  @include bp(tablet){
+    padding: 32px 400px 32px 20px;
+  }
 
   &::-webkit-scrollbar {
     display: none;

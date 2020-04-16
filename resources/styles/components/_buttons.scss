@@ -20,6 +20,9 @@
   #form {
     width:100%;
     display: flex;
+    @include bp(tablet){
+      width: 50%;
+    }
   }
 
   &__input {

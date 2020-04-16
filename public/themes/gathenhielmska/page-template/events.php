@@ -2,7 +2,6 @@
 
 get_header();
 
-
 if (isset($_GET['search']) && (!empty($_GET['search']))) {
     $search = trim(filter_var($_GET['search'], FILTER_SANITIZE_STRING));
 
@@ -86,15 +85,31 @@ $categories = get_terms(
             $time = get_event_time_start($post->ID);
             $year = get_event_year($post->ID);
 
+            $months = [
+                'Januari',
+                'Februari',
+                'Mars',
+                'April',
+                'Maj',
+                'Juni',
+                'Juli',
+                'Augusti',
+                'September',
+                'Oktober',
+                'November',
+                'December'
+            ];
+
             $event_month = get_event_month($post->ID);
+            $month_index = (get_event_month_numb($post->ID)-1);
             $reference = "+$count month";
             $month = date('F', strtotime($reference));
             ?>
-
+            
             <!-- display the title of the month if it's a new month-->
             <?php if ($event_month === $month) : ?>
                 <div class="month-title">
-                    <h2><?php echo "$event_month $year"; ?></h2>
+                    <h2><?php echo "$months[$month_index] $year"; ?></h2>
                 </div>
                 <?php $count++; ?>
             <?php endif; ?>
@@ -121,6 +136,10 @@ $categories = get_terms(
             </div> <!-- /event-item -->
 
         <?php endforeach; ?>
+    <?php else : ?>
+        <div class="event-no-result">
+            <p>Åh nej! Det finns tyvärr inga evenemang som matchar din sökning.</p>
+        </div>
     <?php endif; ?>
 </article>
 

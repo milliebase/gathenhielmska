@@ -144,3 +144,11 @@
     }
   }
 }
+
+.single-event {
+  .hero {
+    @include bp(tablet) {
+      padding-left: 0;
+    }
+  }
+}

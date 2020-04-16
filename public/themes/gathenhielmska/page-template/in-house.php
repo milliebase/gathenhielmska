@@ -21,6 +21,8 @@ $activities = get_posts(['post_type' => 'in-house-activity']);
 
                     <?php if ($activityImage) : ?>
                         <img src="<?php echo $activityImage['url']; ?>" alt="<?php echo ($activityImage['alt'] != '') ? $activityImage['alt'] : '' ?>">
+                    <?php else : ?>
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder.png" alt="In-house image">
                     <?php endif; ?>
 
                     <div class="details__item__info">
