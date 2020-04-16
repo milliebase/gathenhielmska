@@ -18,14 +18,14 @@
         padding:12px;
         overflow: auto;
         position: relative;
-    
-    .timeline_boxes{  
+
+    .timeline_boxes{
             display: flex;
             flex-direction: row;
-          
+
         .timeline__box{
             min-width: 260px;
-        
+
             padding: 12px 0px 13px 0px ;
             height:auto;
             text-align: center;
@@ -33,9 +33,9 @@
            display: flex;
            flex-direction: column;
            justify-self: start;
-           
-            
-        
+
+
+
              .timeline__year{
                 font-size: 21px;
                 width:143px;
@@ -45,7 +45,7 @@
                 .timeline___line-dot{
                 width: 8px;
                 height: 8px;
-                background-color: $color-green;         
+                background-color: $color-green;
                 border-radius: 50%;
                 position: relative;
                 bottom:4px;
@@ -67,19 +67,19 @@
                  height:1px;
                  position: relative;
                  left:28.7%;
-                    
+
                 }
                 .timeline__text{
                     display: block;
                     width: 163px;
                     font-size: 14px;
                     text-align: center;
-                   
-                    
+
+
                 }
 
            }
-        } 
+        }
         }
         .timeline_moreinfo{
             width: 98%;
@@ -96,7 +96,7 @@
         position: relative;
 
 
- 
+
     .history_facts-content{
         padding:16px 16px 16px 16px;
         width: 100%;
@@ -111,12 +111,12 @@
                transform: scale(1.2) translateY(2px);
                margin-left: 6px;
            }
-         
+
         }
-        
-    
+
+
      }
-    
+
     }
      .history_foundead{
             color:white;
@@ -128,7 +128,7 @@
                 margin: 10px 0px;
             }
            .history_paragraph2{
-              
+
               margin:22px 0px;
             }
             .history__facts_background{
@@ -137,9 +137,9 @@
                 object-fit:fill;
                 z-index:-1;
               }
-            
+
         }
-    
+
     .history_part{
         padding:0 10px 30px 10px;;
         overflow: hidden;
@@ -150,24 +150,27 @@
             width: 100%;
             display: flex;
             flex-direction: row;
-        
+            height: 295px;
+
             overflow-x: auto;
             img{
-                margin: 0px 10px;
+              height: 100%;
+              object-fit: cover;
+              margin: 0px 10px;
             }
         }
     }
     .history_saved{
         color:white;
         background: $color-green;
-        
+
         .history_background-wave-desktop{
           display: none;
-        
+
         }
-     
-        
-        
+
+
+
       .history__facts_background{
              display: block;
              position: absolute;
@@ -176,7 +179,7 @@
             opacity: 0.25;
            filter: contrast(180%);
            transform: scale(0.67) translate(43%,34.8%);
-       
+
         }
     }
 
@@ -185,13 +188,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-      
+
         h2{
             align-self: start;
             padding-left: 20px;
         }
         a{
-          
+
             all:unset;
             display: block;
               margin:20px 0px ;
@@ -213,7 +216,7 @@
         .history_desktop-now-img{
             display: none;
         }
-            
+
         }
        .history___arrow-icon{
                 filter: invert(1);
@@ -226,11 +229,11 @@ $var:100;
     @while $var < 1201 {
      @media (min-width: $var*1px){
         @if $var >780{
-           
+
             .history{
-            
+
                .timline_headline{
-                 
+
                    padding-left: 21%;
                }
                 width:100%;
@@ -260,17 +263,17 @@ $var:100;
                             margin-bottom: 100px;
                             top:0px;
                             background-color: white;
-        
+
                          }
                    }
                 .history_foundead, .history_saved{
-                  
+
                 display: flex;
-           
-            
-                   
+
+
+
                     .history_facts-content{
-                 
+
                      margin-left: auto;
                      display: flex;
                      flex-direction: column;
@@ -282,7 +285,7 @@ $var:100;
                         transform: scale(0.82);
                         width: 79%;
                           h2{
-                              margin-left:5%; 
+                              margin-left:5%;
                           }
                     }@else{
                         transform: scale(1);;
@@ -290,23 +293,23 @@ $var:100;
                         h2{
                             margin-left:-8%;
                         }
-                        
+
                     }
 
                     h2{
                         position: relative;
                          @if $var >1000{
-                               
+
                             }@else{
-                                   
+
                             }
-                       
+
                     }
                         p{
                             position: relative;
                             left:12%;
                         }
-                     
+
                        .history_paragraph{
                            display: flex;
                            width: 100%;
@@ -314,19 +317,19 @@ $var:100;
                            flex-direction: row;
                             justify-content: space-between;
                             @if $var >1000{
-                                margin-left:-15%;  
+                                margin-left:-15%;
                             }@else{
-                                 margin-left:-4%;  
+                                 margin-left:-4%;
                             }
-                            
+
                            p{
                                 width:343px;
-                              
+
                            }
-                        
+
                              .history_paragraph2{
                                  position: relative;
-                              
+
                                  margin-top: 0px;
                                  a{
                                      margin-left: 12.7%;
@@ -337,17 +340,17 @@ $var:100;
                            padding-top: 50px;
                        }
 
-                
+
                     }
 
-                   
+
                 }
                   .history_part{
                       @if $var <1000{
                           min-width:882px;
                           transform: scale(0.82);
                           left:11%;
-                         
+
 
                       }@else{
                           transform: scale(1);
@@ -357,14 +360,14 @@ $var:100;
                             h2{
                                 padding-left: 50px;
                             }
-                            
+
                          }
-                           
+
                            width: 79%;
-                        
+
                            align-self: flex-end;
-                       
-                           p{ 
+
+                           p{
                                text-align: center;
                                font-size: 18px;
                                left:8%;
@@ -372,7 +375,7 @@ $var:100;
                                margin: auto;
                                margin-bottom: 20px;
                             }
-                          
+
                            .history__facts_slider-container{
                                min-width: 782px;
                                display: flex;
@@ -380,16 +383,16 @@ $var:100;
                                img{
                                margin: 0px;
                                padding: 0px;
-                            
-                             
+
+
                            }
                            }
 
-                    
+
                        }
                           .history_now{
                               max-width: 80%;
-                              
+
                               align-self:flex-end;
                               padding:20px 0 50px;
                               display: flex;
@@ -410,6 +413,8 @@ $var:100;
                                      display: block;
                                      margin:auto;
                                      width: 90%;
+                                     height: 65%;
+                                     object-fit: cover;
                                     border-radius: 2px;
                                  }
                                  .history_desktop-now-img:nth-child(4){
@@ -420,10 +425,10 @@ $var:100;
                                      &:hover{
                                         opacity:1;
                                     }
-                                    
+
                                  }
                               }
-                               
+
                            }
             }
         }
@@ -433,13 +438,13 @@ $var:100;
             margin:20px 0px;
             overflow:hidden;
             display: flex;
-          
+
             align-items: center;
             width:1020px;
              height: 1000px;
         }
         @include timlineDesktop(0.70,13%);
-       
+
         }
         @if $var >850 and $var < 1001{
              .timeline_desktop{
@@ -459,10 +464,10 @@ $var:100;
              }
             @include timlineDesktop(1,0%);
         }
-        
+
     }
     $var :$var +50;
 }
-  
+
 
 
