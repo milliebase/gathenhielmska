@@ -2,6 +2,9 @@
   width: 100%;
   margin-bottom: 20px;
   padding: 0 17px;
+  @include bp(tablet){
+    width: 70%;
+  }
 
   h3 {
     margin-bottom: 0;
