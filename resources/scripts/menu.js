@@ -10,7 +10,8 @@ const logo = document.querySelector('.navbar__logo');
 const wave = document.querySelector('.navbar__panel__wave');
 const exit = document.querySelector('.navbar__overlay__exit');
 
-const abouts = document.querySelectorAll('.menu-item-has-children');
+const abouts = document.querySelectorAll('.menu-item-has-children a');
+
 
 if (window.location.pathname === "/") {
   window.addEventListener('scroll', () => {
@@ -35,15 +36,16 @@ exit.addEventListener('click', toggleOverlay);
 
 abouts.forEach(about => {
   about.addEventListener('click', (e) => {
-    const subMenu = about.querySelector('.sub-menu');
+    if (e.target.parentElement.classList.contains('menu-item-has-children')) {
+      e.preventDefault();
 
-    e.preventDefault();
+      const subMenu = e.target.parentElement.querySelector('.sub-menu');
 
-    if (subMenu.style.display === '' || subMenu.style.display === 'none') {
-      subMenu.style.display = 'block';
-    } else {
-      subMenu.style.display = 'none';
+      if (subMenu.style.display === '' || subMenu.style.display === 'none') {
+        subMenu.style.display = 'block';
+      } else {
+        subMenu.style.display = 'none';
+      }
     }
-
   })
 });
