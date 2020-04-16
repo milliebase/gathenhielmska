@@ -2,7 +2,8 @@
 get_header();
 ?>
 
-<?php $event_args =
+<?php
+$event_args =
     [
         'post_type' => 'event_listing',
         'meta_key' => '_event_start_date',
@@ -20,11 +21,28 @@ $events = get_posts($event_args);
         <div class="event__wrapper">
             <?php foreach ($events as $post) : setup_postdata($post); ?>
                 <?php
+                $months = [
+                    'Januari',
+                    'Februari',
+                    'Mars',
+                    'April',
+                    'Maj',
+                    'Juni',
+                    'Juli',
+                    'Augusti',
+                    'September',
+                    'Oktober',
+                    'November',
+                    'December'
+                ];
+
                 $image = get_event_image($post->ID);
                 $description = $post->post_content;
                 $venue = get_event_venue($post->ID);
                 $date = get_event_date($post->ID);
                 $time = get_event_time_start($post->ID);
+                $event_month = get_event_month($post->ID);
+                $month_index = (get_event_month_numb($post->ID) - 1);
                 ?>
                 <div class="event__item">
                     <?php if ($image) : ?>
@@ -35,7 +53,7 @@ $events = get_posts($event_args);
 
                     <?php if ($date) : ?>
                         <div class="date-box">
-                            <h2 class="date-box__date"><?php echo "$date"; ?></h2>
+                            <h2 class="date-box__date"><?php echo "$date $months[$month_index]"; ?></h2>
                         </div>
                     <?php endif; ?>
 
@@ -47,7 +65,7 @@ $events = get_posts($event_args);
                         <?php endif; ?>
 
                         <?php if ($date && $time) : ?>
-                            <p class="date-time"><?php echo "$date $time"; ?></p>
+                            <p class="date-time"><?php echo "$date $months[$month_index] $time"; ?></p>
                         <?php endif; ?>
 
                         <a href="<?php the_permalink($post); ?>"><button class="choose-event">Läs mer och boka</button></a>

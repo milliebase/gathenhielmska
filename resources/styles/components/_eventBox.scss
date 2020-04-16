@@ -1,6 +1,9 @@
 .event{
   width: 100%;
-  padding: 0 100px;
+  @include bp(tablet){
+    padding: 0 100px;
+  }
+
 
   &__box-title {
     width: 100%;
@@ -49,7 +52,7 @@
     margin: 16px 0 0 16px;
     width: 80%;
     @include bp(tablet){
-      max-width: 33%;
+      width: 33%;
     }
 
 
