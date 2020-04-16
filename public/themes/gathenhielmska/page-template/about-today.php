@@ -23,6 +23,7 @@
               $paragraph2 =substr($cultureCenter['today_textarea'],strlen($cultureCenter['today_textarea'])/2,strlen($cultureCenter['today_textarea']));      
             ?>
             <h2 class="culture__header"><?php echo $cultureCenter['today_text-header'] ?></h2>
+           <div class="culture__text-box">
             <div class="culture__paragraph">
                  <p>
                     <?php echo $paragraph1 ?>
@@ -32,9 +33,10 @@
             <p>
                 <?php echo $paragraph2 ?>
             </p> 
-            <a href="<?php echo $cultureCenter['url']?>">
-            <?php echo $cultureCenter['today_text-url']?>
-            <img src="<?php echo $icon."arrow_right.svg"?>" class="today___arrow-icon">
+                <a href="<?php echo $cultureCenter['url']?>">
+                <?php echo $cultureCenter['today_text-url']?>
+                <img src="<?php echo $icon."arrow_right.svg"?>" class="today___arrow-icon">
+            </div>
             </div>
         </article>
     </section>
