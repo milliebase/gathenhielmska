@@ -130,8 +130,8 @@ $heroText = get_field($page . '_hero_text');
                     <?php if ($page !== 'home') : ?>
                         <h1><?php the_title(); ?></h1>
                     <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska.svg" alt="Gathenhielmska logo" />
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska2.svg" alt="Gathenhielmska logo" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska.svg" alt="Gathenhielmska logo" id="letter_logo" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska2.svg" alt="Gathenhielmska logo" id="text_logo" />
                     <?php endif; ?>
 
                     <h2>

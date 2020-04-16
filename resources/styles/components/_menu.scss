@@ -26,7 +26,7 @@
 
     &--hide {
       opacity: 0;
-      top: -80px;
+      left: -100px;
     }
 
     @include bp(tablet) {
@@ -64,7 +64,8 @@
     z-index: 95;
     background-color: $color-dark-green;
     overflow: scroll;
-    top: -100vh;
+    top: 0;
+    left: 100vw;
     -webkit-transition: all 1.2s ease;
     -moz-transition: all 1.2s ease;
     -o-transition: all 1.2s ease;
@@ -77,7 +78,7 @@
 
     &--show {
       opacity: 1;
-      top: 0;
+      left: 0;
     }
 
     &__panel {
@@ -206,6 +207,10 @@
     .desktop__ctu {
       @include flex-between();
       padding: 0 17px;
+
+      p {
+        text-decoration: underline;
+      }
     }
   }
 }

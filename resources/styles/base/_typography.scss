@@ -6,6 +6,7 @@ p {
   font-size: 16px;
   font-weight: 300;
   line-height: 23px;
+
   @include bp(tablet){
     font-size: 18px;
   }
@@ -41,7 +42,8 @@ h3 {
   line-height: 23px;
   letter-spacing: 0.04em;
   @include bp(tablet){
-    font-size: 18px;
+    font-size: 23px;
+    line-height: 34px;
   }
 }
 
@@ -59,6 +61,7 @@ h4 {
   line-height: 34px;
   letter-spacing: 0.02em;
   margin: 32px 17px;
+
   @include bp(tablet){
     font-size: 40px;
     line-height: 57px;
