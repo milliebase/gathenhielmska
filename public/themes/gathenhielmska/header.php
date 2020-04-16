@@ -35,13 +35,13 @@ $heroText = get_field($page . '_hero_text');
 
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1">
     <meta name="theme-color" content="#6d9aea">
 
     <?php wp_head(); ?>
 </head>
 
-<body  <?php body_class(); ?>>
+<body <?php body_class(); ?>>
 
     <div class="navbar">
         <div class="navbar__panel">
@@ -58,7 +58,7 @@ $heroText = get_field($page . '_hero_text');
             </svg>
         </div>
 
-        <div class="navbar__overlay hidden">
+        <div class="navbar__overlay">
             <div class="navbar__overlay__panel">
                 <div class="language">
                     <img src="<?php echo $uri ?>/assets/images/language.svg" alt="Choose language icon">
@@ -70,29 +70,55 @@ $heroText = get_field($page . '_hero_text');
 
             <?php wp_nav_menu([
                 'menu_class' => 'menu',
-                'menu_id' => '',
+                'menu_id' => 'mobile_menu',
                 'container' => '',
-                'theme_location' => 'header_menu'
+                'theme_location' => 'mobile_menu'
             ]) ?>
 
             <div class="information">
-                <img src="<?php echo $uri ?>/assets/images/logos/gathenhielmska_gradient.svg" alt="Gathenhielmska logo with gradient" class="information__logo">
+                <img src="<?php echo $uri ?>/assets/images/logos/gathenhielmska_gradient.svg" alt="Gathenhielmska logo with gradient" class="logo">
 
                 <div class="information__ctu">
-                    <p>Login</p>
+                    <p>Logga in</p>
 
                     <a href="#">
-                        <img src="<?php echo $uri ?>/assets/images/logos/facebook.svg" alt="Gathenhielmska Facebook link">
+                        <img class="facebook" src="<?php echo $uri ?>/assets/images/logos/facebook.svg" alt="Gathenhielmska Facebook link">
                     </a>
 
                     <a href="#">
-                        <img src="<?php echo $uri ?>/assets/images/logos/instagram.svg" alt="Gathenhielmska Instagram link">
+                        <img class="instagram" src="<?php echo $uri ?>/assets/images/logos/instagram.svg" alt="Gathenhielmska Instagram link">
                     </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="desktop">
+            <div class="desktop__nav">
+                <div class="desktop__nav__logo">
+                    <a href="<?php echo home_url(); ?>">
+                        <img src="<?php echo $uri ?>/assets/images/logos/gathenhielmska_gradient.svg" alt="Gathenhielmska logo with gradient">
+                    </a>
+                </div>
+
+                <?php wp_nav_menu([
+                    'menu_class' => 'menu',
+                    'menu_id' => 'desktop_menu',
+                    'container' => '',
+                    'theme_location' => 'desktop_menu'
+                ]) ?>
+
+                <div class="desktop__ctu">
+                    <p>Logga in</p>
+
+                    <div class="desktop__language language">
+                        <img src="<?php echo $uri ?>/assets/images/language.svg" alt="Choose language icon">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <!--/navbar-->
+
     <?php if ($page !== 'single_event') : ?>
         <section class=<?php echo ($page === 'home') ? 'hero__home' : 'hero' ?>>
             <?php if ($heroImg) : ?>
@@ -104,8 +130,8 @@ $heroText = get_field($page . '_hero_text');
                     <?php if ($page !== 'home') : ?>
                         <h1><?php the_title(); ?></h1>
                     <?php else : ?>
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska.svg" alt="Gathenhielmska logo" />
-                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska2.svg" alt="Gathenhielmska logo" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska.svg" alt="Gathenhielmska logo" id="letter_logo" />
+                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logos/gathenhielmska2.svg" alt="Gathenhielmska logo" id="text_logo" />
                     <?php endif; ?>
 
                     <h2>

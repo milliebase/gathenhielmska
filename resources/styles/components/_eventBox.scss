@@ -1,0 +1,109 @@
+.event{
+  width: 100%;
+  padding: 0 100px;
+
+  &__box-title {
+    width: 100%;
+    padding: 0 16px;
+    @include bp(tablet){
+      padding: 48px 20px 32px 20px;
+    }
+
+    h2 {
+      margin: 8px 0 0 0;
+      @include bp(tablet){
+        margin: 0;
+      }
+    }
+
+    a {
+      color: $color-black;
+      text-decoration: underline;
+    }
+  }
+
+  &__wrapper {
+    min-width: 100%;
+    display: flex;
+    overflow: auto;
+    @include bp(tablet){
+      max-width: 60%;
+      cursor: pointer;
+      transform: scale(0.998);
+
+      &.active {
+        cursor: grabbing;
+        cursor: -webkit-grabbing;
+      transform: scale(1);
+      }
+    }
+
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex: 0 0 auto;
+    margin: 16px 0 0 16px;
+    width: 80%;
+    @include bp(tablet){
+      max-width: 33%;
+    }
+
+
+    &__image {
+    width: 100%;
+    height: 284px;
+    object-fit: cover;
+    z-index: 1;
+    }
+
+    .date-box {
+      @include flex-center();
+      text-align: center;
+      width: 62px;
+      height: 62px;
+      background-color: $color-orange;
+      margin: 0;
+      color: $color-white;
+      z-index: 2;
+      position: absolute;
+      right: 0;
+
+      &__date {
+        margin: 0;
+        font-weight: normal;
+        line-height: 24px;
+        font-size: 24px;
+      }
+    }
+
+    .event-info {
+      width: 100%;
+      padding: 0 16px;
+      h3, p {
+        margin: 0;
+        text-transform: none;
+      }
+      h3 {
+        margin: 8px 0;
+      }
+      .date-time {
+        font-weight: 800;
+      }
+
+      .choose-event {
+        width: 70%;
+        height: 44px;
+        background-color: $color-black;
+        color: $color-white;
+        border-radius: 4px;
+        border: none;
+        font-size: 16px;
+        margin: 4px 0 24px 0;
+      }
+    }
+  }
+}

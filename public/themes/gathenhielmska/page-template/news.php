@@ -23,9 +23,10 @@ $months = [
     <h2 class="page__heading"><?php the_title(); ?></h2>
 
     <article class="search">
-        <form method="get">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/search.svg" alt="search-logo" class="search__logo">
+        <form method="get" id="form">
             <input type="text" name="search" placeholder="Sök..." class="search__input">
-            <input type="submit" value="submit">
+            <input type="submit" class="search__hide"></input>
         </form>
     </article>
 
@@ -48,10 +49,14 @@ $months = [
     <article class=" news__content">
         <?php
 
-        if (isset($_GET['month'])) {
-            echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter denna månaden" month="' . $_GET['month'] . '"]');
-        } elseif (isset($_GET['search'])) {
-            echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter på det du sökte search="' . $_GET['search'] . '"]');
+        if (isset($_GET['month']) && (!empty($_GET['month']))) {
+            $month = trim(filter_var($_GET['month'], FILTER_SANITIZE_STRING));
+
+            echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter denna månaden" month="' . $month . '"]');
+        } elseif (isset($_GET['search']) && (!empty($_GET['search']))) {
+            $search = trim(filter_var($_GET['search'], FILTER_SANITIZE_STRING));
+
+            echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter på det du sökte search="' . $search . '"]');
         } else {
             echo do_shortcode('[ajax_load_more post_type="article" no_results_text="Åh nej! Det finns tyvärr inga nyheter denna månaden"]');
         }

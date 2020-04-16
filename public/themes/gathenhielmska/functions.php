@@ -48,7 +48,8 @@ add_filter('acf/settings/remove_wp_meta_box', '__return_false');
 //Hide ACF from admin_menu
 // add_filter('acf/settings/show_admin', '__return_false');
 
-register_nav_menu('header_menu', __('Header menu'));
+register_nav_menu('mobile_menu', __('Mobile menu'));
+register_nav_menu('desktop_menu', __('Desktop menu'));
 
 //Add functionality
 require get_template_directory() . '/plate.php';

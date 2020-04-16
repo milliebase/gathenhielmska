@@ -8,6 +8,11 @@ footer{
     overflow: hidden;
     margin: 0px;
 
+    @include bp(tablet) {
+      padding-left: 175px;
+      width: 100%;
+    }
+
 
 
     .footer_container{

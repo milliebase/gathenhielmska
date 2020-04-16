@@ -54,3 +54,19 @@
     @media (min-width: 992px) { @content; }
   }
 }
+
+//Menu
+@mixin menu-item-a {
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 5%;
+}
+
+@mixin sub-menu-a {
+  text-decoration: underline;
+  font-weight: 300;
+  padding-left: 10%;
+}

@@ -1,85 +1,13 @@
 .event-intro {
-  padding: 0 16px;
-}
-
-.event-title {
-  margin: 32px 0;
-  font-weight: 600px;
-}
-
-.event{
   width: 100%;
-
-  &__month-title {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 50px;
-    color: $color-white;
-    background-color: $color-green;
-    padding: 0 16px;
-
-    h2 {
-      font-weight: bold;
-      margin:0;
-    }
+  padding: 0 16px;
+  @include bp(tablet){
+    padding: 0 20px;
   }
 
-  &__item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-
-    &__image {
-    width: 100%;
-    height: 206px;
-    object-fit: cover;
-    position: relative;
-    z-index: 1;
-    }
-
-    .date-box {
-      @include flex-center();
-      text-align: center;
-      width: 62px;
-      height: 62px;
-      position: absolute;
-      z-index: 2;
-      background-color: $color-orange;
-      margin: 0;
-      color: $color-white;
-      h2 {
-        margin: 0;
-        line-height: 24px;
-      }
-    }
-
-    .event-info {
-      width: 100%;
-      padding: 0 16px;
-      h3, p {
-        margin: 0;
-        text-transform: none;
-      }
-      h3 {
-        margin: 8px 0 18px 0;
-      }
-      .date-time {
-        font-weight: 800;
-      }
-
-      .choose-event {
-        width: 50%;
-        height: 44px;
-        background-color: $color-black;
-        color: $color-white;
-        border-radius: 4px;
-        border: none;
-        font-size: 16px;
-        margin: 4px 0 24px 0;
-      }
-    }
-
+  h2 {
+    margin: 32px 0;
+    font-weight: 600px;
   }
 }
 
@@ -142,5 +70,20 @@
     }
   }
  }
+
+ .month-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color: $color-white;
+    background-color: $color-green;
+    padding: 0 16px;
+
+    h2 {
+      font-weight: bold;
+      margin:0;
+    }
+  }
 }
 

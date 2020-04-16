@@ -27,9 +27,16 @@
       background-blend-mode: darken;
       position: relative;
       z-index: 2;
+      @include bp(tablet){
+        padding: 0 20px;
+      }
 
       &__text {
         @include flex-col-start();
+        @include bp(tablet){
+          padding: 0;
+          width: 70%;
+        }
 
         h2, p {
           margin: 0;
@@ -56,6 +63,9 @@
 .info {
   color: $color-black;
   padding: 32px 16px 22px 16px;
+  @include bp(tablet){
+    padding: 48px 20px 22px 20px;
+  }
 
   h2 {
     margin: 0 0 8px 0;
@@ -71,6 +81,9 @@
   }
 
   &__description {
+    @include bp(tablet){
+      width: 90%;
+    }
     p {
       margin: 8px 0 0 0;
     }
@@ -82,18 +95,27 @@
   background-color: $color-light;
   color: $color-black;
   padding: 28px 0 28px 16px;
+  @include bp(tablet){
+    @include flex-row();
+    justify-content: center;
+  }
   p {
     margin: 0;
   }
   .date-time {
     font-weight: 800;
     margin-top: 8px;
+    @include bp(tablet){
+      margin: 0 10px;
+
+    }
   }
 }
 
 .booking {
   background-color: $color-green;
   color: $color-white;
+
   h3 {
     margin: 0;
     font-size: 24px;
@@ -101,6 +123,12 @@
     font-weight: 100;
     text-align: center;
     padding: 48px 0 0 0;
+    @include bp(tablet){
+      font-size: 48px;
+      font-weight: bold;
+      padding: 48px 0 24px 0;
+
+    }
   }
 
   .ninja-forms-req-symbol {
@@ -129,7 +157,7 @@
       input[type=text],
       input[type=email],
       select {
-        background-color: $color-green;
+        background-color: $color-white;
         color: $color-white;
         height: 44px;
       }
@@ -145,11 +173,57 @@
       }
     }
   }
+
+  .nf-error .nf-field-element::after {
+    background: $color-orange !important;
+  }
+
+  .nf-error-msg {
+    color: $color-orange !important;
+  }
+
+  .nf-error .ninja-forms-field {
+    border-color: $color-orange !important;
+  }
+
+  .nf-form-content button:hover, .nf-form-content input[type=button]:hover, .nf-form-content input[type=submit]:hover {
+    background: #c4c4c4 !important;
+  }
+
+  .nf-response-msg {
+    background-color: $color-dark-green !important;
+    border-radius: 10px !important;
+    padding: 2% !important;
+    margin-top: 5% !important;
+  }
 }
 
 .more-events {
-  h2 {
+  &__title {
     font-weight: 800;
-    text-align: center;
+    padding: 32px 0 16px 16px;
+    margin: 0;
   }
+
+  &__wrapper {
+    overflow: initial;
+    @include bp(tablet){
+      @include flex-row();
+      justify-content: center;
+    }
+
+  }
+
+  &__item {
+    width: 100%;
+    margin: 0;
+    @include bp(tablet){
+      width: 40%;
+      flex: initial;
+      margin: 0 50px;
+    }
+  }
+
+
+
 }
