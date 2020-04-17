@@ -2,7 +2,7 @@
 
 ## The project
 
-A cross programme project between Web developers, Digital designers.
+A cross programme project between Web developers and Digital designers.
 
 The goal was to build a landing page for Gathenhielmska Huset with WordPress as CMS.
 
