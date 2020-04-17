@@ -56,7 +56,7 @@
             </div>
 
             <div class="info">
-                <h2></h2>
+                <h2 class="page__heading"><?php the_title(); ?></h2>
                 <?php if ($date && $time) : ?>
                     <p class="info__date-time"><?php echo "$date $months[$month_index] $time"; ?></p>
                 <?php endif; ?>

@@ -4,6 +4,10 @@
   .search {
     margin-top: 40px;
     padding-bottom: 0;
+
+    @include bp(tablet) {
+      margin-left: 98px;
+    }
   }
 
   .album {
@@ -12,6 +16,16 @@
       display: flex;
       justify-content: space-between;
       margin: 0 17px;
+
+      @include bp(tablet) {
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 98px;
+
+        p {
+          margin-left: 10px;
+        }
+      }
 
     }
 
@@ -24,6 +38,10 @@
       grid-auto-columns: 150px;
       grid-auto-flow: column dense;
       grid-gap: 5px;
+
+      @include bp(tablet) {
+        margin-left: 98px;
+      }
 
       .modal-overlay {
         display: none;
@@ -91,6 +109,10 @@
     h2 {
       margin: 0;
       margin-bottom: 16px;
+
+      @include bp(tablet) {
+        margin-left: 20px;
+      }
     }
 
     .video {
@@ -98,6 +120,12 @@
       height: 194px;
       margin-bottom: 8px;
       position: relative;
+
+      @include bp(tablet) {
+        height: 550px;
+        width: 800px;
+        margin-left: 98px;
+      }
 
 
       iframe {

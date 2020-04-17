@@ -82,10 +82,6 @@ require get_template_directory() . '/fields/in-house.php';
 require get_template_directory() . '/taxonomies/archive-category-image.php';
 require get_template_directory() . '/taxonomies/archive-category-video.php';
 
-//Output events
-
-
-
 //Functions
 if (!function_exists('my_acf_google_map_api')) {
 
@@ -177,7 +173,7 @@ if (!function_exists('add_archive_admin_menu')) {
             'archive',
             '',
             'dashicons-admin-media',
-            40
+            25
         );
     }
 }
@@ -203,23 +199,3 @@ if (!function_exists('acf_excerpt')) {
         return apply_filters('the_excerpt', $text);
     }
 }
-
-// Find all submenus or menus
-// add_action('admin_init', 'wpse_136058_debug_admin_menu');
-
-// function wpse_136058_debug_admin_menu()
-// {
-
-//     echo '<pre>' . print_r($GLOBALS['menu'], TRUE) . '</pre>';
-// }
-
-//Temporary solution for disabling adding own custom fields with Gutenberg-editor
-// add_action('admin_head', 'my_custom_style');
-// function my_custom_style()
-// {
-//     echo '<style>
-//         #postcustom {
-//             display:none;
-//         }
-//     </style>';
-// }

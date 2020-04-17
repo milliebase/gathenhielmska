@@ -43,7 +43,7 @@ $videos = get_posts($videosArgs);
             <?php if (count($events)) : ?>
                 <?php foreach ($events as $post) : setup_postdata($post);  ?>
 
-                <?php $gallery = get_field('archive_image_gallery') ?>
+                    <?php $gallery = get_field('archive_image_gallery') ?>
                     <div class="album">
                         <div class="album__info">
                             <h3><?php the_title(); ?></h3>
@@ -53,26 +53,25 @@ $videos = get_posts($videosArgs);
                             <?php endif; ?>
                         </div>
 
-                        <?php //print_r($gallery);
-                        ?>
-
                         <?php if ($gallery) : ?>
                             <div class="album__slider">
                                 <?php foreach ($gallery as $image) : ?>
-                                        <div class="image <?php echo ($image['width'] > $image['height']) ? 'landscape' : 'portrait'; ?>">
-                                            <img src="<?php echo $image['url']; ?>" alt="">
-                                        </div>
+                                    <div class="image <?php echo ($image['width'] > $image['height']) ? 'landscape' : 'portrait'; ?>">
+                                        <img src="<?php echo $image['url']; ?>" alt="">
+                                    </div>
 
-                                        <div class="modal-overlay">
-                                            <!-- <img src="<?php echo $uri ?>/assets/images/exit.svg" alt="Exit menu button" class="modal-overlay__exit"> -->
+                                    <!-- <div class="modal-overlay">
+                                         <img src="<?php //echo $uri
+                                                    ?>/assets/images/exit.svg" alt="Exit menu button" class="modal-overlay__exit">
                                         <div class="image">
-                                            <img src="<?php echo $image['url']; ?>" alt="">
+                                            <img src="<?php //echo $image['url'];
+                                                        ?>" alt="">
                                         </div>
                                         <div class="modal-text">
                                             <p>date</p>
                                             <p>description</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
@@ -104,7 +103,6 @@ $videos = get_posts($videosArgs);
 
                 // Add extra parameters to src and replace HTML.
                 $params = [
-                    // 'autoplay' => 1,
                     'controls'  => 1,
                     'hd'        => 1,
                     'autohide'  => 0,
@@ -131,24 +129,6 @@ $videos = get_posts($videosArgs);
 
 
 
-                <!-- <?php
-                        // $youtube_video_url = get_field('archive_video_url', false, false);
-                        // print_r($youtube_video_url);
-
-                        // $embedUrl = str_replace('watch?=v=', 'embed/', $youtube_video_url,);
-
-                        // print_r($embedUrl);
-                        ?>
-
-                <div class="video">
-                    <button class="video__play" style="background-image: url('<?php //echo get_field('archive_video_image')['url'];
-                                                                                ?>')">
-                        <img src="<?php //echo get_template_directory_uri();
-                                    ?>/assets/images/play.svg" alt="Play button">
-                    </button>
-                    <iframe width="560" height="315" src="<?php //echo $youtube_video_url;
-                                                            ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                </div> -->
             <?php endforeach; ?>
         <?php else : ?>
             <div class="no_results">
@@ -156,9 +136,9 @@ $videos = get_posts($videosArgs);
             </div>
         <?php endif; ?>
     </article>
-    <div class="modal" id="modal">
+    <!-- <div class="modal" id="modal">
         <span class="close">&times;</span>
-    </div>
+    </div> -->
 
 </section>
 
