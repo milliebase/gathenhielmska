@@ -1,5 +1,7 @@
 # Gathenhielmska huset
 
+<img src="" width=100%>
+
 ## The project
 
 A cross programme project between Web developers and Digital designers.
