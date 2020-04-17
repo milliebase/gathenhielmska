@@ -1,6 +1,6 @@
 # Gathenhielmska huset
 
-<img src="" width=100%>
+<img src="/resources/images/gathenhielmska.png" width="100%">
 
 ## The project
 
