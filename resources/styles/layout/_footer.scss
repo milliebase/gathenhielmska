@@ -42,9 +42,11 @@ footer{
                      display: flex;
                     justify-content: space-between;
                     padding-bottom: 10px;
-                     
         @include bp(desktop) {
+            width: 20%;
+             justify-content: flex-start;
             img{
+                margin-left: 10px;
                 transform: scale(1.2);
             }
     }
@@ -142,5 +144,10 @@ footer{
              width: 100%;
               
              }   
+               @include bp(desktop) {
+             left: 71%;
+           
+              
+             } 
     }
 }

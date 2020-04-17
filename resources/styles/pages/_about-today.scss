@@ -9,19 +9,42 @@
         flex-wrap: wrap;
         position: relative;
         justify-content: space-around;
+         @include bp(tablet) {
+             justify-content: flex-end;
+         }
     
         .manifest_box{
            
             overflow: hidden;
             width: 375px;
-            height: 243px;
+            min-height: 243px;
             position: relative;
             color:$color-white;
-            
+             @include bp(tablet) {
+                 width: 50%;
+                 
+                 min-width: 270px;
+                 max-width: 507px;
+                 max-height: 507px;;
+             }
+              @include bp(desktop) {
+                 width: 50%;
+                 min-height: 400px;
+                 min-width: 300px;
+                 max-width: 507px;
+                 max-height: 507px;;
+             }
            
            
             .manifest__box-background-desktop{
              display: none;
+                 @include bp(tablet) {
+                display: block;
+                 position: absolute;
+                z-index: -1;
+                width:100%;
+                 object-fit: cover;
+            }
 
             }
             .manifest__box-background-mobile{
@@ -30,7 +53,10 @@
                 z-index: -1;
                 width:100%;
                  object-fit: cover;
-
+               @include bp(tablet) {
+                display: none;
+            }
+              
             }
             .manifest__box-text{
                 h2{
@@ -49,17 +75,74 @@
         
     }
   .today_culture{
+      @include bp(tablet) {
+                    display: flex;
+                    justify-content: flex-end;
+                h2{
+                    display: none;
+                }
+            }
+              @include bp(desktop) {
+                
+                    padding-right: 15%;
+                
+            }
       padding:40px 23px 48px 16px;
+      .culture__text-box{
+        @include bp(tablet) {
+                display:flex;
+                flex-direction: row;
+                align-self: flex-end;
+                max-width: 970px;
+
+            }
+              @include bp(desktop) {
+                display:flex;
+                flex-direction: row;
+                align-self: flex-end;
+                max-width: 1170px;
+
+            }
+      
         .culture__paragraph2{
+        
+           
             a{
                 color:black;
                 font-weight: bolder;
                 text-decoration: underline;
+                @include bp(tablet) {
+                font-weight: 400;
+          
+               
+            }
                 .today___arrow-icon{
                     filter: invert(1);
                     text-decoration: none;
                     transform: scale(1.2) translate(5px, 2px);
                 }
+                }
+                
+            }
+             .culture__paragraph,.culture__paragraph2{
+              @include bp(tablet) {
+              min-height: 300px;
+              min-width: 300px;
+              max-width: 400px;
+            font-size: 18px;
+                 margin: 5% 0%;
+           
+            
+              
+            }
+             @include bp(desktop) {
+              min-width: 390px;
+              max-width: 50px;
+              min-height: 400px;
+              margin: 5%;
+              
+         
+            }
             }
         }
     }
