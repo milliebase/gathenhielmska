@@ -74,7 +74,7 @@ $ npm run dev
 
 - [Betsy Alva Soplin](https://github.com/milliebase)
 - [Julia Karlsson](https://github.com/Juljulia)
-- [Marcus Augustsson]((https://github.com/MarcusIsCode))
+- [Marcus Augustsson](https://github.com/MarcusIsCode)
 
 ### Digital Designers
 
