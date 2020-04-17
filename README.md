@@ -32,9 +32,9 @@ __Time for project: 5 weeks__
 
 ### Future features
 
-- [x] Possibility to change language between swedish and english
-- [x] Fully functional booking for the events, with payment possibility
-- [x] A login page for the in-house activities to book rooms
+- [ ] Possibility to change language between swedish and english
+- [ ] Fully functional booking for the events, with payment possibility
+- [ ] A login page for the in-house activities to book rooms
 
 ## Installation
 
